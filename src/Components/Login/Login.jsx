@@ -25,7 +25,7 @@ const Login = () => {
     
     const handleLogin = async (data) => {
         try {
-          const response = await axios.post("http://13.126.188.208:5298/api/v1/users/Login", {
+          const response = await axios.post("https://nrimarriage.in/api/v1/users/Login", {
             email: data.Email,
             password: data.Password,
           });
@@ -81,6 +81,7 @@ const Login = () => {
                   name="email"
                   id="email"
                   placeholder="Email"
+                  autoComplete="email" 
                   {...register('Email', { required: "Email required" })}
                 />
                 <p className="errors1">{errors.Email?.message}</p>
@@ -88,6 +89,7 @@ const Login = () => {
                   type="password"
                   id="password"
                   placeholder="Password"
+                  autoComplete="current-password"
                   {...register('Password', { required: "Password required" })}
                 />
                 <p className="errors1">{errors.Password?.message}</p>
@@ -96,31 +98,31 @@ const Login = () => {
                 </button>
               </form>
   
-              <NavLink to="/signup"><a>Not yet registered? Register Now</a></NavLink>
+              <NavLink to="/signup">Not yet registered? Register Now</NavLink>
             </div>
           </div>
         </div>
 
-    <div class="parent-container12">
-        <div class="container12">
+    <div className="parent-container12">
+        <div className="container12">
 
-            <div class="img3">
-                <img loading="lazy" decoding="async" srcset="" sizes="(max-width: 480px) 150px" src={image3} alt="img-3" class="" width="645" height="500" title="" role="img"></img>
+            <div className="img3">
+                <img loading="lazy" decoding="async"  sizes="(max-width: 480px) 150px" srcSet={image3} alt="img-3" className="" width="645" height="500" title="" role="img"></img>
             </div>
         
         
-            <div class="about1">
+            <div className="about1">
                 <h2>Our Story</h2>
                 <p>The IndianWedding is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
-                <div class="hr"></div>
+                <div className="hr"></div>
         
-                <p class="info5">Follow Us</p>
+                <p className="info5">Follow Us</p>
                 
-                    <div class="social-menu">
+                    <div className="social-menu">
                         <ul>
-                            <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
+                            <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
+                            <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
+                            <li><a href=""><i className="fab fa-youtube" target="blank"></i></a></li>
                         </ul>
                     </div>
             </div>
@@ -128,117 +130,104 @@ const Login = () => {
       </div>
 
 
-      <div class="parent-container13">
-        <div class="container13">
+      <div className="parent-container13">
+        <div className="container13">
             <h2>Our Services</h2>
         </div>
 
-        <div class="img-stack">
-            <div class="img-stack1">
+        <div className="img-stack">
+            <div className="img-stack1">
                 <h3>Profiles</h3>
-                {/* <a href="#"><span>Read More</span></a> */}
             </div>
-            <div class="img-stack2">
+            <div className="img-stack2">
                 <h3>Matchmaking</h3>
-                {/* <a href="#"><span>Read More</span></a> */}
             </div>
-            <div class="img-stack3">
+            <div className="img-stack3">
                 <h3>Wedding Shopping</h3>
-                {/* <a href="#"><span>Read More</span></a> */}
             </div>
-            <div class="img-stack4">
+            <div className="img-stack4">
                 <h3>Events</h3>
-                {/* <a href="#"><span>Read More</span></a> */}
             </div>
         </div> 
       </div>
 
 
-      <div class="parent-container14">
-        <div class="container14">
+      <div className="parent-container14">
+        <div className="container14">
             <div>
                 <h2>Find Your Perfect Match</h2>
             </div>
             <div>
                 <p>Start your journey to a happy and fulfilled married life by joining The IndianWedding and finding your perfect match based on compatibility and shared values.</p>
-                    {/* <a href="#" target="_self" rel="noopener noreferrer" onclick="return true;">
-                        <span class="">Join Now</span>
-                    </a> */}
+                  
             </div>
         </div>
       </div>
 
 
-      <div class="parent-container15">
+      <div className="parent-container15">
 
-        <div class="work1">
+        <div className="work1">
             <h2>Our Work</h2>
         </div>
         
-      <div class="container15">
+      <div className="container15">
 
 
-        <div class="img10">
+        <div className="img10">
             <figure>
-            <img src={image10} alt="img-10"></img>
+            <img srcSet={image10} alt="img-10"></img>
             <figcaption>Destination Weddings</figcaption>
             </figure>
         </div>
         
-        <div class="img11">
+        <div className="img11">
             <figure>
-                <img src={image11} alt="img-11"></img>
+                <img srcSet={image11} alt="img-11"></img>
                     <figcaption>Engagements</figcaption>
             </figure>
         </div>
         
-        <div class="img12">
+        <div className="img12">
             <figure>
-                <img src={image12} alt="img-12"></img>
+                <img srcSet={image12} alt="img-12"></img>
                     <figcaption>Love Stories</figcaption>
             </figure>
         </div>
         
-        <div class="img9">
+        <div className="img9">
             <figure>
-                <img src={image9} alt="img-9"></img>
+                <img srcSet={image9} alt="img-9"></img>
                     <figcaption>Lifestyle</figcaption>
             </figure>
         </div>
         
         
         
-        <div class="img8">
+        <div className="img8">
             <figure>
-               <img src={image8} alt="img-8"></img>
+               <img srcSet={image8} alt="img-8"></img>
                 <figcaption>Celebrations</figcaption>
             </figure>
         </div>
     
         
-        
-        
-        {/* <div class="portfolio1">
-            <a  aria-label="" href="#" rel="follow noopener" target="_self" role="button">
-                View Portfolio
-            </a>
-        </div> */}
          
       </div>
       </div>
 
         
-      <div class="couples1">
+      <div className="couples1">
         <div>
             <h2>Happy Couples</h2>
         </div>
       </div> 
       
        
-      <div class="parent-container16">
-      <div class="batch4">
+      <div className="parent-container16">
+      <div className="batch4">
 
-            <div class="star" title="5/5">
+            <div className="star" title="5/5">
                 <span>★</span>
                 <span>★</span>
                 <span>★</span>
@@ -246,20 +235,20 @@ const Login = () => {
                 <span>★</span>
             </div>
         
-            <div class="info6">
+            <div className="info6">
                 <div>
-                    <p class="message4">We are grateful to The IndianWedding for bringing us together. We found true love and a partner for life!</p>
+                    <p className="message4">We are grateful to The IndianWedding for bringing us together. We found true love and a partner for life!</p>
                 </div>
-                <div class="img13">
-                    <img src={image13} alt="img-13"></img>
+                <div className="img13">
+                    <img srcSet={image13} alt="img-13"></img>
                 </div>
-                <p class="name4">Riya &amp; Arjun</p>
+                <p className="name4">Riya &amp; Arjun</p>
             </div>
       </div>
         
-      <div class="batch5">
+      <div className="batch5">
         
-            <div class="star1" title="5/5">
+            <div className="star1" title="5/5">
                 <span>★</span>
                 <span>★</span>
                 <span>★</span>
@@ -269,19 +258,19 @@ const Login = () => {
         
         
         
-            <div class="info7">
+            <div className="info7">
                 <div>
-                    <p class="message5">The IndianWedding helped us find our soulmates. We couldn't be happier with our life partners!</p>
+                    <p className="message5">The IndianWedding helped us find our soulmates. We couldn't be happier with our life partners!</p>
                 </div>
-                <div class="img14">
-                        <img src={image14} alt="img-14"></img>
+                <div className="img14">
+                        <img srcSet={image14} alt="img-14"></img>
                 </div>
-                    <p class="name5">Smita &amp; Deepak</p>
+                    <p className="name5">Smita &amp; Deepak</p>
             </div>
       </div> 
         
-      <div class="batch6">
-            <div class="star2" title="5/5">
+      <div className="batch6">
+            <div className="star2" title="5/5">
                 <span>★</span>
                 <span>★</span>
                 <span>★</span>
@@ -291,90 +280,86 @@ const Login = () => {
         
         
         
-            <div class="info8">
+            <div className="info8">
                 <div>
-                    <p class="message6">Thanks to The IndianWedding, we found true love and are excited to start our journey together as a married couple.</p>
+                    <p className="message6">Thanks to The IndianWedding, we found true love and are excited to start our journey together as a married couple.</p>
                 </div>
-                <div class="img15">
-                        <img src={image15} alt="img-15"></img>
+                <div className="img15">
+                        <img srcSet={image15} alt="img-15"></img>
                 </div>
-                    <p class="name6">Pooja &amp; Rahul</p>
+                    <p className="name6">Pooja &amp; Rahul</p>
             </div>
     
       </div>
       </div> 
 
-      <div class="parent-container17">
-        <div class="check">
+      <div className="parent-container17">
+        <div className="check">
             <h2>Check Out Our Recent Work On Instagram</h2>
-            <div class="insta">
+            <div className="insta">
                 <a href="#" target="_self" rel="noopener noreferrer">Follow Us On Instagram</a>
             </div>
         </div>
-        <div class="container17">
-            <div class="img16">
+        <div className="container17">
+            <div className="img16">
                 <figure>
-                    <img src={image16} alt="img-16"></img>
+                    <img srcSet={image16} alt="img-16"></img>
                 </figure>
             </div>
-            <div class="img17">
+            <div className="img17">
                 <figure>
-                    <img src={image17} alt="img-17"></img>
+                    <img srcSet={image17} alt="img-17"></img>
                 </figure>
             </div>
-            <div class="img18">
+            <div className="img18">
                 <figure>
-                    <img src={image18} alt="img-18"></img>
+                    <img srcSet={image18} alt="img-18"></img>
                 </figure>
             </div>
-            <div class="img19">
+            <div className="img19">
                 <figure>
-                    <img src={image19} alt="img-19"></img>
+                    <img srcSet={image19} alt="img-19"></img>
                 </figure>
             </div>
-            <div class="img20">
+            <div className="img20">
                 <figure>
-                    <img src={image20} alt="img-20"></img>
+                    <img srcSet={image20} alt="img-20"></img>
                 </figure>
             </div>
           </div>
         </div>
 
 
-        <div class="parent-container18">
-        <div class="container18">
+        <div className="parent-container18">
+        <div className="container18">
         
-                <div class="find">
+                <div className="find">
                     <h2>Find Your Soulmate Today</h2>
                 </div>
-                <p class="info4">Join the 'TheIndianWedding' today and begin your search for a compatible life partner in the Indian community.</p>
-                {/* <div class="button1">
-                    <a href="#" target="_self" rel="noopener noreferrer" role="button">
-                        <span>Join Now</span>
-                    </a>
-                </div> */}
+                <p className="info4">Join the 'TheIndianWedding' today and begin your search for a compatible life partner in the Indian community.</p>
+               
         
         </div>
         </div>
 
 
-      <div class="parent-container19">
-      <div class="contact-container1">
-        <div class="contact-item1">
+      <div className="parent-container19">
+      <div className="contact-container1">
+        <div className="contact-item1">
             <h2>Phone</h2>
             <p>202-555-0188</p>
         </div>
-        <div class="contact-item1">
+        <div className="contact-item1">
             <h2>Follow Us</h2>
-            <div class="social-icons1">
+            <div className="social-icons1">
                 <ul>
-                    <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
+                    <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
+                    <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i className="fab fa-youtube" target="blank"></i></a></li>
                 </ul>
             </div>
         </div>
-        <div class="contact-item1">
+        <div className="contact-item1">
             <h2>Email</h2>
             <p>contact@example.com</p>
         </div>
@@ -383,8 +368,8 @@ const Login = () => {
                       
                                 
 
-<div class="parent-container20">
-	<div class="container20">
+<div className="parent-container20">
+	<div className="container20">
         <p>Copyright © 2024 theindianwedding</p>
     </div>			
 </div>	

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useHistory, Navigate} from "react-router-dom";
 import { useState } from "react";
 import Registration from './Components/Registration/Registration';
 import Login from './Components/Login/Login';
@@ -14,14 +14,17 @@ import Profile from './Components/Profile/Profile'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
+
 function App() {
   const [userstate, setUserState] = useState({});
   return (
     <div className="App">
       <Router>
         <Routes> 
+          <Route path="/" element={<Navigate to="/signup" />} />
           <Route path="/profile" element={<Profile/>}></Route>
-          <Route path="/" element={<Registration/>}></Route>
+          <Route path="/signup" element={<Registration/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/home" element={<Home/>}></Route>
           <Route path="/about" element={<About/>}></Route>

@@ -26,94 +26,94 @@ const Home = () => {
     const [profile, setProfile] = useState(null);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [error, setError] = useState('');
+    const [profilePictureUrl, setProfilePictureUrl] = useState(null); // New state for profile picture
+    const dropdownRef = useRef(null);
     const [searchCriteria, setSearchCriteria] = useState({
-        minAge: '',
-        maxAge: '',
-        minHeight: '',
-        maxHeight: '',
-        caste:'',
-        preferredPartnerReligion: '',
-        gender: '',
-        maritalStatus:'',
-        preferredpartnerLocation:'',
-        minSalary:'',
-        maxSalary:'',
-        motherTongue:'',
-        occupation:'',
-        education: ''
+        MinAge: '',
+        MaxAge: '',
+        MinHeight: '',
+        MaxHeight: '',
+        Caste: '',
+        PreferredPartnerReligion: '',
+        Gender: '',
+        MaritalStatus: '',
+        PreferredPartnerLocation: '',
+        MinSalary: '',
+        MaxSalary: '',
+        MotherTongue: '',
+        Occupation: '',
+        Education: ''
     });
     const [searchResults, setSearchResults] = useState([]);
-    const dropdownRef = useRef(null);
+    const [pageNumber, setPageNumber] = useState(1); // Default to page 1
+    const [pageSize] = useState(10); // Default page size, you can change this
+    const [totalPages, setTotalPages] = useState(0); // Total pages returned by the backend
+    const [isSearchPerformed, setIsSearchPerformed] = useState(false); // New state to track search activity
 
+    /* =======================
+       Navigation Functions
+    ======================= */
 
-    const handleViewProfile = (id) => {
-        // Navigate to the profile page using the user ID
-        navigateTo(`/profile/${id}`); // Adjust the route as needed
+    // const handleViewProfile = (id) => {
+    //     // Navigate to the profile page using the user ID
+    //     navigateTo(`/profile/${id}`); // Adjust the route as needed
+    // };
+
+    const handleEditProfile = (data) => {
+        // Navigate to the profile edit page with data
+        navigateTo('/profile', { state: { data } });
     };
-
-   
-    // Fetch profile data
-    const fetchProfile = async () => {
-        try {
-            const response = await axios.get('http://13.126.188.208:5298/api/v1/users/Profile', {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('authToken')}`,
-                },
-            });
-            setProfile(response.data);
-        } catch (error) {
-            console.error('Error fetching profile:', error);
-            if (error.response && error.response.status === 401) {
-                navigateTo('/login');
-            }
-        }
-    };
-
-    useEffect(() => {
-        fetchProfile();
-    }, [navigateTo]);
 
     const handleLogout = () => {
+        // Clear auth token and navigate to login page
         localStorage.removeItem('authToken');
         navigateTo('/login');
     };
+
+    /* =========================
+       Profile Picture Handling
+    ========================= */
+
+    const fetchProfilePicture = async () => {
+        try {
+            const response = await axios.get('https://nrimarriage.in/api/v1/users/GetProfileImage', {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('authToken')}`,
+                },
+                responseType: 'arraybuffer',
+            });
+    
+            // Convert binary data to base64 string
+            const base64Image = btoa(
+                new Uint8Array(response.data)
+                    .reduce((data, byte) => data + String.fromCharCode(byte), '')
+            );
+    
+            // Construct a data URL for the image
+            const imageUrl = `data:image/png;base64,${base64Image}`;
+            setProfilePictureUrl(imageUrl);
+        } catch (error) {
+            // Check if error response exists and is a 404 error
+            if (error.response && error.response.status === 404) {
+                console.log('No profile picture found, setting to default image.');
+                setProfilePictureUrl(image63); // Set image63 as the default image
+            } else {
+                console.error('Error fetching profile picture:', error);
+            }
+        }
+    };
+    
+
+    /* =======================
+       Dropdown Handling
+    ======================= */
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
 
-    const handleEditProfile = () => {
-        navigateTo('/profile');
-    };
-
-
-    const handleSearchChange = (e) => {
-        setSearchCriteria({
-            ...searchCriteria,
-            [e.target.name]: e.target.value,
-        });
-    };
-
-    const handleSearchSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post(
-                'http://13.126.188.208:5298/api/v1/Users/SearchProfiles',
-                searchCriteria,
-                {
-                    headers: {
-                        Authorization: `Bearer ${localStorage.getItem('authToken')}`,
-                    },
-                }
-            );
-            setSearchResults(response.data);
-        } catch (error) {
-            console.error('Error fetching search results:', error);
-        }
-    };
-
-     // Close dropdown if clicked outside
-     useEffect(() => {
+    // Close dropdown if clicked outside
+    useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setDropdownOpen(false);
@@ -125,6 +125,72 @@ const Home = () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [dropdownRef]);
+
+    /* ==========================
+       Search Functionality
+    ========================== */
+
+    const handleSearchChange = (e) => {
+        setSearchCriteria({
+            ...searchCriteria,
+            [e.target.name]: e.target.value,
+        });
+    };
+    
+     // Search submit handler
+    const handleSearchSubmit = async (e, newPageNumber = pageNumber) => {
+        if (e) e.preventDefault();
+
+        const filteredCriteria = Object.fromEntries(
+            Object.entries(searchCriteria).filter(([key, value]) => value.trim() !== '')
+        );
+
+        console.log('Filtered Search Criteria:', filteredCriteria);
+
+        try {
+            const response = await axios.post(
+                'https://nrimarriage.in/api/v1/users/SearchProfiles',
+                { 
+                    ...filteredCriteria, 
+                    pageNumber: newPageNumber,  
+                    pageSize: 8 
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('authToken')}`,
+                    },
+                }
+            );
+
+            console.log('Search Results:', response.data);
+            setSearchResults(response.data.results);
+            setTotalPages(response.data.totalPages);
+            setIsSearchPerformed(true); // Set the search as performed
+        } catch (error) {
+            console.error('Error fetching search results:', error.response ? error.response.data : error.message);
+        }
+    };
+
+    // Page change handler
+    const handlePageChange = async (newPageNumber) => {
+        setPageNumber(newPageNumber);
+        await handleSearchSubmit(null, newPageNumber);
+    };
+
+    // View profile handler
+    const handleViewProfile = (id) => {
+        console.log('View profile', id);
+    };
+
+
+
+    /* =======================
+       Lifecycle Effects
+    ======================= */
+
+    useEffect(() => {
+        fetchProfilePicture(); // Fetch profile picture on component mount
+    }, []);
 
     return (
         <div className='body'>
@@ -142,21 +208,22 @@ const Home = () => {
                     </ul>
                 </nav>
 
-                <div className="header-actions">
-                   <div className="profile-picture-container" onClick={() => setDropdownOpen(!dropdownOpen)} ref={dropdownRef}>
-                    {profile && profile.ProfilePictureUrl ? (
-                    <img src={profile.ProfilePictureUrl} alt="Profile" className="profile-picture1" />
-                    ) : (
-                    <img src={image63} alt="Profile" className="profile-picture1" />
-                    )}
-                    {dropdownOpen && (
+            <div className="header-actions">
+            <div className="profile-picture-container" onClick={toggleDropdown} ref={dropdownRef}>
+                    <img
+                        src={profilePictureUrl ? profilePictureUrl : image63 } // Display the fetched profile picture URL
+                        alt="Profile"
+                        className="profile-picture1"
+                        style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }}
+                    />
+                {dropdownOpen && (
                     <div className="dropdown-menu show" aria-labelledby="dropdownMenuButton">
-                        <button className="dropdown-item" onClick={handleEditProfile}>Edit Profile</button>
+                        <button className="dropdown-item" onClick={()=>handleEditProfile(profilePictureUrl)}>Edit Profile</button>
                         <button className="dropdown-item" onClick={handleLogout}>Logout</button>
                     </div>
-                    )}
-                  </div>
-                </div>
+                )}
+            </div>
+            </div>
             </header>
 
 
@@ -169,8 +236,8 @@ const Home = () => {
                         <label>Min Age:</label>
                         <input
                             type="number"
-                            name="minAge"
-                            value={searchCriteria.minAge}
+                            name="MinAge"
+                            value={searchCriteria.MinAge}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -178,8 +245,8 @@ const Home = () => {
                         <label>Max Age:</label>
                         <input
                             type="number"
-                            name="maxAge"
-                            value={searchCriteria.maxAge}
+                            name="MaxAge"
+                            value={searchCriteria.MaxAge}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -187,8 +254,8 @@ const Home = () => {
                         <label>Min Height:</label>
                         <input
                             type="number"
-                            name="minHeight"
-                            value={searchCriteria.minHeight}
+                            name="MinHeight"
+                            value={searchCriteria.MinHeight}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -196,8 +263,8 @@ const Home = () => {
                         <label>Max Height:</label>
                         <input
                             type="number"
-                            name="maxHeight"
-                            value={searchCriteria.maxHeight}
+                            name="MaxHeight"
+                            value={searchCriteria.MaxHeight}
                             onChange={handleSearchChange}
                         />
                     </div> 
@@ -205,8 +272,8 @@ const Home = () => {
                         <label>Caste:</label>
                         <input
                             type="text"
-                            name="caste"
-                            value={searchCriteria.caste}
+                            name="Caste"
+                            value={searchCriteria.Caste}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -214,8 +281,8 @@ const Home = () => {
                         <label>Religion:</label>
                         <input
                             type="text"
-                            name="preferredPartnerReligion"
-                            value={searchCriteria.preferredPartnerReligion}
+                            name="PreferredPartnerReligion"
+                            value={searchCriteria.PreferredPartnerReligion}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -223,8 +290,8 @@ const Home = () => {
                         <label>Gender:</label>
                         <input
                             type="text"
-                            name="gender"
-                            value={searchCriteria.gender}
+                            name="Gender"
+                            value={searchCriteria.Gender}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -232,8 +299,8 @@ const Home = () => {
                         <label>Marital Status:</label>
                         <input
                             type="text"
-                            name="maritalStatus"
-                            value={searchCriteria.maritalStatus}
+                            name="MaritalStatus"
+                            value={searchCriteria.MaritalStatus}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -241,8 +308,8 @@ const Home = () => {
                         <label>Preferred Partner Location:</label>
                         <input
                             type="text"
-                            name="preferredPartnerLocation"
-                            value={searchCriteria.preferredPartnerLocation}
+                            name="PreferredPartnerLocation"
+                            value={searchCriteria.PreferredPartnerLocation}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -250,8 +317,8 @@ const Home = () => {
                         <label>Min Salary:</label>
                         <input
                             type="number"
-                            name="minSalary"
-                            value={searchCriteria.minSalary}
+                            name="MinSalary"
+                            value={searchCriteria.MinSalary}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -259,8 +326,8 @@ const Home = () => {
                         <label>Max Salary:</label>
                         <input
                             type="number"
-                            name="maxSalary"
-                            value={searchCriteria.maxSalary}
+                            name="MaxSalary"
+                            value={searchCriteria.MaxSalary}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -268,8 +335,8 @@ const Home = () => {
                         <label>Mother Tongue:</label>
                         <input
                             type="text"
-                            name="motherTongue"
-                            value={searchCriteria.motherTongue}
+                            name="MotherTongue"
+                            value={searchCriteria.MotherTongue}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -277,8 +344,8 @@ const Home = () => {
                         <label>Occupation:</label>
                         <input
                             type="text"
-                            name="occupation"
-                            value={searchCriteria.occupation}
+                            name="Occupation"
+                            value={searchCriteria.Occupation}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -286,8 +353,8 @@ const Home = () => {
                         <label>Education:</label>
                         <input
                             type="text"
-                            name="education"
-                            value={searchCriteria.education}
+                            name="Education"
+                            value={searchCriteria.Education}
                             onChange={handleSearchChange}
                         />
                     </div>
@@ -295,45 +362,68 @@ const Home = () => {
                 <button type="submit">Search</button>
             </form>
 
-            <div className="search-results">
-    {searchResults.length > 0 ? (
-        <div className="row justify-content-center">
-            {searchResults.map((result) => (
-                <div key={result.id} className="profile-card col-2 mb-4"> {/* Use col-2 for 5 cards in a row */}
-                    <div className="card">
-                        <img
-                            src={result.profilePictureUrl || image63}
-                            alt={`${result.firstName} ${result.lastName} Profile`}
-                            className="profile-card-img" // Updated class
-                        />
-                        <div className="card-body text-center"> {/* Center text */}
-                            <h5 className="card-title">{result.firstName} {result.lastName}</h5>
-                            <p className="card-text">Age: {result.age}</p>
-                            <p className="card-text">Height: {result.height} cm</p>
-                            <p className="card-text">Religion: {result.religion}</p>
-                            <p className="card-text">Gender: {result.gender}</p>
-                            <button 
-                                className="btn-custom" // Use the custom button class
-                                onClick={() => handleViewProfile(result.id)}
-                            >
-                            View Profile
-                            </button>
+            
+            {/* Only display search results if a search has been performed */}
+            {isSearchPerformed ? (
+                <div className="search-results">
+                    {searchResults.length > 0 ? (
+                        <div className="row justify-content-center">
+                            {searchResults.map((result) => (
+                                <div key={result.id} className="profile-card col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div className="card shadow-sm border-light">
+                                        <img
+                                            src={result.profilePictureUrl || 'default-image-url'}
+                                            alt={`${result.firstName} ${result.lastName} Profile`}
+                                            className="card-img-top"
+                                        />
+                                        <div className="card-body text-center">
+                                            <h5 className="card-title">{result.firstName} {result.lastName}</h5>
+                                            <p className="card-text">Age: {result.age}</p>
+                                            <p className="card-text">Height: {result.height} cm</p>
+                                            <p className="card-text">Religion: {result.religion}</p>
+                                            <p className="card-text">Gender: {result.gender}</p>
+                                            <button 
+                                                className="btn btn-primary"
+                                                onClick={() => handleViewProfile(result.id)}
+                                            >
+                                                View Profile
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    </div>
+                    ) : (
+                        <p className="text-center">No profiles found.</p>
+                    )}
                 </div>
-            ))}
-        </div>
-    ) : (
-        <p className="text-center">No profiles found.</p>
-    )}
-</div>
+            ) : (
+                <p className="text-center">Please perform a search to see results.</p>
+            )}
 
-
-
-
+            {/* Pagination controls */}
+            {isSearchPerformed && totalPages > 1 && (
+                <div className="pagination-controls text-center mt-4">
+                    <nav aria-label="Page navigation">
+                        <ul className="pagination justify-content-center">
+                            {Array.from({ length: totalPages }, (_, index) => (
+                                <li className={`page-item ${pageNumber === index + 1 ? 'active' : ''}`} key={index}>
+                                    <button
+                                        className="page-link"
+                                        onClick={() => handlePageChange(index + 1)}
+                                    >
+                                        {index + 1}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+            )}
+        
     
-    <div class="parent-container21">
-        <div class="container21">
+    <div className="parent-container21">
+        <div className="container21">
             <div>
                 <h1>Connect with Your Perfect Match</h1>
             </div>
@@ -342,60 +432,60 @@ const Home = () => {
                 <a href="" onClick={() => navigateTo('/contact')}><span>Join Now</span></a>
             </div>
         </div>
-        <div class="image-section">
-            <img src={image1} alt="img-1" class="image-1"></img>
-            <img src={image2} alt="img-2" class="image-2"></img>
+        <div className="image-section">
+            <img srcSet={image1} alt="img-1" className="image-1"></img>
+            <img srcSet={image2} alt="img-2" className="image-2"></img>
         </div>
     </div>
 
 
-    <div class="parent-container22">
-        <div class="container22">
+    <div className="parent-container22">
+        <div className="container22">
 
-            <div class="img3">
-                <img loading="lazy" decoding="async" srcset="" sizes="(max-width: 480px) 150px" src={image3} alt="img-3" class="" width="645" height="500" title="" role="img"></img>
+            <div className="img3">
+                <img loading="lazy" decoding="async"  sizes="(max-width: 480px) 150px" srcSet={image3} alt="img-3" className="" width="645" height="500" title="" role="img"></img>
             </div>
         
         
-            <div class="about2">
+            <div className="about2">
                 <h2>Our Story</h2>
                 <p>The <b>'TheIndianWedding'</b> is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
-                <div class="hr"></div>
-                <div class="button6">
+                <div className="hr"></div>
+                <div className="button6">
                     <a href="" onClick={() => navigateTo('/about')}><span>Read More</span></a>
                 </div>
-                <p class="info9">Follow Us</p>
+                <p className="info9">Follow Us</p>
                 
-                    <div class="social-menu">
+                    <div className="social-menu">
                         <ul>
-                            <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
+                            <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
+                            <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
+                            <li><a href=""><i className="fab fa-youtube" target="blank"></i></a></li>
                         </ul>
                     </div>
             </div>
         </div>
     </div>
 
-<div class="parent-container23">
-        <div class="container23">
+<div className="parent-container23">
+        <div className="container23">
             <h2>Our Services</h2>
         </div>
 
-        <div class="img-stack">
-            <div class="img-stack1">
+        <div className="img-stack">
+            <div className="img-stack1">
                 <h3>Profiles</h3>
                 <a href="" onClick={() => navigateTo('/services')}><span>Read More</span></a>
             </div>
-            <div class="img-stack2">
+            <div className="img-stack2">
                 <h3>Matchmaking</h3>
                 <a href="" onClick={() => navigateTo('/services')}><span>Read More</span></a>
             </div>
-            <div class="img-stack3">
+            <div className="img-stack3">
                 <h3>Wedding Shopping</h3>
                 <a href="" onClick={() => navigateTo('/services')}><span>Read More</span></a>
             </div>
-            <div class="img-stack4">
+            <div className="img-stack4">
                 <h3>Events</h3>
                 <a href="" onClick={() => navigateTo('/services')}><span>Read More</span></a>
             </div>
@@ -403,63 +493,63 @@ const Home = () => {
     </div>
         
 
-    <div class="parent-container24">
-        <div class="container24">
+    <div className="parent-container24">
+        <div className="container24">
             <div>
                 <h2>Find Your Perfect Match</h2>
             </div>
             <div>
                 <p>Start your journey to a happy and fulfilled married life by joining the <b>'TheIndianWedding'</b> and finding your perfect match based on compatibility and shared values.</p>
-                    <a href="" target="_self" rel="noopener noreferrer" onclick="return true;" onClick={() => navigateTo('/contact')}>
-                        <span class="">Join Now</span>
+                    <a href="" target="_self" rel="noopener noreferrer"  onClick={() => navigateTo('/contact')}>
+                        <span className="">Join Now</span>
                     </a>
             </div>
         </div>
     </div>
 
 
-        <div class="parent-container25">
+        <div className="parent-container25">
 
-            <div class="work">
+            <div className="work">
                 <h2>Our Work</h2>
             </div>
             
-        <div class="container25">
+        <div className="container25">
 
 
-            <div class="img10">
+            <div className="img10">
                 <figure>
-                <img src={image10}></img>
+                <img srcSet={image10}></img>
                 <figcaption>Destination Weddings</figcaption>
                 </figure>
             </div>
             
-            <div class="img11">
+            <div className="img11">
                 <figure>
-                    <img src={image11} alt="img-11"></img>
+                    <img srcSet={image11} alt="img-11"></img>
                         <figcaption>Engagements</figcaption>
                 </figure>
             </div>
             
-            <div class="img12">
+            <div className="img12">
                 <figure>
-                    <img src={image12} alt="img-12"></img>
+                    <img srcSet={image12} alt="img-12"></img>
                         <figcaption>Love Stories</figcaption>
                 </figure>
             </div>
             
-            <div class="img9">
+            <div className="img9">
                 <figure>
-                    <img src={image9} alt="img-9"></img>
+                    <img srcSet={image9} alt="img-9"></img>
                         <figcaption>Lifestyle</figcaption>
                 </figure>
             </div>
             
             
             
-            <div class="img8">
+            <div className="img8">
                 <figure>
-                <img src={image8} alt="img-8"></img>
+                <img srcSet={image8} alt="img-8"></img>
                     <figcaption>Celebrations</figcaption>
                 </figure>
             </div>
@@ -467,7 +557,7 @@ const Home = () => {
             
             
             
-            <div class="portfolio">
+            <div className="portfolio">
                 <a  aria-label="" href="#" rel="follow noopener" target="_self" role="button" onClick={() => navigateTo('/portfolio')}>
                     View Portfolio
                 </a>
@@ -477,17 +567,17 @@ const Home = () => {
         </div>
 
             
-        <div class="couples">
+        <div className="couples">
             <div>
                 <h2>Happy Couples</h2>
             </div>
         </div>   
 
 
-    <div class="parent-container26">
-    <div class="batch7">
+    <div className="parent-container26">
+    <div className="batch7">
 
-            <div class="star" title="5/5">
+            <div className="star" title="5/5">
                 <span>★</span>
                 <span>★</span>
                 <span>★</span>
@@ -495,20 +585,20 @@ const Home = () => {
                 <span>★</span>
             </div>
         
-            <div class="info10">
+            <div className="info10">
                 <div>
-                    <p class="message">We are grateful to The IndianWedding for bringing us together. We found true love and a partner for life!</p>
+                    <p className="message">We are grateful to The IndianWedding for bringing us together. We found true love and a partner for life!</p>
                 </div>
-                <div class="img13">
-                    <img src={image13} alt="img-13"></img>
+                <div className="img13">
+                    <img srcSet={image13} alt="img-13"></img>
                 </div>
-                <p class="name">Riya &amp; Arjun</p>
+                <p className="name">Riya &amp; Arjun</p>
             </div>
     </div>
         
-    <div class="batch8">
+    <div className="batch8">
         
-            <div class="star1" title="5/5">
+            <div className="star1" title="5/5">
                 <span>★</span>
                 <span>★</span>
                 <span>★</span>
@@ -518,19 +608,19 @@ const Home = () => {
         
         
         
-            <div class="info11">
+            <div className="info11">
                 <div>
-                    <p class="message2">The IndianWedding helped us find our soulmates. We couldn't be happier with our life partners!</p>
+                    <p className="message2">The IndianWedding helped us find our soulmates. We couldn't be happier with our life partners!</p>
                 </div>
-                <div class="img14">
-                        <img src={image14} alt="img-14"></img>
+                <div className="img14">
+                        <img srcSet={image14} alt="img-14"></img>
                 </div>
-                    <p class="name1">Smita &amp; Deepak</p>
+                    <p className="name1">Smita &amp; Deepak</p>
             </div>
     </div> 
         
-    <div class="batch9">
-            <div class="star2" title="5/5">
+    <div className="batch9">
+            <div className="star2" title="5/5">
                 <span>★</span>
                 <span>★</span>
                 <span>★</span>
@@ -540,14 +630,14 @@ const Home = () => {
         
         
         
-            <div class="info12">
+            <div className="info12">
                 <div>
-                    <p class="message3">Thanks to The IndianWedding, we found true love and are excited to start our journey together as a married couple.</p>
+                    <p className="message3">Thanks to The IndianWedding, we found true love and are excited to start our journey together as a married couple.</p>
                 </div>
-                <div class="img15">
-                        <img src={image15} alt="img-15"></img>
+                <div className="img15">
+                        <img srcSet={image15} alt="img-15"></img>
                 </div>
-                    <p class="name2">Pooja &amp; Rahul</p>
+                    <p className="name2">Pooja &amp; Rahul</p>
             </div>
     
     </div>
@@ -556,51 +646,51 @@ const Home = () => {
 
 
 
-    <div class="parent-container27">
-        <div class="check">
+    <div className="parent-container27">
+        <div className="check">
             <h2>Check Out Our Recent Work On Instagram</h2>
-            <div class="insta">
+            <div className="insta">
                 <a href="" target="_self" rel="noopener noreferrer">Follow Us On Instagram</a>
             </div>
         </div>
-        <div class="container27">
-            <div class="img16">
+        <div className="container27">
+            <div className="img16">
                 <figure>
-                    <img src={image16} alt="img-16"></img>
+                    <img srcSet={image16} alt="img-16"></img>
                 </figure>
             </div>
-            <div class="img17">
+            <div className="img17">
                 <figure>
-                    <img src={image17} alt="img-17"></img>
+                    <img srcSet={image17} alt="img-17"></img>
                 </figure>
             </div>
-            <div class="img18">
+            <div className="img18">
                 <figure>
-                    <img src={image18} alt="img-18"></img>
+                    <img srcSet={image18} alt="img-18"></img>
                 </figure>
             </div>
-            <div class="img19">
+            <div className="img19">
                 <figure>
-                    <img src={image19} alt="img-19"></img>
+                    <img srcSet={image19} alt="img-19"></img>
                 </figure>
             </div>
-            <div class="img20">
+            <div className="img20">
                 <figure>
-                    <img src={image20} alt="img-20"></img>
+                    <img srcSet={image20} alt="img-20"></img>
                 </figure>
             </div>
         </div>
     </div>
 
     
-    <div class="parent-container28">
-        <div class="container28">
+    <div className="parent-container28">
+        <div className="container28">
         
-                <div class="find">
+                <div className="find">
                     <h2>Find Your Soulmate Today</h2>
                 </div>
-                <p class="info13">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
-                <div class="button7">
+                <p className="info13">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
+                <div className="button7">
                     <a href="" target="_self" rel="noopener noreferrer" role="button" onClick={() => navigateTo('/contact')}>
                         <span>Join Now</span>
                     </a>
@@ -610,23 +700,23 @@ const Home = () => {
     </div>
 
 
-    <div class="parent-container29">
-    <div class="contact-container2">
-        <div class="contact-item2">
+    <div className="parent-container29">
+    <div className="contact-container2">
+        <div className="contact-item2">
             <h2>Phone</h2>
             <p>202-555-0188</p>
         </div>
-        <div class="contact-item2">
+        <div className="contact-item2">
             <h2>Follow Us</h2>
-            <div class="social-icons2">
+            <div className="social-icons2">
                 <ul>
-                    <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="" target="blank"><i class="fab fa-youtube" ></i></a></li>
+                    <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
+                    <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
+                    <li><a href="" target="blank"><i className="fab fa-youtube" ></i></a></li>
                 </ul>
             </div>
         </div>
-        <div class="contact-item2">
+        <div className="contact-item2">
             <h2>Email</h2>
             <p>contact@example.com</p>
         </div>
@@ -636,9 +726,9 @@ const Home = () => {
     
     
         
-<div class="parent-container30">
+<div className="parent-container30">
 
-    <nav class="container30">
+    <nav className="container30">
 
             <ul id="info14">
                 <li><a href="" onClick={() => navigateTo('/home')}>Home</a></li>
@@ -656,8 +746,8 @@ const Home = () => {
                       
                                 
 
-<div class="parent-container31">
-	<div class="container31">
+<div className="parent-container31">
+	<div className="container31">
         <p>Copyright © 2024 theindianwedding</p>
     </div>			
 </div>
