@@ -47,12 +47,15 @@ const Registration = () => {
 
     return (
         <div className='body'>
-            <header className="header">
-                <h2 className="h2"><a href="#">TheIndianWedding</a></h2>
-                <div className="button">
-                    <a href="#" onClick={() => navigateTo('/login')}><span>Login In</span></a>
-                </div>
-            </header>
+         <header className="header container-fluid">
+         <div className="row align-items-center justify-content-between">
+            <h2 className="h2 col-auto"><a href="#">TheIndianWedding</a></h2>
+        <div className="button col-auto">
+            <a href="#" onClick={() => navigateTo('/login')}><span>Login In</span></a>
+        </div>
+        </div>
+        </header>
+
 
             <div className="parent-container">
                 <div className="containera">
@@ -159,31 +162,29 @@ const Registration = () => {
                 </div>
             </div>
 
-    <div className="parent-container2">
-        <div className="container2">
-
-            <div className="img3">
-                <img loading="lazy" decoding="async" srcSet="" sizes="(max-width: 480px) 150px" src={image3} alt="img-3" className="" width="645" height="500" title="" role="img"></img>
-            </div>
-        
-        
-            <div className="about">
-                <h2>Our Story</h2>
-                <p>The IndianWedding is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
-                <div className="hr"></div>
-              
-                <p className="info">Follow Us</p>
-                
-                    <div className="social-menu">
-                        <ul>
-                            <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
-                            <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
-                            <li><a href=""><i className="fab fa-youtube" target="blank"></i></a></li>
-                        </ul>
-                    </div>
+            <div className="parent-container2">
+    <div className="container2">
+        <div className="img3">
+            <img loading="lazy" decoding="async" srcSet="" sizes="(max-width: 480px) 150px" src={image3} alt="img-3" className="" width="645" height="500" title="" role="img" />
+        </div>
+    
+        <div className="about">
+            <h2>Our Story</h2>
+            <p>The IndianWedding is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
+            <div className="hr"></div>
+            <p className="info">Follow Us</p>
+            
+            <div className="social-menu">
+                <ul>
+                    <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
+                    <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
+                    <li><a href="" target="blank"><i className="fab fa-youtube"></i></a></li>
+                </ul>
             </div>
         </div>
-      </div>
+    </div>
+</div>
+
 
 
       <div className="parent-container3">
@@ -225,131 +226,114 @@ const Registration = () => {
 
 
       <div className="parent-container5">
-
-        <div className="work">
-            <h2>Our Work</h2>
-        </div>
-        
-      <div className="container5">
-
-
+    <div className="work">
+        <h2>Our Work</h2>
+    </div>
+    
+    <div className="container5">
         <div className="img10">
             <figure>
-            <img srcSet={image10} alt="img-10"></img>
-            <figcaption>Destination Weddings</figcaption>
+                <img srcSet={image10} alt="img-10" />
+                <figcaption>Destination Weddings</figcaption>
             </figure>
         </div>
         
         <div className="img11">
             <figure>
-                <img srcSet={image11} alt="img-11"></img>
-                    <figcaption>Engagements</figcaption>
+                <img srcSet={image11} alt="img-11" />
+                <figcaption>Engagements</figcaption>
             </figure>
         </div>
         
         <div className="img12">
             <figure>
-                <img srcSet={image12} alt="img-12"></img>
-                    <figcaption>Love Stories</figcaption>
+                <img srcSet={image12} alt="img-12" />
+                <figcaption>Love Stories</figcaption>
             </figure>
         </div>
         
         <div className="img9">
             <figure>
-                <img srcSet={image9} alt="img-9"></img>
-                    <figcaption>Lifestyle</figcaption>
+                <img srcSet={image9} alt="img-9" />
+                <figcaption>Lifestyle</figcaption>
             </figure>
         </div>
-        
-        
         
         <div className="img8">
             <figure>
-               <img srcSet={image8} alt="img-8"></img>
+                <img srcSet={image8} alt="img-8" />
                 <figcaption>Celebrations</figcaption>
             </figure>
         </div>
-    
-         
-      </div>
-      </div>
+    </div>
+</div>
 
-        
-      <div className="couples">
-        <div>
-            <h2>Happy Couples</h2>
+<div className="parent-container6">
+    <div className="couples">
+        <h2>Happy Couples</h2>
+    </div>
+    
+    <div className="batch1">
+        <div className="star" title="5/5">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
         </div>
-      </div> 
-      
-       
-      <div className="parent-container6">
-      <div className="batch1">
 
-            <div className="star" title="5/5">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
+        <div className="info1">
+            <div>
+                <p className="message">We are grateful to The IndianWedding for bringing us together. We found true love and a partner for life!</p>
             </div>
-        
-            <div className="info1">
-                <div>
-                    <p className="message">We are grateful to The IndianWedding for bringing us together. We found true love and a partner for life!</p>
-                </div>
-                <div className="img13">
-                    <img srcSet={image13} alt="img-13"></img>
-                </div>
-                <p className="name">Riya &amp; Arjun</p>
+            <div className="img13">
+                <img srcSet={image13} alt="img-13"></img>
             </div>
-      </div>
-        
-      <div className="batch2">
-        
-            <div className="star1" title="5/5">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
+            <p className="name">Riya &amp; Arjun</p>
+        </div>
+    </div>
+
+    <div className="batch2">
+        <div className="star1" title="5/5">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+        </div>
+
+        <div className="info2">
+            <div>
+                <p className="message2">The IndianWedding helped us find our soulmates. We couldn't be happier with our life partners!</p>
             </div>
-        
-        
-        
-            <div className="info2">
-                <div>
-                    <p className="message2">The IndianWedding helped us find our soulmates. We couldn't be happier with our life partners!</p>
-                </div>
-                <div className="img14">
-                        <img srcSet={image14} alt="img-14"></img>
-                </div>
-                    <p className="name1">Smita &amp; Deepak</p>
+            <div className="img14">
+                <img srcSet={image14} alt="img-14"></img>
             </div>
-      </div> 
-        
-      <div className="batch3">
-            <div className="star2" title="5/5">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
+            <p className="name1">Smita &amp; Deepak</p>
+        </div>
+    </div>
+
+    <div className="batch3">
+        <div className="star2" title="5/5">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+        </div>
+
+        <div className="info3">
+            <div>
+                <p className="message3">Thanks to The IndianWedding, we found true love and are excited to start our journey together as a married couple.</p>
             </div>
-        
-        
-        
-            <div className="info3">
-                <div>
-                    <p className="message3">Thanks to The IndianWedding, we found true love and are excited to start our journey together as a married couple.</p>
-                </div>
-                <div className="img15">
-                        <img srcSet={image15} alt="img-15"></img>
-                </div>
-                    <p className="name2">Pooja &amp; Rahul</p>
+            <div className="img15">
+                <img srcSet={image15} alt="img-15"></img>
             </div>
-    
-      </div>
-      </div> 
+            <p className="name2">Pooja &amp; Rahul</p>
+        </div>
+    </div>
+</div>
+
 
       <div className="parent-container7">
         <div className="check">
