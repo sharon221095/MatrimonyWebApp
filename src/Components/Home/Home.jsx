@@ -228,244 +228,182 @@ const Home = () => {
 
 
              
-             <form onSubmit={handleSearchSubmit} className="search-form">
-                <h2>Search Profiles</h2>
-                <div className="search-fields">
-                {error && <div className="alert alert-danger">{error}</div>}
-                    <div className="search-field">
-                        <label>Min Age:</label>
-                        <input
-                            type="number"
-                            name="MinAge"
-                            value={searchCriteria.MinAge}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Max Age:</label>
-                        <input
-                            type="number"
-                            name="MaxAge"
-                            value={searchCriteria.MaxAge}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                     <div className="search-field">
-                        <label>Min Height:</label>
-                        <input
-                            type="number"
-                            name="MinHeight"
-                            value={searchCriteria.MinHeight}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Max Height:</label>
-                        <input
-                            type="number"
-                            name="MaxHeight"
-                            value={searchCriteria.MaxHeight}
-                            onChange={handleSearchChange}
-                        />
-                    </div> 
-                     <div className="search-field">
-                        <label>Caste:</label>
-                        <input
-                            type="text"
-                            name="Caste"
-                            value={searchCriteria.Caste}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Religion:</label>
-                        <input
-                            type="text"
-                            name="PreferredPartnerReligion"
-                            value={searchCriteria.PreferredPartnerReligion}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Gender:</label>
-                        <input
-                            type="text"
-                            name="Gender"
-                            value={searchCriteria.Gender}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Marital Status:</label>
-                        <input
-                            type="text"
-                            name="MaritalStatus"
-                            value={searchCriteria.MaritalStatus}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Preferred Partner Location:</label>
-                        <input
-                            type="text"
-                            name="PreferredPartnerLocation"
-                            value={searchCriteria.PreferredPartnerLocation}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Min Salary:</label>
-                        <input
-                            type="number"
-                            name="MinSalary"
-                            value={searchCriteria.MinSalary}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Max Salary:</label>
-                        <input
-                            type="number"
-                            name="MaxSalary"
-                            value={searchCriteria.MaxSalary}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Mother Tongue:</label>
-                        <input
-                            type="text"
-                            name="MotherTongue"
-                            value={searchCriteria.MotherTongue}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Occupation:</label>
-                        <input
-                            type="text"
-                            name="Occupation"
-                            value={searchCriteria.Occupation}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                    <div className="search-field">
-                        <label>Education:</label>
-                        <input
-                            type="text"
-                            name="Education"
-                            value={searchCriteria.Education}
-                            onChange={handleSearchChange}
-                        />
-                    </div>
-                </div>
-                <button type="submit">Search</button>
-            </form>
+            <form onSubmit={handleSearchSubmit} className="search-form">
+    <h2>Search Profiles</h2>
+    <div className="search-fields row">
+        {error && <div className="alert alert-danger">{error}</div>}
+        {[
+            { label: 'Min Age:', name: 'MinAge', type: 'number' },
+            { label: 'Max Age:', name: 'MaxAge', type: 'number' },
+            { label: 'Min Height:', name: 'MinHeight', type: 'number' },
+            { label: 'Max Height:', name: 'MaxHeight', type: 'number' },
+            { label: 'Caste:', name: 'Caste', type: 'text' },
+            { label: 'Religion:', name: 'PreferredPartnerReligion', type: 'text' },
+            { label: 'Gender:', name: 'Gender', type: 'text' },
+            { label: 'Marital Status:', name: 'MaritalStatus', type: 'text' },
+            { label: 'Preferred Partner Location:', name: 'PreferredPartnerLocation', type: 'text' },
+            { label: 'Min Salary:', name: 'MinSalary', type: 'number' },
+            { label: 'Max Salary:', name: 'MaxSalary', type: 'number' },
+            { label: 'Mother Tongue:', name: 'MotherTongue', type: 'text' },
+            { label: 'Occupation:', name: 'Occupation', type: 'text' },
+            { label: 'Education:', name: 'Education', type: 'text' },
+        ].map(({ label, name, type }) => (
+            <div className="col-lg-3 col-md-6 col-sm-12 mb-3" key={name}>
+                <label>{label}</label>
+                <input
+                    type={type}
+                    name={name}
+                    value={searchCriteria[name] || ""}
+                    onChange={handleSearchChange}
+                    className="form-control"
+                />
+            </div>
+        ))}
+    </div>
+    <button type="submit" className="btn btn-primary">Search</button>
+</form>
 
-            
-            {/* Only display search results if a search has been performed */}
-            {isSearchPerformed ? (
-                <div className="search-results">
-                    {searchResults.length > 0 ? (
-                        <div className="row justify-content-center">
-                            {searchResults.map((result) => (
-                                <div key={result.id} className="profile-card col-lg-3 col-md-4 col-sm-6 mb-4">
-                                    <div className="card shadow-sm border-light">
-                                        <img
-                                            src={result.profilePictureUrl || 'default-image-url'}
-                                            alt={`${result.firstName} ${result.lastName} Profile`}
-                                            className="card-img-top"
-                                        />
-                                        <div className="card-body text-center">
-                                            <h5 className="card-title">{result.firstName} {result.lastName}</h5>
-                                            <p className="card-text">Age: {result.age}</p>
-                                            <p className="card-text">Height: {result.height} cm</p>
-                                            <p className="card-text">Religion: {result.religion}</p>
-                                            <p className="card-text">Gender: {result.gender}</p>
-                                            <button 
-                                                className="btn btn-primary"
-                                                onClick={() => handleViewProfile(result.id)}
-                                            >
-                                                View Profile
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+
+
+
+
+{/* Only display search results if a search has been performed */}
+{isSearchPerformed ? (
+    <div className="search-results">
+        {searchResults.length > 0 ? (
+            <div className="row justify-content-center">
+                {searchResults.map((result) => (
+                    <div key={result.id} className="profile-card col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div className="card shadow-sm border-light">
+                            <img
+                                src={result.profilePictureUrl || 'default-image-url'}
+                                alt={`${result.firstName} ${result.lastName} Profile`}
+                                className="card-img-top"
+                            />
+                            <div className="card-body text-center">
+                                <h5 className="card-title">{result.firstName} {result.lastName}</h5>
+                                <p className="card-text">Age: {result.age}</p>
+                                <p className="card-text">Height: {result.height} cm</p>
+                                <p className="card-text">Religion: {result.religion}</p>
+                                <p className="card-text">Gender: {result.gender}</p>
+                                <button 
+                                    className="btn btn-primary"
+                                    onClick={() => handleViewProfile(result.id)}
+                                >
+                                    View Profile
+                                </button>
+                            </div>
                         </div>
-                    ) : (
-                        <p className="text-center">No profiles found.</p>
-                    )}
-                </div>
-            ) : (
-                <p className="text-center">Please perform a search to see results.</p>
-            )}
+                    </div>
+                ))}
+            </div>
+        ) : (
+            <p className="text-center">No profiles found.</p>
+        )}
+    </div>
+) : (
+    <p className="text-center">Please perform a search to see results.</p>
+)}
 
-            {/* Pagination controls */}
-            {isSearchPerformed && totalPages > 1 && (
-                <div className="pagination-controls text-center mt-4">
-                    <nav aria-label="Page navigation">
-                        <ul className="pagination justify-content-center">
-                            {Array.from({ length: totalPages }, (_, index) => (
-                                <li className={`page-item ${pageNumber === index + 1 ? 'active' : ''}`} key={index}>
-                                    <button
-                                        className="page-link"
-                                        onClick={() => handlePageChange(index + 1)}
-                                    >
-                                        {index + 1}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                </div>
-            )}
+
+{isSearchPerformed && totalPages > 1 && (
+    <div className="pagination-controls text-center mt-4">
+        <nav aria-label="Page navigation">
+            <ul className="pagination justify-content-center">
+                {Array.from({ length: totalPages }, (_, index) => (
+                    <li className={`page-item ${pageNumber === index + 1 ? 'active' : ''}`} key={index}>
+                        <button
+                            className="page-link"
+                            onClick={() => handlePageChange(index + 1)}
+                        >
+                            {index + 1}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    </div>
+)}
+
         
     
-    <div className="parent-container21">
-        <div className="container21">
-            <div>
+<div className="container mt-4">
+    <div className="row justify-content-center align-items-stretch"> {/* Change align-items-center to align-items-stretch */}
+        <div className="col-lg-6 col-md-12 mb-4">
+            <div className="container21">
                 <h1>Connect with Your Perfect Match</h1>
-            </div>
-            <p>Find your life partner through our comprehensive profiles, matchmaking services, and tools.</p>
-            <div>
+                <p>Find your life partner through our comprehensive profiles, matchmaking services, and tools.</p>
                 <a href="" onClick={() => navigateTo('/contact')}><span>Join Now</span></a>
             </div>
         </div>
-        <div className="image-section">
-            <img srcSet={image1} alt="img-1" className="image-1"></img>
-            <img srcSet={image2} alt="img-2" className="image-2"></img>
+        <div className="col-lg-6 col-md-12 d-flex justify-content-center image-section mt-4">
+            <img srcSet={image1} alt="img-1" className="image-1" />
+            <img srcSet={image2} alt="img-2" className="image-2" />
         </div>
     </div>
+</div>
 
 
-    <div className="parent-container22">
-        <div className="container22">
 
+<div className="container-fluid parent-container22 px-4 px-md-5 my-5">
+    <div className="row align-items-center justify-content-center">
+        
+        
+        <div className="col-12 col-md-6 d-flex justify-content-center mb-4 mb-md-0">
             <div className="img3">
-                <img loading="lazy" decoding="async"  sizes="(max-width: 480px) 150px" srcSet={image3} alt="img-3" className="" width="645" height="500" title="" role="img"></img>
-            </div>
-        
-        
-            <div className="about2">
-                <h2>Our Story</h2>
-                <p>The <b>'TheIndianWedding'</b> is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
-                <div className="hr"></div>
-                <div className="button6">
-                    <a href="" onClick={() => navigateTo('/about')}><span>Read More</span></a>
-                </div>
-                <p className="info9">Follow Us</p>
-                
-                    <div className="social-menu">
-                        <ul>
-                            <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
-                            <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
-                            <li><a href=""><i className="fab fa-youtube" target="blank"></i></a></li>
-                        </ul>
-                    </div>
+                <img 
+                    loading="lazy" 
+                    decoding="async"  
+                    srcSet={image3} 
+                    alt="img-3" 
+                    className="img-fluid" 
+                    width="645" 
+                    height="500" 
+                    role="img"
+                />
             </div>
         </div>
+
+        
+        <div className="about2 col-md-6">
+    <h2>Our Story</h2>
+    <p>
+        The <b>'TheIndianWedding'</b> is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.
+    </p>
+    <div className="hr my-3"></div>
+
+    <div className="button6 mb-4">
+        <a href="" onClick={() => navigateTo('/about')}>
+            <span>Read More</span>
+        </a>
     </div>
+
+    <p className="info9">Follow Us</p>
+
+    <div className="social-menu">
+        <ul className="list-inline mb-0">
+            <li className="list-inline-item">
+                <a href="" target="_blank" className="social-link">
+                    <i className="fab fa-facebook"></i>
+                </a>
+            </li>
+            <li className="list-inline-item">
+                <a href="" target="_blank" className="social-link">
+                    <i className="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li className="list-inline-item">
+                <a href="" target="_blank" className="social-link">
+                    <i className="fab fa-youtube"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+    </div>
+</div>
+
+
 
 <div className="parent-container23">
         <div className="container23">

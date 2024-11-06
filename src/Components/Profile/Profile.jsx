@@ -269,11 +269,7 @@ const Profile = () => {
     }
   };
 
-  // Handle image deletion
-  const handleDeleteImage = (index) => {
-    setProfileImages((prevImages) => prevImages.filter((_, i) => i !== index));
-  };
-
+ 
   // Handle setting profile image
   const handleSetProfileImage = (image) => {
     setProfileImage(image);
@@ -295,6 +291,41 @@ const Profile = () => {
   const closePreviewModal = () => {
     setSelectedImage(null);
   };
+
+
+const handleImageDelete = async (index, imageId) => {
+  const token = localStorage.getItem("authToken");
+  console.log("handleImageDelete - Token:", token); // Log the token here
+
+  if (!token) {
+    console.error("Token not found. Please ensure you are logged in.");
+    return;
+  }
+
+  try {
+    const response = await axios.delete(
+      "http://13.126.188.208:5298/api/v1/users/DeleteUserImage",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: {
+          imageId: imageId,
+        },
+      }
+    );
+
+    console.log("Image deleted:", response.data);
+    // Update UI or state here
+  } catch (error) {
+    console.error("Error deleting image:", error);
+  }
+};
+
+  
+
+
+  
 
   return (
     <div className="parent-container78">
@@ -332,76 +363,68 @@ const Profile = () => {
               </td>
               <td>:</td>
               <td>
-                <div className="form-group mb-4 text-center">
-                  {/* <label htmlFor="AdditionalImages">Upload Additional Profile Images</label> */}
-                  <input
-                    type="file"
-                    id="AdditionalImages"
-                    className="form-control mb-3"
-                    {...register('AdditionalImages')}
-                    multiple
-                    onChange={onAdditionalImagesChange}
-                  />
-                  <div className="uploaded-images row mt-3">
-                    {profileImages.length > 0 &&
-                      profileImages.map((image, index) => (
-                        <div key={index} className="col-4 col-md-2 mb-3">
-                          <div className="image-preview position-relative" onClick={() => openPreviewModal(image)}>
-                            <img
-                              src={image.preSignedUrl}
-                              alt={`Preview ${index}`}
-                              className="img-fluid rounded"
-                            />
-                            <button
-                              type="button"
-                              className="btn btn-danger position-absolute"
-                              onClick={(e) => {
-                                e.stopPropagation(); // Prevent click event from propagating to parent div
-                                handleDeleteImage(index);
-                              }}
-                            >
-                              <i className="bi bi-x-circle"></i>
-                            </button>
-                          </div>
-                        </div>
-                      ))}
-                       {/* :(
-                    {
-                      profileImages.map((image, index) => (
-                        <div key={index} className="col-4 col-md-2 mb-3">
-                          <div className="image-preview position-relative" onClick={() => openPreviewModal(image)}>
-                            <img
-                              src={URL.createObjectURL(image)}
-                              alt={`Preview ${index}`}
-                              className="img-fluid rounded"
-                            />
-                            <button
-                              type="button"
-                              className="btn btn-danger position-absolute"
-                              onClick={(e) => {
-                                e.stopPropagation(); // Prevent click event from propagating to parent div
-                                handleDeleteImage(index);
-                              }}
-                            >
-                              <i className="bi bi-x-circle"></i>
-                            </button>
-                          </div>
-                        </div>
-                      ))}) */}
-                  </div>
+              
+  <input
+    type="file"
+    id="AdditionalImages"
+    className="form-control mb-3"
+    {...register('AdditionalImages')}
+    multiple
+    onChange={onAdditionalImagesChange}
+  />
+<div className="uploaded-images row mt-3">
+  {profileImages.length > 0 &&
+    profileImages.map((image, index) => (
+      <div key={index} className="col-4 col-md-2 mb-3">
+        <div className="image-preview position-relative" onClick={() => openPreviewModal(image.preSignedUrl)}>
+          <img
+            src={image.preSignedUrl}
+            alt={`Preview ${index}`}
+            className="img-fluid rounded shadow"
+            style={{ cursor: 'pointer' }}
+          />
+          <button
+            type="button"
+            className="btn btn-danger btn-sm position-absolute top-0 end-0 m-1"
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent click event from propagating to parent div
+              handleImageDelete(index, image.id); // Pass image ID for deletion
+            }}
+            title="Delete Image"
+          >
+            <i className="bi bi-x-circle"></i>
+          </button>
+        </div>
+      </div>
+    ))}
+</div>
 
-                  {/* Preview Modal */}
-                  {selectedImage && (
-                    <div className="preview-modal show" onClick={closePreviewModal}>
-                      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <img src={selectedImage} alt="Selected Preview" />
-                        <button onClick={() => handleSetProfileImage(selectedImage)}>
-                          Set as Profile Picture
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
+{/* Preview Modal */}
+{selectedImage && (
+  <div className="preview-modal show" onClick={closePreviewModal}>
+    <div className="modal-dialog modal-dialog-centered" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">Image Preview</h5>
+          <button type="button" className="btn-close" onClick={closePreviewModal}></button>
+        </div>
+        <div className="modal-body text-center">
+          <img src={selectedImage} alt="Selected Preview" className="img-fluid rounded shadow" />
+        </div>
+        <div className="modal-footer justify-content-center">
+          <button className="btn btn-primary" onClick={() => handleSetProfileImage(selectedImage)}>
+            Set as Profile Picture
+          </button>
+          <button className="btn btn-secondary" onClick={closePreviewModal}>
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+
               </td>
             </tr>
 
