@@ -1,11 +1,15 @@
 import React, { useState,  useEffect, useRef } from 'react';
 import './Home.css'
 import { useForm } from 'react-hook-form';
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import image1 from '../img/img-1.webp';
 import image2 from '../img/img-2.jpg';
 import image3 from '../img/img-3.jpg';
+import image4 from '../img/img-4.jpg';
+import image5 from '../img/img-5.jpg';
+import image6 from '../img/img-6.avif';
+import image7 from '../img/img-7.avif';
 import image8 from '../img/img-8.avif';
 import image9 from '../img/img-9.avif';
 import image10 from '../img/img-10.jpg';
@@ -49,15 +53,12 @@ const Home = () => {
     const [pageSize] = useState(10); // Default page size, you can change this
     const [totalPages, setTotalPages] = useState(0); // Total pages returned by the backend
     const [isSearchPerformed, setIsSearchPerformed] = useState(false); // New state to track search activity
+    const location = useLocation();
 
     /* =======================
        Navigation Functions
     ======================= */
 
-    // const handleViewProfile = (id) => {
-    //     // Navigate to the profile page using the user ID
-    //     navigateTo(`/profile/${id}`); // Adjust the route as needed
-    // };
 
     const handleEditProfile = (data) => {
         // Navigate to the profile edit page with data
@@ -195,36 +196,91 @@ const Home = () => {
     return (
         <div className='body'>
             <header className="header3">
-                <h2 className="h2b"><a href="">TheIndianWedding</a></h2>
-                <nav>
-                    <ul>
-                        <li><a href="" onClick={() => navigateTo('/home')}>Home</a></li>
-                        <li><a href="" onClick={() => navigateTo('/about')}>About Us</a></li>
-                        <li><a href="" onClick={() => navigateTo('/services')}>Services</a></li>
-                        <li><a href="" onClick={() => navigateTo('/portfolio')}>Portfolio</a></li>
-                        <li><a href="" onClick={() => navigateTo('/testimonials')}>Testimonials</a></li>
-                        <li><a href="" onClick={() => navigateTo('/blog')}>Blog</a></li>
-                        <li><a href="" onClick={() => navigateTo('/contact')}>Contact</a></li>
-                    </ul>
-                </nav>
-
+            <h2 className="h2b"><a href="/">TheIndianWedding</a></h2>
+            <nav>
+                <ul>
+                    <li>
+                        <a
+                            href="/home"
+                            onClick={() => navigateTo('/home')}
+                            className={location.pathname === '/home' ? 'active' : ''}
+                        >
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/about"
+                            onClick={() => navigateTo('/about')}
+                            className={location.pathname === '/about' ? 'active' : ''}
+                        >
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/services"
+                            onClick={() => navigateTo('/services')}
+                            className={location.pathname === '/services' ? 'active' : ''}
+                        >
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/portfolio"
+                            onClick={() => navigateTo('/portfolio')}
+                            className={location.pathname === '/portfolio' ? 'active' : ''}
+                        >
+                            Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/testimonials"
+                            onClick={() => navigateTo('/testimonials')}
+                            className={location.pathname === '/testimonials' ? 'active' : ''}
+                        >
+                            Testimonials
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/blog"
+                            onClick={() => navigateTo('/blog')}
+                            className={location.pathname === '/blog' ? 'active' : ''}
+                        >
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/contact"
+                            onClick={() => navigateTo('/contact')}
+                            className={location.pathname === '/contact' ? 'active' : ''}
+                        >
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
             <div className="header-actions">
-            <div className="profile-picture-container" onClick={toggleDropdown} ref={dropdownRef}>
+                <div className="profile-picture-container" onClick={toggleDropdown} ref={dropdownRef}>
                     <img
-                        src={profilePictureUrl ? profilePictureUrl : image63 } // Display the fetched profile picture URL
+                        src={profilePictureUrl ? profilePictureUrl : '/path/to/default.jpg'}
                         alt="Profile"
                         className="profile-picture1"
                         style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }}
                     />
-                {dropdownOpen && (
-                    <div className="dropdown-menu show" aria-labelledby="dropdownMenuButton">
-                        <button className="dropdown-item" onClick={()=>handleEditProfile(profilePictureUrl)}>Edit Profile</button>
-                        <button className="dropdown-item" onClick={handleLogout}>Logout</button>
-                    </div>
-                )}
+                    {dropdownOpen && (
+                        <div className="dropdown-menu show" aria-labelledby="dropdownMenuButton">
+                            <button className="dropdown-item" onClick={() => handleEditProfile(profilePictureUrl)}>Edit Profile</button>
+                            <button className="dropdown-item" onClick={handleLogout}>Logout</button>
+                        </div>
+                    )}
+                </div>
             </div>
-            </div>
-            </header>
+        </header>
 
 
              
@@ -265,9 +321,6 @@ const Home = () => {
 
 
 
-
-
-{/* Only display search results if a search has been performed */}
 {isSearchPerformed ? (
     <div className="search-results">
         {searchResults.length > 0 ? (
@@ -327,334 +380,285 @@ const Home = () => {
 
         
     
-<div className="container mt-4">
-    <div className="row justify-content-center align-items-stretch"> {/* Change align-items-center to align-items-stretch */}
-        <div className="col-lg-6 col-md-12 mb-4">
+<div className="parent-container21">
             <div className="container21">
                 <h1>Connect with Your Perfect Match</h1>
                 <p>Find your life partner through our comprehensive profiles, matchmaking services, and tools.</p>
-                <a href="" onClick={() => navigateTo('/contact')}><span>Join Now</span></a>
             </div>
+        
+        <div className="image-section">
+            <img srcSet={image1} alt="img-1" className="image1a" />
+            <img srcSet={image2} alt="img-2" className="image2a" />
         </div>
-        <div className="col-lg-6 col-md-12 d-flex justify-content-center image-section mt-4">
-            <img srcSet={image1} alt="img-1" className="image-1" />
-            <img srcSet={image2} alt="img-2" className="image-2" />
+</div>
+
+
+
+<div className="parent-container2">
+    <div className="container2">
+        <div className="img63">
+            <img loading="lazy" decoding="async" srcSet="" sizes="(max-width: 480px) 150px" src={image3} alt="Our Story Image" width="645" height="500" title="Our Story" />
+        </div>
+
+        <div className="about">
+            <h2>Our Story</h2>
+            <p>The IndianWedding is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
+            <div className="hr"></div>
+            <p className="info">Follow Us</p>
+            
+            <div className="social-menu1">
+                <ul>
+                    <li><a href="#" target="_blank"><i className="fab fa-facebook"></i></a></li>
+                    <li><a href="#" target="_blank"><i className="fab fa-instagram"></i></a></li>
+                    <li><a href="#" target="_blank"><i className="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 
 
 
-<div className="container-fluid parent-container22 px-4 px-md-5 my-5">
-    <div className="row align-items-center justify-content-center">
-        
-        
-        <div className="col-12 col-md-6 d-flex justify-content-center mb-4 mb-md-0">
-            <div className="img3">
-                <img 
-                    loading="lazy" 
-                    decoding="async"  
-                    srcSet={image3} 
-                    alt="img-3" 
-                    className="img-fluid" 
-                    width="645" 
-                    height="500" 
-                    role="img"
-                />
-            </div>
+
+<div className="container-fluid parent-container3 p-0">
+    <div className="container3 text-center">
+        <h2>Our Services</h2>
+    </div>
+
+    <div className="img-stack d-flex justify-content-center">
+        <div className="img-stack-item">
+            <img src={image4} alt="Profiles" className="img-fluid" />
+            <h3>Profiles</h3>
         </div>
-
-        
-        <div className="about2 col-md-6">
-    <h2>Our Story</h2>
-    <p>
-        The <b>'TheIndianWedding'</b> is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.
-    </p>
-    <div className="hr my-3"></div>
-
-    <div className="button6 mb-4">
-        <a href="" onClick={() => navigateTo('/about')}>
-            <span>Read More</span>
-        </a>
-    </div>
-
-    <p className="info9">Follow Us</p>
-
-    <div className="social-menu">
-        <ul className="list-inline mb-0">
-            <li className="list-inline-item">
-                <a href="" target="_blank" className="social-link">
-                    <i className="fab fa-facebook"></i>
-                </a>
-            </li>
-            <li className="list-inline-item">
-                <a href="" target="_blank" className="social-link">
-                    <i className="fab fa-instagram"></i>
-                </a>
-            </li>
-            <li className="list-inline-item">
-                <a href="" target="_blank" className="social-link">
-                    <i className="fab fa-youtube"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
+        <div className="img-stack-item">
+            <img src={image5} alt="Matchmaking" className="img-fluid" />
+            <h3>Matchmaking</h3>
+        </div>
+        <div className="img-stack-item">
+            <img src={image6} alt="Wedding Shopping" className="img-fluid" />
+            <h3>Wedding Shopping</h3>
+        </div>
+        <div className="img-stack-item">
+            <img src={image7} alt="Events" className="img-fluid" />
+            <h3>Events</h3>
+        </div>
     </div>
 </div>
 
 
 
-<div className="parent-container23">
-        <div className="container23">
-            <h2>Our Services</h2>
-        </div>
 
-        <div className="img-stack">
-            <div className="img-stack1">
-                <h3>Profiles</h3>
-                <a href="" onClick={() => navigateTo('/services')}><span>Read More</span></a>
-            </div>
-            <div className="img-stack2">
-                <h3>Matchmaking</h3>
-                <a href="" onClick={() => navigateTo('/services')}><span>Read More</span></a>
-            </div>
-            <div className="img-stack3">
-                <h3>Wedding Shopping</h3>
-                <a href="" onClick={() => navigateTo('/services')}><span>Read More</span></a>
-            </div>
-            <div className="img-stack4">
-                <h3>Events</h3>
-                <a href="" onClick={() => navigateTo('/services')}><span>Read More</span></a>
-            </div>
-        </div> 
-    </div>
-        
 
-    <div className="parent-container24">
-        <div className="container24">
+<div className="container-fluid">
+    <div className="parent-container4 mx-4">
+        <div className="container container4">
             <div>
                 <h2>Find Your Perfect Match</h2>
             </div>
             <div>
-                <p>Start your journey to a happy and fulfilled married life by joining the <b>'TheIndianWedding'</b> and finding your perfect match based on compatibility and shared values.</p>
-                    <a href="" target="_self" rel="noopener noreferrer"  onClick={() => navigateTo('/contact')}>
-                        <span className="">Join Now</span>
-                    </a>
+                <p>Start your journey to a happy and fulfilled married life by joining The IndianWedding and finding your perfect match based on compatibility and shared values.</p>
             </div>
         </div>
     </div>
+</div>
 
 
-        <div className="parent-container25">
-
-            <div className="work">
-                <h2>Our Work</h2>
-            </div>
-            
-        <div className="container25">
 
 
-            <div className="img10">
-                <figure>
-                <img srcSet={image10}></img>
+
+<div className="parent-container5">
+    <div className="work">
+        <h2>Our Work</h2>
+    </div>
+
+    <div className="container5 d-flex justify-content-center">
+        <div className="img10">
+            <figure>
+                <img srcSet={image10} alt="img-10" />
                 <figcaption>Destination Weddings</figcaption>
-                </figure>
-            </div>
-            
-            <div className="img11">
-                <figure>
-                    <img srcSet={image11} alt="img-11"></img>
-                        <figcaption>Engagements</figcaption>
-                </figure>
-            </div>
-            
-            <div className="img12">
-                <figure>
-                    <img srcSet={image12} alt="img-12"></img>
-                        <figcaption>Love Stories</figcaption>
-                </figure>
-            </div>
-            
-            <div className="img9">
-                <figure>
-                    <img srcSet={image9} alt="img-9"></img>
-                        <figcaption>Lifestyle</figcaption>
-                </figure>
-            </div>
-            
-            
-            
-            <div className="img8">
-                <figure>
-                <img srcSet={image8} alt="img-8"></img>
-                    <figcaption>Celebrations</figcaption>
-                </figure>
-            </div>
-        
-            
-            
-            
-            <div className="portfolio">
-                <a  aria-label="" href="#" rel="follow noopener" target="_self" role="button" onClick={() => navigateTo('/portfolio')}>
-                    View Portfolio
-                </a>
-            </div>
-            
-        </div>
+            </figure>
         </div>
 
-            
-        <div className="couples">
+        <div className="img11">
+            <figure>
+                <img srcSet={image11} alt="img-11" />
+                <figcaption>Engagements</figcaption>
+            </figure>
+        </div>
+
+        <div className="img12">
+            <figure>
+                <img srcSet={image12} alt="img-12" />
+                <figcaption>Love Stories</figcaption>
+            </figure>
+        </div>
+
+        <div className="img8">
+            <figure>
+                <img srcSet={image8} alt="img-8" />
+                <figcaption>Celebrations</figcaption>
+            </figure>
+        </div>
+
+        <div className="img9">
+            <figure>
+                <img srcSet={image9} alt="img-9" />
+                <figcaption>Lifestyle</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div className="parent-container6">
+    <div className="couples">
+        <h2>Happy Couples</h2>
+    </div>
+    
+    <div className="batch1">
+        <div className="star" title="5/5">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+        </div>
+
+        <div className="info1">
             <div>
-                <h2>Happy Couples</h2>
+                <p className="message">We are grateful to The IndianWedding for bringing us together. We found true love and a partner for life!</p>
             </div>
-        </div>   
-
-
-    <div className="parent-container26">
-    <div className="batch7">
-
-            <div className="star" title="5/5">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
+            <div className="img13">
+                <img srcSet={image13} alt="img-13"></img>
             </div>
-        
-            <div className="info10">
-                <div>
-                    <p className="message">We are grateful to The IndianWedding for bringing us together. We found true love and a partner for life!</p>
-                </div>
-                <div className="img13">
-                    <img srcSet={image13} alt="img-13"></img>
-                </div>
-                <p className="name">Riya &amp; Arjun</p>
-            </div>
-    </div>
-        
-    <div className="batch8">
-        
-            <div className="star1" title="5/5">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-            </div>
-        
-        
-        
-            <div className="info11">
-                <div>
-                    <p className="message2">The IndianWedding helped us find our soulmates. We couldn't be happier with our life partners!</p>
-                </div>
-                <div className="img14">
-                        <img srcSet={image14} alt="img-14"></img>
-                </div>
-                    <p className="name1">Smita &amp; Deepak</p>
-            </div>
-    </div> 
-        
-    <div className="batch9">
-            <div className="star2" title="5/5">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-            </div>
-        
-        
-        
-            <div className="info12">
-                <div>
-                    <p className="message3">Thanks to The IndianWedding, we found true love and are excited to start our journey together as a married couple.</p>
-                </div>
-                <div className="img15">
-                        <img srcSet={image15} alt="img-15"></img>
-                </div>
-                    <p className="name2">Pooja &amp; Rahul</p>
-            </div>
-    
-    </div>
-    </div>
-    
-
-
-
-    <div className="parent-container27">
-        <div className="check">
-            <h2>Check Out Our Recent Work On Instagram</h2>
-            <div className="insta">
-                <a href="" target="_self" rel="noopener noreferrer">Follow Us On Instagram</a>
-            </div>
-        </div>
-        <div className="container27">
-            <div className="img16">
-                <figure>
-                    <img srcSet={image16} alt="img-16"></img>
-                </figure>
-            </div>
-            <div className="img17">
-                <figure>
-                    <img srcSet={image17} alt="img-17"></img>
-                </figure>
-            </div>
-            <div className="img18">
-                <figure>
-                    <img srcSet={image18} alt="img-18"></img>
-                </figure>
-            </div>
-            <div className="img19">
-                <figure>
-                    <img srcSet={image19} alt="img-19"></img>
-                </figure>
-            </div>
-            <div className="img20">
-                <figure>
-                    <img srcSet={image20} alt="img-20"></img>
-                </figure>
-            </div>
+            <p className="name">Riya &amp; Arjun</p>
         </div>
     </div>
 
-    
-    <div className="parent-container28">
-        <div className="container28">
-        
-                <div className="find">
-                    <h2>Find Your Soulmate Today</h2>
-                </div>
-                <p className="info13">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
-                <div className="button7">
-                    <a href="" target="_self" rel="noopener noreferrer" role="button" onClick={() => navigateTo('/contact')}>
-                        <span>Join Now</span>
-                    </a>
-                </div>
-        
+    <div className="batch2">
+        <div className="star1" title="5/5">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+        </div>
+
+        <div className="info2">
+            <div>
+                <p className="message2">The IndianWedding helped us find our soulmates. We couldn't be happier with our life partners!</p>
+            </div>
+            <div className="img14">
+                <img srcSet={image14} alt="img-14"></img>
+            </div>
+            <p className="name1">Smita &amp; Deepak</p>
         </div>
     </div>
 
+    <div className="batch3">
+        <div className="star2" title="5/5">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+        </div>
 
-    <div className="parent-container29">
-    <div className="contact-container2">
-        <div className="contact-item2">
+        <div className="info3">
+            <div>
+                <p className="message3">Thanks to The IndianWedding, we found true love and are excited to start our journey together as a married couple.</p>
+            </div>
+            <div className="img15">
+                <img srcSet={image15} alt="img-15"></img>
+            </div>
+            <p className="name2">Pooja &amp; Rahul</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div className="parent-container7">
+  <div className="check1">
+    <h2>Check Out Our Recent Work On Instagram</h2>
+    </div>
+    <div className="insta1">
+      <a href="#" target="_self" rel="noopener noreferrer">
+        Follow Us On Instagram
+      </a>
+    </div>
+  <div className="container7">
+    <div className="row justify-content-center"> 
+      <div className="col-auto">
+        <div className="image16">
+          <figure>
+            <img srcSet={image16} alt="img-16" />
+          </figure>
+        </div>
+      </div>
+      <div className="col-auto">
+        <div className="image17">
+          <figure>
+            <img srcSet={image17} alt="img-17" />
+          </figure>
+        </div>
+      </div>
+      <div className="col-auto">
+        <div className="image18">
+          <figure>
+            <img srcSet={image18} alt="img-18" />
+          </figure>
+        </div>
+      </div>
+      <div className="col-auto">
+        <div className="image19">
+          <figure>
+            <img srcSet={image19} alt="img-19" />
+          </figure>
+        </div>
+      </div>
+      <div className="col-auto">
+        <div className="image20">
+          <figure>
+            <img srcSet={image20} alt="img-20" />
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div className="parent-container8">
+    <div className="container8 text-center">
+        <div className="find mb-4"> 
+            <h2>Find Your Soulmate Today</h2>
+        </div>
+        <p className="info4">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
+    </div>
+    </div>
+
+
+    <div class="parent-container54">
+    <div class="contact-container5">
+        <div class="contact-item5">
             <h2>Phone</h2>
             <p>202-555-0188</p>
         </div>
-        <div className="contact-item2">
+        <div class="contact-item5">
             <h2>Follow Us</h2>
-            <div className="social-icons2">
+            <div class="social-icons5">
                 <ul>
-                    <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
-                    <li><a href="" target="blank"><i className="fab fa-youtube" ></i></a></li>
+                    <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
                 </ul>
             </div>
         </div>
-        <div className="contact-item2">
+        <div class="contact-item5">
             <h2>Email</h2>
             <p>contact@example.com</p>
         </div>
@@ -664,18 +668,18 @@ const Home = () => {
     
     
         
-<div className="parent-container30">
+<div class="parent-container55">
 
-    <nav className="container30">
+    <nav class="container55">
 
-            <ul id="info14">
-                <li><a href="" onClick={() => navigateTo('/home')}>Home</a></li>
-                <li><a href="" onClick={() => navigateTo('/about')}>About Us</a></li>
-                <li><a href="" onClick={() => navigateTo('/services')}>Services</a></li>
-                <li><a href="" onClick={() => navigateTo('/portfolio')}>Portfolio</a></li>
-                <li><a href="" onClick={() => navigateTo('/testimonials')}>Testimonials</a></li>
-                <li><a href="" onClick={() => navigateTo('/blog')}>Blog</a></li>
-                <li><a href="" onClick={() => navigateTo('/contact')}>Contact</a></li>
+            <ul id="info39">
+                <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
+                <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
+                <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
+                <li><a href="#"onClick={() => navigateTo('/portfolio')}>Portfolio</a></li>
+                <li><a href="#" onClick={() => navigateTo('/testimonials')}>Testimonials</a></li>
+                <li><a href="#" onClick={() => navigateTo('/blog')}>Blog</a></li>
+                <li><a href="#" onClick={() => navigateTo('/contact')}>Contact</a></li>
             </ul>
 
     </nav>
@@ -684,11 +688,11 @@ const Home = () => {
                       
                                 
 
-<div className="parent-container31">
-	<div className="container31">
+<div class="parent-container56">
+	<div class="container56">
         <p>Copyright © 2024 theindianwedding</p>
     </div>			
-</div>
+</div> 
     </div>
   )
 }

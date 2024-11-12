@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react';
 import './Portfolio.css'
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, useLocation} from "react-router-dom";
+import axios from "axios";
 import image16 from '../img/img-16.avif';
 import image17 from '../img/img-17.jpg';
 import image18 from '../img/img-18.avif';
@@ -25,29 +26,176 @@ import image50 from '../img/img-50.jpg';
 import image51 from '../img/img-51.jpg';
 import image52 from '../img/img-52.jpg';
 import image53 from '../img/img-53.jpg';
+import image63 from '../img/user.png';
 
 const Portfolio = () => {
 
     const navigateTo= useNavigate();
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
+    const [profilePictureUrl, setProfilePictureUrl] = useState(null); // New state for profile picture
+    const location = useLocation();
+
+
+
+     /* =========================
+       Profile Picture Handling
+    ========================= */
+
+    const fetchProfilePicture = async () => {
+        try {
+            const response = await axios.get('https://nrimarriage.in/api/v1/users/GetProfileImage', {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('authToken')}`,
+                },
+                responseType: 'arraybuffer',
+            });
+    
+            // Convert binary data to base64 string
+            const base64Image = btoa(
+                new Uint8Array(response.data)
+                    .reduce((data, byte) => data + String.fromCharCode(byte), '')
+            );
+    
+            // Construct a data URL for the image
+            const imageUrl = `data:image/png;base64,${base64Image}`;
+            setProfilePictureUrl(imageUrl);
+        } catch (error) {
+            // Check if error response exists and is a 404 error
+            if (error.response && error.response.status === 404) {
+                console.log('No profile picture found, setting to default image.');
+                setProfilePictureUrl(image63); // Set image63 as the default image
+            } else {
+                console.error('Error fetching profile picture:', error);
+            }
+        }
+    };
+    
+    /* =======================
+       Lifecycle Effects
+    ======================= */
+
+    useEffect(() => {
+        fetchProfilePicture(); // Fetch profile picture on component mount
+    }, []);
+
+    const handleEditProfile = (data) => {
+        // Navigate to the profile edit page with data
+        navigateTo('/profile', { state: { data } });
+    };
+
+    const handleLogout = () => {
+        // Clear auth token and navigate to login page
+        localStorage.removeItem('authToken');
+        navigateTo('/login');
+    };
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [dropdownRef]);
 
   return (
     <div className='body'>
         <header class="header6">
         <h2 class="h2e"><a href="/HomePage/Home.html">TheIndianWedding</a></h2>
         <nav>
-            <ul>
-                <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
-                <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
-                <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
-                <li><a href="#"onClick={() => navigateTo('/portfolio')}>Portfolio</a></li>
-                <li><a href="#" onClick={() => navigateTo('/testimonials')}>Testimonials</a></li>
-                <li><a href="#" onClick={() => navigateTo('/blog')}>Blog</a></li>
-                <li><a href="#" onClick={() => navigateTo('/contact')}>Contact</a></li>
-            </ul>
-        </nav>
-        <div class="button12">
-            <a href="#"><span>Join Us</span></a>
-        </div>
+                <ul>
+                    <li>
+                        <a
+                            href="/home"
+                            onClick={() => navigateTo('/home')}
+                            className={location.pathname === '/home' ? 'active' : ''}
+                        >
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/about"
+                            onClick={() => navigateTo('/about')}
+                            className={location.pathname === '/about' ? 'active' : ''}
+                        >
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/services"
+                            onClick={() => navigateTo('/services')}
+                            className={location.pathname === '/services' ? 'active' : ''}
+                        >
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/portfolio"
+                            onClick={() => navigateTo('/portfolio')}
+                            className={location.pathname === '/portfolio' ? 'active' : ''}
+                        >
+                            Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/testimonials"
+                            onClick={() => navigateTo('/testimonials')}
+                            className={location.pathname === '/testimonials' ? 'active' : ''}
+                        >
+                            Testimonials
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/blog"
+                            onClick={() => navigateTo('/blog')}
+                            className={location.pathname === '/blog' ? 'active' : ''}
+                        >
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/contact"
+                            onClick={() => navigateTo('/contact')}
+                            className={location.pathname === '/contact' ? 'active' : ''}
+                        >
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        
+       
+        <div className="header-actions">
+            <div className="profile-picture-container" onClick={toggleDropdown} ref={dropdownRef}>
+                    <img
+                        src={profilePictureUrl ? profilePictureUrl : image63 } 
+                        alt="Profile"
+                        className="profile-picture1"
+                        style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }}
+                    />
+                {dropdownOpen && (
+                    <div className="dropdown-menu show" aria-labelledby="dropdownMenuButton">
+                        <button className="dropdown-item" onClick={()=>handleEditProfile(profilePictureUrl)}>Edit Profile</button>
+                        <button className="dropdown-item" onClick={handleLogout}>Logout</button>
+                    </div>
+                )}
+            </div>
+            </div>
     </header>
 
     <div class="parent-container48">
@@ -222,7 +370,7 @@ const Portfolio = () => {
     </div>
 
 
-    <div class="parent-container51">
+   <div class="parent-container51">
         <div class="container51">
 
             <div class="info36">
@@ -301,57 +449,64 @@ const Portfolio = () => {
     </div>
 
 
-    <div class="parent-container52">
-        <div class="check">
-            <h2>Check Out Our Recent Work On Instagram</h2>
-            <div class="insta">
-                <a href="#" target="_self" rel="noopener noreferrer">Follow Us On Instagram</a>
-            </div>
-        </div>
-        <div class="container52">
-            <div class="img16">
-                <figure>
-                    <img src={image16} alt="img-16"></img>
-                </figure>
-            </div>
-            <div class="img17">
-                <figure>
-                    <img src={image17} alt="img-17"></img>
-                </figure>
-            </div>
-            <div class="img18">
-                <figure>
-                    <img src={image18} alt="img-18"></img>
-                </figure>
-            </div>
-            <div class="img19">
-                <figure>
-                    <img src={image19} alt="img-19"></img>
-                </figure>
-            </div>
-            <div class="img20">
-                <figure>
-                    <img src={image20} alt="img-20"></img>
-                </figure>
-            </div>
-        </div>
+    <div className="parent-container7">
+  <div className="check1">
+    <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
-
-    
-    <div class="parent-container53">
-        <div class="container53">
-        
-                <div class="find">
-                    <h2>Find Your Soulmate Today</h2>
-                </div>
-                <p class="info38">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
-                <div class="button13">
-                    <a href="#" target="_self" rel="noopener noreferrer" role="button">
-                        <span>Join Now</span>
-                    </a>
-                </div>
-        
+    <div className="insta1">
+      <a href="#" target="_self" rel="noopener noreferrer">
+        Follow Us On Instagram
+      </a>
+    </div>
+  <div className="container7">
+    <div className="row justify-content-center"> 
+      <div className="col-auto">
+        <div className="image16">
+          <figure>
+            <img srcSet={image16} alt="img-16" />
+          </figure>
         </div>
+      </div>
+      <div className="col-auto">
+        <div className="image17">
+          <figure>
+            <img srcSet={image17} alt="img-17" />
+          </figure>
+        </div>
+      </div>
+      <div className="col-auto">
+        <div className="image18">
+          <figure>
+            <img srcSet={image18} alt="img-18" />
+          </figure>
+        </div>
+      </div>
+      <div className="col-auto">
+        <div className="image19">
+          <figure>
+            <img srcSet={image19} alt="img-19" />
+          </figure>
+        </div>
+      </div>
+      <div className="col-auto">
+        <div className="image20">
+          <figure>
+            <img srcSet={image20} alt="img-20" />
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div className="parent-container8">
+    <div className="container8 text-center">
+        <div className="find mb-4"> 
+            <h2>Find Your Soulmate Today</h2>
+        </div>
+        <p className="info4">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
+    </div>
     </div>
 
 
@@ -405,7 +560,7 @@ const Portfolio = () => {
 	<div class="container56">
         <p>Copyright © 2024 theindianwedding</p>
     </div>			
-</div>
+</div> 
 
         
 

@@ -4,15 +4,18 @@ body {
     padding: 0;
 }
 
+/* Apply box-sizing globally for consistent sizing behavior */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Ensures header container is fluid, will adapt to different screen sizes */
 .header1 {
-    display: flex;
     color: white;
     padding: 10px 20px;
-    align-items: center;
-    grid-column-gap: 20px;
-    overflow-wrap: anywhere;
-    unicode-bidi: isolate;
-    justify-content: space-between;
+    background-color: #f8f9fa;
 }
 
     
@@ -21,434 +24,412 @@ body {
     text-decoration: none;
     color: black;
     font-size: 32px;
+    white-space: nowrap;
 }
 
-
-.header1 nav ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    align-items: center;
-    gap: 15px;
-    
-}
-
-.header1 nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-.header1 nav ul li a {
-    color: black;
-    text-decoration: none;
-    padding: 5px 10px;
-    transition: background-color 0.3s;
-
-}
-.header1 nav ul li a:hover {
-    border-radius: 5px;
-    color: #9335B6;
-
-}
 
 .button4 a{
     color: #9335B6;
-    background:#f4eaf9;
-    border-color:#f4eaf9;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 0px;
-    transition: all .2s linear;
-    border-style: solid;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-left-width: 2px;
-    border-bottom-width: 2px;
-    padding-top: 14px;
-    padding-right: 12px;
-    padding-bottom: 14px;
-    padding-left: 12px;
+    background: #f4eaf9;
+    border-color: #f4eaf9;
+    border-radius: 25px;
+    transition: all 0.2s linear;
+    padding: 14px 12px;
     font-family: 'Inria Serif', serif;
     font-weight: 700;
     font-size: 1rem;
-    line-height: 1em;
     cursor: pointer;
     display: flex;
-    width: 150px;
     justify-content: center;
-    border: none;
+    text-align: center;
+    border: 2px solid #f4eaf9;
     text-decoration: none;
+    width: 100%; /* Make sure button doesn’t overflow */
+    white-space: nowrap;
 }
 
 
-.button4 a:hover{
-    background-color: #9335B6;
-    color: white;
+/* Hover effect for the button */
+.button4 a:hover {
+    background-color: #9335B6; /* Change background on hover */
+    color: white; /* Change text color on hover */
+    border-color: #9335B6; /* Change border color on hover */
 }
+
+/* Forcing a recalculation of the layout when the screen is resized */
+@media (max-width: 767px) {
+    .header1 {
+        padding: 20px 10px;
+    }
+
+    .h2a {
+        font-size: 24px;
+    }
+
+    .button4 a {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .button4 a:hover {
+        background-color: #9335B6; /* Change background on hover */
+        color: white; /* Change text color on hover */
+        border-color: #9335B6; /* Change border color on hover */
+    }
+
+    .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .col-auto {
+        width: 100%;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header1 {
+        padding: 20px 10px;
+    }
+
+    .h2a {
+        font-size: 28px;
+    }
+
+    .button4 a {
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+    }
+
+    .button4 a:hover {
+        background-color: #9335B6; /* Change background on hover */
+        color: white; /* Change text color on hover */
+        border-color: #9335B6; /* Change border color on hover */
+    }
+}
+
+/* Larger Tablets */
+@media (max-width: 991px) {
+    .h2a {
+        font-size: 30px;
+    }
+
+    .button4 a {
+        width: auto;
+    }
+
+    .button4 a:hover {
+        background-color: #9335B6; /* Change background on hover */
+        color: white; /* Change text color on hover */
+        border-color: #9335B6; /* Change border color on hover */
+    }
+}
+
+/* Adjustments for very small screens (below 375px) */
+@media (max-width: 374px) {
+    .header1 {
+        padding: 15px 5px;
+    }
+
+    .h2a {
+        font-size: 20px;
+    }
+
+    .button4 a {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .button4 a:hover {
+        background-color: #9335B6; /* Change background on hover */
+        color: white; /* Change text color on hover */
+        border-color: #9335B6; /* Change border color on hover */
+    }
+}
+
 
 .parent-container11 {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 50px 20px;
+    flex-wrap: wrap;
 }
 
+/* Left container with heading and description */
 .container11 {
     flex: 1;
-    background-color: #f4eaf9;
+    background:#f4eaf9;
+    border-top-left-radius: 50px;
     border-bottom-right-radius: 150px;
     width: 45%;
     height: 550px;
-    margin-left: 70px;
-    padding-top: 150px;
-    padding-bottom: 150px;
-    padding-left: 60px;
-    padding-right: 60px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 200px;
+    margin-left: 20px;
+    padding: 50px; /* More padding for a spacious look */
+    display: flex;
     flex-direction: column;
-    text-align: left;
+    justify-content: center; /* Centers content vertically */
+    text-align: left; /* Aligns text to the left */
     box-sizing: border-box;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Heading and paragraph inside the containera */
 .container11 h1 {
-    font-size: 3.125rem;
-    font-weight: 500;
+    font-size: 3rem;
+    font-weight: 600;
     font-family: 'Inria Serif', serif;
-    line-height: 1.2em;
-    margin-bottom: 40px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    display: block;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-    color: black;
-    font-family: 'Inria Serif', serif;
-
+    color:#000;
+    margin-bottom: 20px;
 }
-
 
 .container11 p {
-    font-size: 1.2em;
-    color: black;
-    font-family: 'Inria Serif', serif;
-    margin-bottom: 28px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    border: 0;
-    font-size: 100%;
-    font-style: inherit;
-    font-weight: inherit;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-}
-
-
-.container11 a {
-    text-decoration: none;
-}
-
-.container11 a span {
-    background-color: #9335B6;
-    color: white;
-    font-size: 1em;
-    display: inline-block;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 0px;
-    border-style: solid;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-left-width: 2px;
-    border-bottom-width: 2px;
-    font-family: 'Inria Serif', serif;
-    font-weight: 700;
-    line-height: 1em;
-    font-size: 1rem;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 0px;
-    padding-top: 14px;
-    padding-right: 28px;
-    padding-bottom: 14px;
-    padding-left: 28px;
-    box-shadow: none;
-    display: inline-flex;
-    transition: all .2s linear;
-    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #000;
     font-family: 'Inria Serif', serif;
 }
 
-
-.container2a {
+/* Form container styling */
+.container11a {
     flex: 1;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-  }
-  
-  .form1 {
-    width: 350px;
+    width: 45%;
+    margin: 20px;
+}
+
+/* Form field design to match container look */
+.form1 {
+    width: 100%;
+    max-width: 400px;
     background: #f4eaf9;
-    border: 1px solid #dddfe2;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-    padding: 1rem;
-    align-items: center;
-    text-align: center;
+    padding: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 80px;
     border-bottom-right-radius: 80px;
-  }
-  
-  .form1 h1 {
-    margin-bottom: 20px; 
-    font-size: 24px; 
-    color: black; 
-  }
-
-  .loginas {
-    color: #9335B6;
-  }
-
-  .radio-container1 {
-    margin-bottom: 10px;
-  }
-
-  .radio-container1 input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 15px;
-    height: 15px;
-    border: 1px solid;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-right: 10px;
+    text-align: center;
 }
 
-  .radio-container1 input[type="radio"]:checked {
-    background-color: #f4eaf9;
-    border-color: #f4eaf9;
+/* Heading styling for the form */
+.form1 h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: black;
 }
 
-.radio-container1 input[type="radio"]:checked::before {
-    content: '';
-    display: block;
-    border-radius: 50%;
-    background-color:#9335B6;
-}
-
-  .radio2 {
-    margin-right: 20px;
-    font-weight: bold;
-  }
-
-  .radio3 {
-    font-weight: bold;
-  }
-  
-  .form1 input[type="text"],
-  .form1 input[type="email"],
-  .form1 input[type="password"] {
-    padding: 12px; 
-    margin: 2% 0; 
-    border: 2px solid lightgrey; 
-    border-radius:20px;
-    box-sizing: border-box; 
-    font-size: 16px; 
+/* Input fields styling */
+.form1 input[type="email"],
+.form1 input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid lightgrey;
+    border-radius: 20px;
+    font-size: 16px;
     outline: none;
-  }
-  
-  .errors1 {
+}
+
+/* Error message styling */
+.errors1 {
     color: red;
     text-align: left;
     margin: auto;
     font-size: 12px;
     padding: 0px 2rem;
-  }
-  
-  .form1 button {
-    width: 30%; 
-    padding: 10px; 
-    background-color: #9335B6; 
-    color:white; 
-    border: none; 
+}
+
+/* Submit Button */
+.form1 button{
+    width: 30%;
+    max-width: 150px;
+    padding: 10px;
+    background-color: #9335B6;
+    color: white;
+    border: none;
     border-top-left-radius: 18px;
     border-bottom-right-radius: 18px;
-    font-size: 16px; 
-    cursor: pointer; margin-top: 10px;
-    margin-left: 120px;
-  }
-  
-  .form1 a {
-    display: block; 
-    margin-top: 20px; 
-    text-align: center; 
-    color: #9335B6; 
-    text-decoration: none; 
-  }
-  
-  .form1 a:hover {
-    text-decoration: underline; 
-  }
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.form1 button:hover {
+    background-color: #f4eaf9;
+    color: #9335B6;
+}
+
+/* Link styling */
+.form1 a {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #9335B6;
+    text-decoration: none;
+}
+
+.form1 a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+    .parent-container11 {
+        flex-direction: column;
+    }
+
+    .container11, .container11a {
+        width: 90%;
+        max-width: 600px;
+        margin: 30px auto;
+    }
+
+    .container11 h1 {
+        font-size: 2.5rem;
+    }
+
+    
+    .form1 input[type="email"],
+    .form1 input[type="password"] {
+        font-size: 1rem;
+    }
+
+    .form1 button {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .container11 h1 {
+        font-size: 2rem;
+    }
+
+    .form1 button {
+        font-size: 0.9rem;
+    }
+}
 
 
 
-.parent-container12 {
+/* Parent container styling */
+.parent-container2 {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     margin-top: 100px;
     margin-bottom: 100px;
+    padding: 0 20px; /* Ensure equal padding on both sides */
+    box-sizing: border-box; /* Prevent overflow */
+    height: auto;
+    min-height: 400px; /* Optional: Set a minimum height to make it look more centered */
 }
 
-.container12 {
+/* Container for the content */
+.container2 {
     display: flex;
-    padding-left: 70px;
-    padding-right: 70px;
     align-items: center;
+    justify-content: center; /* Ensure everything inside is centered horizontally */
     flex-direction: row;
-    box-sizing: inherit;
+    width: 100%;
+    max-width: 1200px; /* Ensure content doesn't stretch too wide */
+    box-sizing: border-box;
+    text-align: center; /* Align text in the center */
+    gap: 50px;
 }
 
-.img3{
-    flex: 1;
-    object-fit: cover;
-    width: 645px;
-    height: 500px;
-    box-shadow: 0px 0px 0 #00000070;
-    border-top-left-radius: 200px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+/* Image container styling */
+.img63 {
+    width: 100%; /* Full width of the parent container */
+    max-width: 645px; /* Maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px ; /* Top-left corner rounded */
+    overflow: hidden; /* Ensure the image stays within the rounded corner */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow to make image stand out */
     display: flex;
-    max-width: 100%;
-    transition: box-shadow 0.2s ease;
-    vertical-align: middle;
-    border: 0;
-    aspect-ratio: auto 645 / 500;
-    overflow-clip-margin: content-box;
-    overflow: clip;
-    margin-right: 100px;
+    justify-content: center; /* Center image inside container */
+    align-items: center;
 }
 
-.about1{
+/* Image inside container */
+.img63 img {
+    width: 100%; /* Ensure the image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area without stretching */
+}
+
+/* About section styling */
+.about {
     flex: 2;
+    text-align: left;
 }
 
-.about1 h2{
-    margin-bottom:20px;
-    margin: 0;
-    word-break: break-word;
-    font-size: 36px;
+/* Heading styling */
+.about h2 {
+    margin: 0 0 20px;
     font-size: 2.25rem;
     font-weight: 700;
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
-    display: block;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
 }
 
-.about1 p{
-    margin-bottom: 7px;
-    margin: 0;
-    word-break: break-word;
-    order: 0;
+/* Paragraph styling */
+.about p {
+    margin: 1em 0;
     font-size: 16px;
-    font-style: inherit;
-    font-weight: inherit;
-    outline: 0;
-    padding: 0;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-    font-family:'DM Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     line-height: 1.65;
 }
 
-.hr{
-    border-top-style: solid;
-    border-top-width: 1px;
+/* Divider styling */
+.hr {
+    border-top: 1px solid #EAD5F3;
     width: 100%;
-    border-color: #EAD5F3;
-    margin-bottom: 0px;
-    font-size: 0;
-    display: inline-block;
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
 }
 
-.info5{
+/* Information label styling */
+.info {
     color: #110713;
     margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 2px;
-    margin: 0;
-    word-break: break-word;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-    text-align: left;
-
 }
 
-
-.social-menu{
+/* Social menu styling */
+.social-menu1 {
     display: flex;
-}
-
-.social-menu ul{
-    top: 50%;
-    left: 50%;
-    padding: 0;
-    margin: 0;
-    transform: translate(-50%, -50%);
-    display: flex;
-    margin-left: 200px;
+    justify-content: left;
     margin-top: 50px;
-    
 }
 
-.social-menu ul li{
+.social-menu1 ul {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+}
+
+.social-menu1 ul li {
     list-style: none;
     margin: 0 12px;
 }
 
-.social-menu ul li .fab{
+.social-menu1 ul li .fab {
     font-size: 30px;
     line-height: 60px;
     transition: .3s;
     color: #000;
 }
 
-.social-menu ul li .fab:hover{
-    color: #fff;
-}
-
-.social-menu ul li a{
+.social-menu1 ul li a {
     position: relative;
     display: block;
     width: 60px;
@@ -460,280 +441,463 @@ body {
     box-shadow: 0 5px 4px rgba(0,0,0,.5);
 }
 
-.social-menu ul li a:hover{
+.social-menu1 ul li a:hover {
     transform: translate(0, -10%);
 }
 
-.social-menu ul li:nth-child(1) a:hover{
-    background-color: #1877F2;
+/* Social media icon hover effect */
+.social-menu1 ul li:nth-child(1) a:hover {
+    background-color: #1877F2; /* Facebook */
 }
-.social-menu ul li:nth-child(2) a:hover{
-    background-color: #FCAF45;
+.social-menu1 ul li:nth-child(2) a:hover {
+    background-color: #FCAF45; /* Instagram */
 }
-.social-menu ul li:nth-child(3) a:hover{
-    background-color: #0077b5;
+.social-menu1 ul li:nth-child(3) a:hover {
+    background-color: #FF0000; /* YouTube */
 }
-.social-menu ul li:nth-child(4) a:hover{
-    background-color: 	#FF0000;
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+    .parent-container2 {
+        padding: 0 10px; /* Add small padding for smaller screens */
+    }
+
+    .container2 {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 0; /* Adjust padding for smaller screens */
+        width: 100%;
+        max-width: 100%; /* Ensure it doesn't overflow */
+    }
+
+    .about {
+        text-align: center; /* Center-align the text */
+        padding: 0 10px; /* Add padding for content */
+    }
+
+    .about h2 {
+        font-size: 1.75rem; /* Adjust heading size */
+    }
+
+    .about p {
+        font-size: 14px; /* Adjust paragraph font size */
+    }
+
+    .info {
+        font-size: 12px; /* Adjust font size for mobile */
+    }
+
+    .img63 {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add bottom margin for spacing */
+        max-width: 100%; /* Make image fully responsive */
+        width: 100%; /* Ensure it doesn't go outside the screen */
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px; /* Keep the rounded top-left corner */
+    }
+
+    .social-menu1 {
+        justify-content: center; /* Center items on smaller screens */
+        margin-top: 20px; /* Adjust margin for smaller screens */
+    }
 }
-.social-menu ul li:nth-child(5) a:hover{
-    background-color: #1DA1F2;
+
+@media (max-width: 768px) {
+  
+
+    .container2 {
+        padding: 0 15px; /* Adjust padding for mobile */
+    }
+
+    .img63 {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add margin at the bottom for spacing */
+        max-width: 100%; /* Ensure image is responsive */
+        width: 100%; /* Ensure image doesn't go out of bounds */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about {
+        text-align: center; /* Center-align the text */
+        padding: 0 10px; /* Add padding for content */
+    }
+
+    .about h2 {
+        font-size: 1.75rem; /* Adjust heading size */
+    }
+
+    .about p {
+        font-size: 14px; /* Adjust paragraph font size */
+    }
+
+    .info {
+        font-size: 12px; /* Adjust font size for mobile */
+    }
+
+    .social-menu1 {
+        justify-content: center; /* Center social icons */
+        margin-top: 20px; /* Adjust top margin */
+    }
+
+    .social-menu1 ul li {
+        margin: 0 10px; /* Adjust margin for mobile */
+    }
 }
 
 
-.container13 {
-    box-shadow: 0px 0px #00000070;
-    padding-top: 40px;
-    padding-bottom: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-    overflow: visible;
-    border-color: inherit;
-    row-gap: 0px;
-    column-gap: 0px;
-    background-color: #f4eaf9;
+
+/* Parent container styling */
+.parent-container3 {
+    padding: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
-.container13 h2{
-    font-size: 2.25rem;
+/* Container for the title */
+.container3 {
+    margin-bottom: 30px;
+}
+
+.container3 h2 {
+    font-size: 2rem;
     font-weight: 700;
     font-family: 'Inria Serif', serif;
-    line-height: 1.25em;
-    display: block;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-    text-align: center;
 }
 
+/* Image stack container */
 .img-stack {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute images evenly */
+    gap: 20px; /* Adds a gap between the images */
+    width: 100%; /* Ensure it takes up the entire width of the container */
+    box-sizing: border-box; /* Includes padding and border in width */
 }
 
-.img-stack div {
-    position: relative;
-    width: 25%;
-    height: 500px;
-    margin: 0;
-    overflow: hidden;
-}
-
-.img-stack div::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-}
-
-.img-stack1 {
-    background: url('../img/img-4.jpg') center/cover no-repeat;
-}
-
-.img-stack2 {
-    background: url('../img/img-5.jpg') center/cover no-repeat;
-}
-
-.img-stack3 {
-    background: url('../img/img-6.avif') center/cover no-repeat;
-}
-
-.img-stack4 {
-    background: url('../img/img-7.avif') center/cover no-repeat;
-}
-
-
-.img-stack h3 {
-    position: relative;
-    z-index: 2;
-    color: #ffffff;
-    margin-bottom: 24px;
-    margin-top: 350px;
-    font-size: 1.75rem;
-    font-weight: 700;
-    font-family: 'Inria Serif', serif;
-    line-height: 1.5em;
+/* Individual image item styling */
+.img-stack-item {
     text-align: center;
-    
+    flex: 1; /* Ensure each image item takes up equal width */
+    max-width: 23%; /* Ensure images do not stretch too much on large screens */
+    position: relative; /* For positioning shadow effect */
 }
 
-.parent-container14 {
+/* Image styling */
+.img-stack-item img {
+    width: 100%; /* Ensure image takes up full width of its container */
+    height: 400px; /* Set fixed height for all images */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    border-radius: 10px; /* Optional: add rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for images */
+.img-stack-item img:hover {
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Add a shadow around the image */
+}
+
+/* Styling for the headings below each image */
+.img-stack-item h3 {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+    .img-stack {
+        gap: 15px; /* Adjust gap for smaller screens */
+    }
+
+    .img-stack-item img {
+        width: 100%; /* Make image responsive */
+        height: 180px; /* Adjust height for tablets */
+    }
+
+    .img-stack-item h3 {
+        font-size: 0.9rem; /* Adjust heading size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .img-stack {
+        flex-direction: column; /* Stack images vertically on mobile */
+        gap: 10px; /* Adjust gap for mobile */
+        align-items: center; /* Center items */
+    }
+
+    .img-stack-item {
+        width: 100%; /* Make each image take the entire width of the container */
+        max-width: 100%; /* Remove max-width constraint */
+    }
+
+    .img-stack-item img {
+        width: 90%; /* Ensure image takes up the entire width on small screens */
+        height: 200px; /* Adjust height for mobile */
+    }
+
+    .img-stack-item h3 {
+        font-size: 0.8rem; /* Adjust heading size for mobile */
+    }
+}
+
+
+/* Parent container */
+.parent-container4 {
     background-color: #f4eaf9;
     border-radius: 120px 0px 120px 0px;
     margin-top: 100px;
-    margin-left: 70px;
-    margin-right: 70px;
-    margin-bottom: 150px;
-    
+    margin-bottom: 100px;
+    padding: 0 15px; /* Adds some space on smaller screens */
 }
 
-.container14 {
+/* Inner container */
+.container4 {
     text-align: center;
-    box-shadow: 0px 0px #00000070;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 80px 70px;
+    max-width: 100%;
 }
 
-.container14 h2 {
+/* Heading styling */
+.container4 h2 {
     font-size: 2.25rem;
     font-weight: 700;
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
     color: #000000;
     margin-bottom: 30px;
-    margin-top: 10px;
 }
 
-.container14 p {
-    font-size: 1em;
-    color: #5b5b5b;
-    margin-bottom: 50px;
+/* Paragraph styling */
+.container4 p {
+    font-size: 1.2rem;
+    color: rgb(95, 86, 86);
+    font-family: 'Inria Serif', serif;
     margin-top: 20px;
-    font-size: 100%;
-    font-style: inherit;
-    font-weight: inherit;
 }
 
-.parent-container15 {
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-bottom: 80px;
-  }
+/* Responsive Styles */
 
-  .work1{
-    font-size: 1.5rem;
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .container4 {
+        padding: 40px 30px;  /* Adjust padding for mobile */
+    }
+
+    .container4 h2 {
+        font-size: 1.75rem;  /* Adjust font size for smaller screens */
+    }
+
+    .container4 p {
+        font-size: 1rem;  /* Adjust paragraph size */
+    }
+}
+
+/* For tablet and iPad screens (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container4 {
+        padding: 60px 40px;  /* Adjust padding for tablets */
+    }
+
+    .container4 h2 {
+        font-size: 2rem;  /* Slightly smaller font for tablets */
+    }
+
+    .container4 p {
+        font-size: 1.1rem;  /* Adjust paragraph size */
+    }
+}
+
+
+/* Parent container */
+.parent-container5 {
+    margin: 0 40px 80px; /* Keep the margin as specified */
+}
+
+/* Work section styling */
+.work {
+    font-size: 2.25rem;
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
-    display: block;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
     text-align: center;
-    margin-bottom: 50px;
-  }
-  
-  .container15 {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    align-items: center; 
-    column-gap: 24px;
-  }
-
-  
-  .container15 figure {
-    margin: 0rem; 
-  }
-  
-.img10 {
-    width: 250px;
-    height: 260px;
+    margin-bottom: 0px;
 }
 
-.img10 img {
-    width: 250px;
-    height: 260px;
-    object-fit: cover;
-
+/* Container for images */
+.container5 {
+    display: flex;
+    justify-content: center; /* Horizontally center the items */
+    align-items: center; /* Vertically center the items */
+    gap: 20px; /* Adds space between images */
+    width: 100%; /* Ensure container takes full width */
 }
 
-.img11 {
-    width: 250px;
-    height: 320px;
+/* Individual image styles */
+.img10, .img11, .img12, .img8, .img9 {
+    display: flex;
+    justify-content: center; /* Centers the image inside the div */
+    align-items: center; /* Centers the image inside the div */
+    text-align: center; /* Ensures caption is also centered */
+    transition: transform 0.3s ease-in-out; /* Adds smooth transition for hover effect */
+    width: 100%; /* Ensures the image container takes up 100% of the parent width */
+    height: auto; /* Ensures the image container takes up 100% of the parent height */
 }
 
-.img11 img {
-    width: 250px;
-    height: 320px;
-    object-fit: cover;
-
+/* Standard size for images - allow them to expand to fill container */
+.img10, .img8, .img11, .img9 {
+    width: 18%; /* Adjusted to fit images horizontally */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .img12 {
-    width: 300px;
-    height: 400px;
+    width: 22%; /* Larger image will take 22% width */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.img12 img {
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-
+/* Ensure images fill their containers */
+.img10 img, .img11 img, .img12 img, .img8 img, .img9 img {
+    width: 100%; /* Make image fill its container */
+    height: 100%; /* Make image fill its container */
+    object-fit: cover; /* Ensure image covers the container without distortion */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
 }
 
-.img9 {
-    width: 250px;
-    height: 320px;
-}
-
-.img9 img {
-    width: 250px;
-    height: 320px;
-    object-fit: cover;
-
-}
-
-.img8 {
-    width: 250px;
-    height: 260px;
-}
-
-.img8 img {
-    width: 250px;
-    height: 260px;
-    object-fit: cover;
-
-}
-  
-  .container15 figcaption {
+/* Caption styling */
+.container5 figcaption {
     text-align: center;
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 1.4em;
     margin-top: 20px;
-    align-self: center;
+    color: #333; /* Default text color */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+/* Hover effects */
+.img10:hover img, .img11:hover img, .img12:hover img, .img8:hover img, .img9:hover img {
+    transform: scale(1.1); /* Slightly zoom the image on hover */
+}
+
+.container5 .img10:hover figcaption,
+.container5 .img11:hover figcaption,
+.container5 .img12:hover figcaption,
+.container5 .img8:hover figcaption,
+.container5 .img9:hover figcaption {
+    color: #9335B6; /* Change caption color to purple on hover */
+}
+
+/* Responsive Styles */
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .container5 {
+        flex-direction: column !important; /* Force stacking of images vertically */
+        align-items: center; /* Center images */
+        gap: 30px; /* Adds more space between stacked images */
+        margin: 50px auto; /* Adjust the margin for better alignment */
+    }
+
+    /* Adjust image size for mobile - full container width */
+    .img10, .img8, .img11, .img9 {
+        width: 100% !important; /* Make images take full width of the container */
+        height: auto !important; /* Ensure images fill container height */
+    }
+
+    .img12 {
+        width: 100% !important; /* Make the larger image take full width */
+        height: auto !important; /* Ensure it fills container height */
+    }
+}
+
+/* For tablet screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container5 {
+        flex-direction: row; /* Align images horizontally in a row */
+        justify-content: center; /* Center images horizontally */
+        gap: 20px; /* Add space between images */
+        margin-top: 50px;
+    }
+
+    .img10, .img8, .img11, .img9 {
+        width: 28%; /* Adjust image size for tablet screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .img12 {
+        width: 35%; /* Adjust the larger image for tablet */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* For desktop screens (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .container5 {
+        display: flex; /* Make the container a flexbox */
+        flex-direction: row; /* Align items in a horizontal row */
+        justify-content: center; /* Center images horizontally */
+        gap: 20px; /* Space between images */
+        margin-top: 50px; /* Add top margin for better spacing */
+        width: 100%; /* Ensure the container takes up full width */
+    }
+
+    .img10, .img8, .img11, .img9 {
+        width: 18%; /* Each image will take up 18% of the container's width */
+        height: auto; /* Maintain the image's aspect ratio */
+        text-align: center; /* Center the caption text */
+    }
+
+    .img12 {
+        width: 22%; /* Make this image take the full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
     
-  }
+    .img10 img, .img11 img, .img12 img, .img8 img, .img9 img {
+        width: 100%;
+        height: auto; 
+        object-fit: cover; 
+    }
+}
 
 
-.parent-container16 {
-    justify-content: space-around;
+
+.parent-container6 {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
     padding: 20px;
     background-color: #f9f9f9;
-    display: flex;
     margin-bottom: 100px;
 }
 
-.couples1 h2{
-    display: block;
-    text-align: center;
+.couples {
+    width: 100%; 
+    text-align: center; 
+    margin-bottom: 40px; 
+}
+
+.couples h2 {
     font-size: 2.25rem;
     font-weight: 700;
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
-    padding-bottom: 40px;
-    padding-top: 0px;
 }
 
-.batch4, .batch5, .batch6 {
+.batch1, .batch2, .batch3 {
     background: #fff;
     border-top-left-radius: 80px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 80px;
+    border-bottom-right-radius: 40px;
     padding: 40px;
     text-align: center;
-    width: 360px;
+    width: 100%; 
+    max-width: 360px; 
+    margin: 50px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -743,282 +907,478 @@ body {
     margin-bottom: 15px;
 }
 
-.info6, .info7, .info8 {
+.info1, .info2, .info3 {
     background-color: #f7f7ff;
     border-radius: 20px;
-    padding: 20px;
-    margin-top: 20px;
+    padding: 10px;
+    margin-top: 10px;
 }
 
-.message4, .message5, .message6 {
+.message, .message2, .message3 {
     font-size: 16px;
-    color:black;
+    color: black;
     margin-bottom: 15px;
 }
 
 .img13 img, .img14 img, .img15 img {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.name4, .name5, .name6 {
-    font-weight: bold;
-    font-size: 18px;
-    color:black;
-}
-
-.batch4, .batch5, .batch6 {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    background-color: white;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.batch4:hover, .batch5:hover, .batch6:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.star, .star1, .star2 {
-    color: #f39c12; 
-    font-size: 20px;
+    width: 60px;
+    height: 60px;
     margin-bottom: 10px;
 }
 
-
-
-.img13:hover img, .img14:hover img, .img15:hover img {
-    transform: scale(1.1);
+.name, .name1, .name2 {
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
 }
 
 
-.parent-container17 {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 40px;
-    padding-right: 40px;
-    background-color:#f4eaf9;
+@media (max-width: 1024px) {
+    .parent-container6 {
+        justify-content: center; 
+    }
+
+    .batch1, .batch2, .batch3 {
+        width: 40%; 
+        max-width: 360px; 
+    }
 }
 
-.check {
+
+@media (max-width: 768px) {
+    .parent-container6 {
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    .batch1, .batch2, .batch3 {
+        width: 90%; 
+        max-width: 400px; 
+        margin: 20px 0; 
+    }
+}
+
+
+
+/* Base container styling */
+.parent-container7 {
+    padding: 60px 40px;
+    background-color: #f4eaf9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.check1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.check h2 {
+.check1 h2 {
     font-size: 2.25rem;
     font-weight: 700;
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
-    justify-content: center;
-    margin-left: 33px;
-    margin-right: 33px;
+    margin: 0 33px;
 }
 
-.insta a {
+.insta1 {
+    display: flex;
+}
+
+.insta1 a {
     text-decoration: none;
     padding: 10px 20px;
-    border-radius: 25px 0px 25px 0px;
+    border-radius: 25px;
     font-weight: bold;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-left-width: 2px;
-    border-bottom-width: 2px;
+    border: 2px solid transparent;
     background-color: #8e3bb6;
     color: white;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.insta a:hover{
-    background-color:white;
+.insta1 a:hover {
+    background-color: white;
     color: #9335B6;
 }
 
-.container17 {
-    display: flex;
-    gap: 20px;
-    
-}
-
-
-.img16, .img17, .img18, .img19, .img20{
-    width: 262px;
-    height: 262px;
-}
-
-.img16 img, .img17 img, .img18 img, .img19 img, .img20 img{
-    object-fit: cover;
-    width: 262px;
-    height: 262px;
-}
-
-.img17, .img19{
+.container7 {
     margin-top: 40px;
+    display: flex;
+    justify-content: center; /* Centering container7 within parent-container7 */
+    width: 100%;
 }
 
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
-.parent-container18 {
+/* Remove padding from .col-auto */
+.col-auto {
+    padding: 0px;
+}
+
+/* Image containers */
+.image16, .image17, .image18, .image19, .image20 {
+    width: 200px;  /* Fixed width of 300px */
+    height: 200px; /* Fixed height of 300px */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+/* Individual images - fill container */
+.image16 img, .image17 img, .image18 img, .image19 img, .image20 img {
+    width: 200px;  /* Ensures the image fills the width of the container */
+    height: 200px; /* Ensures the image fills the height of the container */
+    object-fit: cover; /* Ensures the image covers the entire container without distortion */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.image16:hover, .image17:hover, .image18:hover, .image19:hover, .image20:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.image16:hover img, .image17:hover img, .image18:hover img, .image19:hover img, .image20:hover img {
+    transform: scale(1.05); /* Slight zoom for the image itself */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .row {
+        gap: 20px; /* Adjust gap for medium screens */
+    }
+
+    .image16, .image17, .image18, .image19, .image20 {
+        width: 200px;  /* Fixed width of 300px */
+        height: 200px; /* Fixed height of 300px */
+    }
+
+    /* Ensure images fill the container */
+    .image16 img, .image17 img, .image18 img, .image19 img, .image20 img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover; /* Ensures the image fills the container without distortion */
+    }
+}
+
+@media (max-width: 768px) {
+   
+    .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .image16, .image17, .image18, .image19, .image20 {
+        width: 300px;  /* Fixed width of 300px */
+        height: 300px; /* Fixed height of 300px */
+    }
+
+    /* Ensure images fill the container */
+    .image16 img, .image17 img, .image18 img, .image19 img, .image20 img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover; /* Ensures the image fills the container without distortion */
+    }
+
+    /* Make .check1 and .about1 stack vertically on smaller screens */
+    .check1, .about1 {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Adjust spacing for vertical layout */
+    .check1 {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    
+
+    .about1 {
+        margin-top: 20px;
+    }
+}
+  
+  
+
+.parent-container8 {
     background-color: #f5eafa; 
     padding: 50px 0;
-    text-align: center;
     background: linear-gradient(0deg, #1e0118 50%, #f5eafa 50%);
-
 }
 
-.container18 {
+.container8 {
     background-color: #fff;
     box-shadow: 0px 0px #00000070;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    padding-left: 30px;
-    padding-right: 30px;
-    overflow: visible;
+    padding: 70px 30px; /* Simplified padding */
     border-top-left-radius: 120px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
     border-bottom-right-radius: 120px;
-    border-color: inherit;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    row-gap: 0px;
-    column-gap: 100px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 0 50px; /* Simplified margin */
 }
 
 .find h2 {
     font-size: 2.25em;
     margin-bottom: 20px;
     font-family: 'Inria Serif', serif;
-    line-height: 1.25em;
-    margin-top: 0px;
 }
 
 .info4 {
-    font-size: 1em;
-    color: #5b5b5b; 
+    font-size: 1.2em; 
+    color: black; 
     margin-bottom: 28px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inria Serif', serif;
+    font-weight: lighter;
 }
 
-.parent-container19{
-    font-family: Arial, sans-serif;
-    background-color:#1e0118;
+/* Contact Section */
+.parent-container54 {
+    background-color: #170A1C;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 40px 20px;
+    flex-direction: column;
 }
 
-.contact-container1 {
+.contact-container5 {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-direction: row; /* Stack items horizontally */
+    align-items: center; /* Center items horizontally */
 }
 
-.contact-item1 {
-    text-align: center;
+.contact-item5 {
+    justify-content: space-between;
+    width: 30%; /* Adjust width as necessary */
+    margin: 20px 0;
+    justify-items: center;
+    padding-bottom: 20px;
 }
 
-.contact-item1 h2 {
+.contact-item5 h2 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.contact-item5 p {
     font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.contact-item1 p {
-    font-size: 1.5em;
     margin: 0;
-    margin-bottom: 20px;
 }
 
-
-
-
-.social-icons1 {
+.social-icons5 {
     display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center; /* Center the social icons horizontally */
+    align-items: center; /* Center the social icons vertically */
 }
 
-.social-icons1 ul{
-    top: 50%;
-    left: 50%;
+.social-icons5 ul {
+    display: flex;
+    flex-direction: row; /* Align list items horizontally */
     padding: 0;
     margin: 0;
-    transform: translate(-50%, -50%);
-    display: flex;
-    margin-left: 200px;
-    margin-top: 30px;
-    
+    gap: 20px; /* Add gap between icons */
 }
 
-.social-icons1 ul li{
+.social-icons5 ul li {
     list-style: none;
-    margin: 0 12px;
 }
 
-.social-icons1 ul li .fab{
-    font-size: 15px;
+.social-icons5 ul li .fab {
+    font-size: 1.5em;
     line-height: 40px;
-    transition: .3s;
+    transition: 0.3s;
     color: #000;
 }
 
-.social-icons1 ul li .fab:hover{
+.social-icons5 ul li .fab:hover {
     color: #fff;
 }
 
-.social-icons1 ul li a{
+.social-icons5 ul li a {
     position: relative;
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: #fff;
     text-align: center;
-    transition: .6s;
-    box-shadow: 0 5px 4px rgba(0,0,0,.5);
+    transition: 0.6s;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
 }
 
-.social-icons1 ul li:nth-child(1) a:hover{
+.social-icons5 ul li:nth-child(1) a:hover {
     background-color: #1877F2;
 }
-.social-icons1 ul li:nth-child(2) a:hover{
+
+.social-icons5 ul li:nth-child(2) a:hover {
     background-color: #FCAF45;
 }
-.social-icons1 ul li:nth-child(3) a:hover{
-    background-color: #0077b5;
-}
-.social-icons1 ul li:nth-child(4) a:hover{
-    background-color: 	#FF0000;
-}
-.social-icons1 ul li:nth-child(5) a:hover{
-    background-color: #1DA1F2;
+
+.social-icons5 ul li:nth-child(3) a:hover {
+    background-color: #FF0000;
 }
 
+/* Footer Navigation */
+.parent-container55 {
+    background-color: #170A1C;
+    padding: 0px 20px;
+    text-align: center;
+}
 
-.parent-container20 {
+.container55 {
+    display: inline-block;
+}
+
+#info39 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#info39 li {
+    display: inline;
+}
+
+#info39 a {
+    text-decoration: none;
+    color: #f7f5e6;
+    font-family: Arial, sans-serif;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+#info39 a:hover {
+    color: #abb8c3;
+}
+
+/* Footer Copyright */
+.parent-container56 {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
     min-height: 30px;
-    border-style: solid;
-    border-width: 0px;
-    border-top-width: 1px;
-    border-top-color: rgba(255, 255, 255, 0.25);
-    background-color:#1e0118 ;
-    padding-right: 85px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: #170A1C;
 }
 
-.container20 {
+.container56 {
     color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    /* Adjust contact section to be horizontally aligned */
+    .contact-container5 {
+        flex-direction: row; /* Stack horizontally */
+        align-items: flex-start; /* Align items at the top */
+    }
+
+    .contact-item5 {
+        width: 30%; /* Ensure equal width of each item */
+        margin-bottom: 20px; /* Reduce bottom margin */
+    }
+
+    .social-icons5 {
+        flex-direction: row; /* Stack icons horizontally */
+        gap: 15px;
+        justify-content: center; /* Center the social icons */
+    }
+
+    .social-icons5 ul {
+        flex-direction: row; /* Align list items horizontally */
+        gap: 20px;
+    }
+
+    /* Navigation adjustment for max-width 1200px */
+    #info39 {
+        justify-content: space-between; /* Ensure horizontal spacing */
+        gap: 20px;
+    }
+
+    #info39 li {
+        margin: 0;
+    }
+
+    #info39 a {
+        font-size: 1em;
+    }
+}
+
+/* Mobile-First Design for Smaller Screens */
+@media (max-width: 767px) {
+    .contact-container5 {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .contact-item5 {
+        width: 80%; /* Adjust for smaller screens */
+        margin-bottom: 20px;
+        border-bottom: 2px solid #fff; /* Add a horizontal line separator */
+        padding-bottom: 20px; /* Ensure space for the separator */
+    }
+
+    .social-icons5 {
+        flex-direction: row; /* Stack icons horizontally */
+        gap: 10px;
+        justify-content: center; /* Center the social icons */
+        align-items: center; /* Center the icons vertically */
+    }
+
+    .social-icons5 ul {
+        display: flex; /* Ensure horizontal stacking */
+        flex-direction: row; /* Align list items horizontally */
+        gap: 30px;
+    }
+
+    .social-icons5 ul li .fab {
+        font-size: 1.2em;
+    }
+
+    #info39 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #info39 li {
+        margin: 10px 0;
+    }
+
+    #info39 a {
+        font-size: 1em;
+    }
+
+    .parent-container54{
+        padding: 0px 20px;
+    }
 }

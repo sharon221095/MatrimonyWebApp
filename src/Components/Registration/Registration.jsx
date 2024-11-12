@@ -4,6 +4,10 @@ import { useForm } from 'react-hook-form';
 import { useNavigate, NavLink } from "react-router-dom";
 import axios from "axios";
 import image3 from '../img/img-3.jpg';
+import image4 from '../img/img-4.jpg';
+import image5 from '../img/img-5.jpg';
+import image6 from '../img/img-6.avif';
+import image7 from '../img/img-7.avif';
 import image8 from '../img/img-8.avif';
 import image9 from '../img/img-9.avif';
 import image10 from '../img/img-10.jpg';
@@ -47,14 +51,20 @@ const Registration = () => {
 
     return (
         <div className='body'>
-         <header className="header container-fluid">
-         <div className="row align-items-center justify-content-between">
-            <h2 className="h2 col-auto"><a href="#">TheIndianWedding</a></h2>
-        <div className="button col-auto">
-            <a href="#" onClick={() => navigateTo('/login')}><span>Login In</span></a>
-        </div>
-        </div>
-        </header>
+            <header className="header container-fluid">
+            <div className="row align-items-center justify-content-between">
+        {/* <!-- Logo --> */}
+                <h2 className="h2 col-12 col-md-auto text-center text-md-left">
+                    <a href="#">TheIndianWedding</a>
+                </h2>
+
+        {/* <!-- Login Button --> */}
+            <div className="button col-12 col-md-auto text-center">
+                    <a href="#" onClick={() => navigateTo('/login')}><span>Login In</span></a>
+            </div>
+            </div>
+            </header>
+
 
 
             <div className="parent-container">
@@ -162,12 +172,12 @@ const Registration = () => {
                 </div>
             </div>
 
-    <div className="parent-container2">
+        <div className="parent-container2">
     <div className="container2">
-        <div className="img3">
-            <img loading="lazy" decoding="async" srcSet="" sizes="(max-width: 480px) 150px" src={image3} alt="img-3" className="" width="645" height="500" title="" role="img" />
+        <div className="img63">
+            <img loading="lazy" decoding="async" srcSet="" sizes="(max-width: 480px) 150px" src={image3} alt="Our Story Image" width="645" height="500" title="Our Story" />
         </div>
-    
+
         <div className="about">
             <h2>Our Story</h2>
             <p>The IndianWedding is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
@@ -176,9 +186,9 @@ const Registration = () => {
             
             <div className="social-menu1">
                 <ul>
-                    <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
-                    <li><a href="" target="blank"><i className="fab fa-youtube"></i></a></li>
+                    <li><a href="#" target="_blank"><i className="fab fa-facebook"></i></a></li>
+                    <li><a href="#" target="_blank"><i className="fab fa-instagram"></i></a></li>
+                    <li><a href="#" target="_blank"><i className="fab fa-youtube"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -187,26 +197,32 @@ const Registration = () => {
 
 
 
+
 <div className="container-fluid parent-container3 p-0">
     <div className="container3 text-center">
         <h2>Our Services</h2>
     </div>
 
-    <div className="img-stack">
-        <div className="img-stack1">
+    <div className="img-stack d-flex justify-content-center">
+        <div className="img-stack-item">
+            <img src={image4} alt="Profiles" className="img-fluid" />
             <h3>Profiles</h3>
         </div>
-        <div className="img-stack2">
+        <div className="img-stack-item">
+            <img src={image5} alt="Matchmaking" className="img-fluid" />
             <h3>Matchmaking</h3>
         </div>
-        <div className="img-stack3">
+        <div className="img-stack-item">
+            <img src={image6} alt="Wedding Shopping" className="img-fluid" />
             <h3>Wedding Shopping</h3>
         </div>
-        <div className="img-stack4">
+        <div className="img-stack-item">
+            <img src={image7} alt="Events" className="img-fluid" />
             <h3>Events</h3>
         </div>
     </div>
 </div>
+
 
 
 
@@ -227,12 +243,13 @@ const Registration = () => {
 
 
 
+
 <div className="parent-container5">
     <div className="work">
         <h2>Our Work</h2>
     </div>
 
-    <div className="container5 d-flex justify-content-center flex-wrap">
+    <div className="container5 d-flex justify-content-center">
         <div className="img10">
             <figure>
                 <img srcSet={image10} alt="img-10" />
@@ -254,17 +271,17 @@ const Registration = () => {
             </figure>
         </div>
 
-        <div className="img9">
-            <figure>
-                <img srcSet={image9} alt="img-9" />
-                <figcaption>Lifestyle</figcaption>
-            </figure>
-        </div>
-
         <div className="img8">
             <figure>
                 <img srcSet={image8} alt="img-8" />
                 <figcaption>Celebrations</figcaption>
+            </figure>
+        </div>
+
+        <div className="img9">
+            <figure>
+                <img srcSet={image9} alt="img-9" />
+                <figcaption>Lifestyle</figcaption>
             </figure>
         </div>
     </div>
@@ -345,44 +362,44 @@ const Registration = () => {
 <div className="parent-container7">
   <div className="check1">
     <h2>Check Out Our Recent Work On Instagram</h2>
+    </div>
     <div className="insta1">
       <a href="#" target="_self" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
     </div>
-  </div>
   <div className="container7">
-    <div className="row justify-content-center"> {/* Centering the images */}
+    <div className="row justify-content-center"> 
       <div className="col-auto">
-        <div className="img16">
+        <div className="image16">
           <figure>
             <img srcSet={image16} alt="img-16" />
           </figure>
         </div>
       </div>
       <div className="col-auto">
-        <div className="img17">
+        <div className="image17">
           <figure>
             <img srcSet={image17} alt="img-17" />
           </figure>
         </div>
       </div>
       <div className="col-auto">
-        <div className="img18">
+        <div className="image18">
           <figure>
             <img srcSet={image18} alt="img-18" />
           </figure>
         </div>
       </div>
       <div className="col-auto">
-        <div className="img19">
+        <div className="image19">
           <figure>
             <img srcSet={image19} alt="img-19" />
           </figure>
         </div>
       </div>
       <div className="col-auto">
-        <div className="img20">
+        <div className="image20">
           <figure>
             <img srcSet={image20} alt="img-20" />
           </figure>
@@ -395,7 +412,7 @@ const Registration = () => {
 
     <div className="parent-container8">
     <div className="container8 text-center">
-        <div className="find mb-4"> {/* Use Bootstrap margin classes for spacing */}
+        <div className="find mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
         <p className="info4">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
@@ -403,42 +420,57 @@ const Registration = () => {
     </div>
 
 
-    <div className="parent-container9">
-    <div className="container contact-container">
-        <div className="col-md-4 contact-item text-center">
+    <div class="parent-container54">
+    <div class="contact-container5">
+        <div class="contact-item5">
             <h2>Phone</h2>
             <p>202-555-0188</p>
         </div>
-        <div className="col-md-4 contact-item text-center">
-            <h2>Email</h2>
-            <p>contact@example.com</p>
-        </div>
-        <div className="col-md-4 contact-item text-center">
+        <div class="contact-item5">
             <h2>Follow Us</h2>
-            <div className="social-icons">
+            <div class="social-icons5">
                 <ul>
-                    <li><a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
-                    <li><a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a></li>
+                    <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
                 </ul>
             </div>
         </div>
+        <div class="contact-item5">
+            <h2>Email</h2>
+            <p>contact@example.com</p>
+        </div>
     </div>
-</div>
+    </div>
+    
+    
+    
+        
+<div class="parent-container55">
 
+    <nav class="container55">
 
+            <ul id="info39">
+                <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
+                <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
+                <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
+                <li><a href="#"onClick={() => navigateTo('/portfolio')}>Portfolio</a></li>
+                <li><a href="#" onClick={() => navigateTo('/testimonials')}>Testimonials</a></li>
+                <li><a href="#" onClick={() => navigateTo('/blog')}>Blog</a></li>
+                <li><a href="#" onClick={() => navigateTo('/contact')}>Contact</a></li>
+            </ul>
 
+    </nav>
+
+</div>			
                       
                                 
 
-<div className="parent-container10">
-	<div className="container10">
+<div class="parent-container56">
+	<div class="container56">
         <p>Copyright © 2024 theindianwedding</p>
     </div>			
-</div>	
-
-
-
+</div> 
 </div>
     
     
