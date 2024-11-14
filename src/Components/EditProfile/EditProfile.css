@@ -1,0 +1,617 @@
+.parent-container78 {
+    background: white;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.navbar_1 {
+    display: flex;
+    align-items: center;
+    background: #f5eafa;
+    padding: 10px 7%;
+}
+
+.logo {
+    width: 35px;
+    cursor: pointer;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+
+.logo_text {
+    color: white;
+    padding-left: 10px;
+    margin-top: 10px;
+
+}
+
+.text {
+    color: black;
+    padding-top: 10px;
+}
+
+.container78 {
+    display: flex;
+    flex-direction: column;
+    background: #f5eafa;
+    width: 800px;
+    border: 5px solid #f5eafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    /* Increased padding */
+    margin: 50px auto;
+    /* Center container */
+}
+
+.container78 select {
+    border-radius: 20px;
+    border: 2px solid lightgrey;
+    outline: none;
+    color: #1d2129;
+    margin: 10px 0;
+    /* Space between fields */
+    width: 90%;
+    /* Responsive width */
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+    /* Center text horizontally */
+    appearance: none;
+    /* Remove default arrow */
+    background: white;
+    /* Match background */
+    display: flex;
+    /* Enable flexbox */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+}
+
+/* Additional styling for the arrow */
+.container78 select:focus {
+    border-color: #8e44ad;
+    /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+    /* Add subtle shadow */
+}
+
+.container78 select option {
+    text-align: center;
+    /* Center text in dropdown options */
+}
+
+.container78 h1 {
+    text-align: center;
+    font-size: 24px;
+    /* Larger font size */
+    margin-bottom: 20px;
+    /* Space below heading */
+}
+
+
+
+/* Button styling */
+.button21 {
+    background: #8e44ad;
+    /* Button color */
+    color: white;
+    padding: 12px 30px;
+    /* Increased padding */
+    border: none;
+    font-size: 16px;
+    /* Larger font size */
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition */
+    width: 400px;
+    margin-left: 165px;
+}
+
+/* Button hover effect */
+.button21:hover {
+    background-color: #732d91;
+    /* Darker shade on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge */
+}
+
+.container78 form input,
+.container78 form select {
+    border-radius: 20px;
+    border: 2px solid #ddd;
+    /* Light border */
+    outline: none;
+    color: #333;
+    /* Darker text color */
+    margin: 10px 0;
+    /* Spacing between fields */
+    width: 90%;
+    /* Responsive width */
+    padding: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
+}
+
+/* Focus styling for inputs */
+.container78 form input:focus,
+.container78 form select:focus {
+    border-color: #8e44ad;
+    /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+    /* Add subtle shadow */
+}
+
+
+
+
+.profile-image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Profile image wrapper styling */
+.profile-image-wrapper {
+    position: relative;
+    width: 150px;
+    /* Fixed size */
+    height: 150px;
+    /* Fixed size */
+    border-radius: 50%;
+    /* Circular */
+    overflow: hidden;
+    /* Prevents overflow */
+    border: 3px solid #732d91;
+    /* Border style */
+    display: flex;
+    /* Flexbox for centering */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+/* Profile image styling */
+.profile-image {
+    width: 100%;
+    /* Full width of the wrapper */
+    height: 100%;
+    /* Full height of the wrapper */
+    object-fit: cover;
+    /* Ensures the image covers the container */
+    transition: opacity 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+#ProfileImage {
+    margin-top: 10px;
+}
+
+.profile-image-wrapper:hover .profile-image {
+    opacity: 0.8;
+}
+
+.profile-image-wrapper:hover:before {
+    opacity: 1;
+}
+
+
+.parent-container79 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #f4eaf9;
+}
+
+.container79 figure {
+    width: 262px;
+}
+
+.check {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.check h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    font-family: 'Inria Serif', serif;
+    line-height: 1.25em;
+    justify-content: center;
+    margin-left: 33px;
+    margin-right: 33px;
+}
+
+.insta a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px 0px 25px 0px;
+    font-weight: bold;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    background-color: #8e3bb6;
+    color: white;
+}
+
+.insta a:hover {
+    background-color: white;
+    color: #9335B6;
+}
+
+.container79 {
+    display: flex;
+    gap: 20px;
+
+}
+
+
+.img16,
+.img17,
+.img18,
+.img19,
+.img20 {
+    width: 262px;
+    height: 262px;
+}
+
+.img16 img,
+.img17 img,
+.img18 img,
+.img19 img,
+.img20 img {
+    object-fit: cover;
+    width: 262px;
+    height: 262px;
+}
+
+.img17,
+.img19 {
+    margin-top: 40px;
+}
+
+
+.parent-container80 {
+    background-color: #f5eafa;
+    padding: 50px 0;
+    text-align: center;
+    background: linear-gradient(0deg, #170A1C 50%, #f5eafa 50%);
+
+}
+
+.container80 {
+    background-color: #fff;
+    box-shadow: 0px 0px #00000070;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow: visible;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 120px;
+    border-color: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    row-gap: 0px;
+    column-gap: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.find h2 {
+    font-size: 2.25em;
+    margin-bottom: 20px;
+    font-family: 'Inria Serif', serif;
+    line-height: 1.25em;
+    margin-top: 0px;
+}
+
+.info54 {
+    font-size: 1.2em;
+    color: black;
+    margin-bottom: 28px;
+    font-family: 'Inria Serif', serif;
+    font-weight: lighter;
+
+}
+
+.button20 a {
+    background-color: #8e44ad;
+    color: #fff;
+    border-style: none;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
+    line-height: 1em;
+    font-size: 16px;
+    font-size: 1rem;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 0px;
+    padding-top: 14px;
+    padding-right: 28px;
+    padding-bottom: 14px;
+    padding-left: 28px;
+    text-decoration: none;
+}
+
+.button20 a:hover {
+    background-color: #732d91;
+}
+
+.parent-container81 {
+    font-family: Arial, sans-serif;
+    background-color: #170A1C;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container8 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px;
+}
+
+.contact-item8 {
+    text-align: center;
+}
+
+.contact-item8 h2 {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.contact-item8 p {
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+
+
+
+.social-icons8 {
+    display: flex;
+}
+
+.social-icons8 ul {
+    top: 50%;
+    left: 50%;
+    padding: 0;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    display: flex;
+    margin-left: 200px;
+    margin-top: 20px;
+
+}
+
+.social-icons8 ul li {
+    list-style: none;
+    margin: 0 12px;
+}
+
+.social-icons8 ul li .fab {
+    font-size: 15px;
+    line-height: 40px;
+    transition: .3s;
+    color: #000;
+}
+
+.social-icons8 ul li .fab:hover {
+    color: #fff;
+}
+
+.social-icons8 ul li a {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    transition: .6s;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, .5);
+}
+
+.social-icons8 ul li:nth-child(1) a:hover {
+    background-color: #1877F2;
+}
+
+.social-icons8 ul li:nth-child(2) a:hover {
+    background-color: #FCAF45;
+}
+
+.social-icons8 ul li:nth-child(3) a:hover {
+    background-color: #FF0000;
+}
+
+
+
+.parent-container82 {
+    background-color: #170A1C;
+    padding: 50px 0;
+    text-align: center;
+    padding-right: 85px;
+}
+
+.container82 {
+    display: inline-block;
+}
+
+#info55 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#info55 li {
+    display: inline;
+    margin: 0 10px;
+}
+
+#info55 a {
+    text-decoration: none;
+    color: #f7f5e6;
+    font-family: Arial, sans-serif;
+    font-size: 0.875rem;
+}
+
+
+#info55 a:hover {
+    color: #abb8c3;
+    outline: 0;
+}
+
+.parent-container83 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 30px;
+    border-style: solid;
+    border-width: 0px;
+    border-top-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.25);
+    background-color: #170A1C;
+    padding-right: 85px;
+}
+
+.container83 {
+    color: white;
+}
+
+.errors1 {
+    color: red;
+    text-align: left;
+    margin: auto;
+    font-size: 12px;
+    padding: 0px 2rem;
+}
+
+/* Styles for the image upload box */
+.form-group input[type="file"] {
+    width: 200px;
+    /* Set a fixed width for the file input */
+    height: 40px;
+    /* Set a fixed height for the file input */
+    overflow: hidden;
+    /* Hide overflow content */
+    border-radius: 5px;
+    /* Add border radius */
+    margin: 0 auto;
+    /* Center the file input */
+}
+
+/* Style for the image preview container */
+.uploaded-images .image-preview {
+    width: 400px;
+    /* Set fixed width */
+    height: 200px;
+    /* Set fixed height */
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.uploaded-images .image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+/* Image preview hover effect */
+.uploaded-images .image-preview:hover {
+    transform: scale(1.05);
+}
+
+/* Delete button positioning */
+.uploaded-images .image-preview .btn-danger {
+    top: 5px;
+    right: 5px;
+    font-size: 0.75rem;
+    padding: 3px 6px;
+}
+
+/* Modal Styles */
+.preview-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black background with opacity */
+    z-index: 1050;
+    /* Higher z-index to appear above other elements */
+}
+
+.preview-modal.show {
+    display: flex;
+    /* Show modal */
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-modal .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 600px;
+    width: 80%;
+}
+
+.preview-modal .modal-content img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.preview-modal .modal-content button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.preview-modal .modal-content button:hover {
+    background-color: #0056b3;
+}

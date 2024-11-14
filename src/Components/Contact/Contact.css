@@ -16,9 +16,9 @@ body {
     justify-content: space-between;
 }
 
-    
 
-.h2h a{
+
+.h2h a {
     text-decoration: none;
     color: black;
 }
@@ -30,7 +30,7 @@ body {
     padding: 0;
     align-items: center;
     gap: 15px;
-    
+
 }
 
 .header9 nav ul li {
@@ -45,16 +45,17 @@ body {
     transition: background-color 0.3s;
 
 }
+
 .header9 nav ul li a:hover {
     border-radius: 5px;
     color: #9335B6;
 
 }
 
-.button18 a{
+.button18 a {
     color: #9335B6;
-    background:#f4eaf9;
-    border-color:#f4eaf9;
+    background: #f4eaf9;
+    border-color: #f4eaf9;
     border-top-left-radius: 25px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 25px;
@@ -79,11 +80,11 @@ body {
     justify-content: center;
     border: none;
     text-decoration: none;
-    
+
 }
 
 
-.button18 a:hover{
+.button18 a:hover {
     background-color: #9335B6;
     color: white;
 }
@@ -93,7 +94,7 @@ body {
     padding-bottom: 100px;
     padding-left: 120px;
     padding-right: 120px;
-    background-color:#f4eaf9 ;
+    background-color: #f4eaf9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,8 +106,8 @@ body {
     max-width: 800px;
 }
 
-.container70 h1{
-    margin-bottom:25px;
+.container70 h1 {
+    margin-bottom: 25px;
     word-break: break-word;
     color: black;
     clear: none;
@@ -119,7 +120,7 @@ body {
     unicode-bidi: isolate;
 }
 
-.container70 p{
+.container70 p {
     word-break: break-word;
     display: block;
     margin-block-start: 1em;
@@ -146,7 +147,7 @@ body {
 .container71 {
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     column-gap: 100px;
 }
 
@@ -189,7 +190,7 @@ body {
 }
 
 
-.hr{
+.hr {
     border-top-style: solid;
     border-top-width: 1px;
     width: 100%;
@@ -221,7 +222,7 @@ body {
 }
 
 
-.hr1{
+.hr1 {
     border-top-style: solid;
     border-top-width: 1px;
     width: 100%;
@@ -253,7 +254,7 @@ body {
 }
 
 
-.hr2{
+.hr2 {
     border-top-style: solid;
     border-top-width: 1px;
     width: 100%;
@@ -266,7 +267,7 @@ body {
 
 
 .info53 {
-     text-transform: uppercase;
+    text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 2px;
@@ -276,11 +277,11 @@ body {
 }
 
 
-.social-menu{
+.social-menu {
     display: flex;
 }
 
-.social-menu ul{
+.social-menu ul {
     top: 50%;
     left: 50%;
     padding: 0;
@@ -289,26 +290,26 @@ body {
     display: flex;
     margin-left: 110px;
     margin-top: 50px;
-    
+
 }
 
-.social-menu ul li{
+.social-menu ul li {
     list-style: none;
     margin: 0 12px;
 }
 
-.social-menu ul li .fab{
+.social-menu ul li .fab {
     font-size: 30px;
     line-height: 60px;
     transition: .3s;
     color: #000;
 }
 
-.social-menu ul li .fab:hover{
+.social-menu ul li .fab:hover {
     color: #fff;
 }
 
-.social-menu ul li a{
+.social-menu ul li a {
     position: relative;
     display: block;
     width: 60px;
@@ -317,21 +318,23 @@ body {
     background-color: #fff;
     text-align: center;
     transition: .6s;
-    box-shadow: 0 5px 4px rgba(0,0,0,.5);
+    box-shadow: 0 5px 4px rgba(0, 0, 0, .5);
 }
 
-.social-menu ul li a:hover{
+.social-menu ul li a:hover {
     transform: translate(0, -10%);
 }
 
-.social-menu ul li:nth-child(1) a:hover{
+.social-menu ul li:nth-child(1) a:hover {
     background-color: #1877F2;
 }
-.social-menu ul li:nth-child(2) a:hover{
+
+.social-menu ul li:nth-child(2) a:hover {
     background-color: #FCAF45;
 }
-.social-menu ul li:nth-child(3) a:hover{
-    background-color: 	#FF0000;
+
+.social-menu ul li:nth-child(3) a:hover {
+    background-color: #FF0000;
 }
 
 
@@ -417,7 +420,7 @@ form {
 }
 
 .button19 a {
-    background-color: #8e44ad; 
+    background-color: #8e44ad;
     color: #fff;
     border-style: none;
     border-top-width: 2px;
@@ -441,7 +444,7 @@ form {
 }
 
 .button19 a:hover {
-    background-color: #732d91; 
+    background-color: #732d91;
 }
 
 .map {
@@ -460,10 +463,10 @@ embed {
     padding-bottom: 60px;
     padding-left: 40px;
     padding-right: 40px;
-    background-color:#f4eaf9;
+    background-color: #f4eaf9;
 }
 
-.container73 figure{
+.container73 figure {
     width: 262px;
 }
 
@@ -497,36 +500,45 @@ embed {
     color: white;
 }
 
-.insta a:hover{
-    background-color:white;
+.insta a:hover {
+    background-color: white;
     color: #9335B6;
 }
 
 .container73 {
     display: flex;
     gap: 20px;
-    
+
 }
 
 
-.img16, .img17, .img18, .img19, .img20{
+.img16,
+.img17,
+.img18,
+.img19,
+.img20 {
     width: 262px;
     height: 262px;
 }
 
-.img16 img, .img17 img, .img18 img, .img19 img, .img20 img{
+.img16 img,
+.img17 img,
+.img18 img,
+.img19 img,
+.img20 img {
     object-fit: cover;
     width: 262px;
     height: 262px;
 }
 
-.img17, .img19{
+.img17,
+.img19 {
     margin-top: 40px;
 }
 
 
 .parent-container74 {
-    background-color: #f5eafa; 
+    background-color: #f5eafa;
     padding: 50px 0;
     text-align: center;
     background: linear-gradient(0deg, #170A1C 50%, #f5eafa 50%);
@@ -565,16 +577,16 @@ embed {
 }
 
 .info54 {
-    font-size: 1.2em; 
-    color: black; 
+    font-size: 1.2em;
+    color: black;
     margin-bottom: 28px;
     font-family: 'Inria Serif', serif;
     font-weight: lighter;
-    
+
 }
 
 .button20 a {
-    background-color: #8e44ad; 
+    background-color: #8e44ad;
     color: #fff;
     border-style: none;
     border-top-width: 2px;
@@ -598,12 +610,12 @@ embed {
 }
 
 .button20 a:hover {
-    background-color: #732d91; 
+    background-color: #732d91;
 }
 
 .parent-container75 {
     font-family: Arial, sans-serif;
-    background-color:#170A1C;
+    background-color: #170A1C;
     color: white;
     display: flex;
     justify-content: center;
@@ -639,7 +651,7 @@ embed {
     display: flex;
 }
 
-.social-icons8 ul{
+.social-icons8 ul {
     top: 50%;
     left: 50%;
     padding: 0;
@@ -648,26 +660,26 @@ embed {
     display: flex;
     margin-left: 200px;
     margin-top: 20px;
-    
+
 }
 
-.social-icons8 ul li{
+.social-icons8 ul li {
     list-style: none;
     margin: 0 12px;
 }
 
-.social-icons8 ul li .fab{
+.social-icons8 ul li .fab {
     font-size: 15px;
     line-height: 40px;
     transition: .3s;
     color: #000;
 }
 
-.social-icons8 ul li .fab:hover{
+.social-icons8 ul li .fab:hover {
     color: #fff;
 }
 
-.social-icons8 ul li a{
+.social-icons8 ul li a {
     position: relative;
     display: block;
     width: 40px;
@@ -676,17 +688,19 @@ embed {
     background-color: #fff;
     text-align: center;
     transition: .6s;
-    box-shadow: 0 5px 4px rgba(0,0,0,.5);
+    box-shadow: 0 5px 4px rgba(0, 0, 0, .5);
 }
 
-.social-icons8 ul li:nth-child(1) a:hover{
+.social-icons8 ul li:nth-child(1) a:hover {
     background-color: #1877F2;
 }
-.social-icons8 ul li:nth-child(2) a:hover{
+
+.social-icons8 ul li:nth-child(2) a:hover {
     background-color: #FCAF45;
 }
-.social-icons8 ul li:nth-child(3) a:hover{
-    background-color: 	#FF0000;
+
+.social-icons8 ul li:nth-child(3) a:hover {
+    background-color: #FF0000;
 }
 
 
@@ -695,7 +709,7 @@ embed {
     background-color: #170A1C;
     padding: 50px 0;
     text-align: center;
-    padding-right: 85px; 
+    padding-right: 85px;
 }
 
 .container76 {
@@ -703,26 +717,26 @@ embed {
 }
 
 #info55 {
-    list-style: none; 
-    margin: 0; 
-    padding: 0; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #info55 li {
-    display: inline; 
-    margin: 0 10px; 
+    display: inline;
+    margin: 0 10px;
 }
 
 #info55 a {
-    text-decoration: none; 
-    color: #f7f5e6; 
-    font-family: Arial, sans-serif; 
+    text-decoration: none;
+    color: #f7f5e6;
+    font-family: Arial, sans-serif;
     font-size: 0.875rem;
 }
 
 
-#info55 a:hover{
-    color:#abb8c3;
+#info55 a:hover {
+    color: #abb8c3;
     outline: 0;
 }
 
@@ -737,7 +751,7 @@ embed {
     border-width: 0px;
     border-top-width: 1px;
     border-top-color: rgba(255, 255, 255, 0.25);
-    background-color:#170A1C;
+    background-color: #170A1C;
     padding-right: 85px;
 }
 
@@ -747,3 +761,21 @@ embed {
 
 
 
+.parent-container72 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.form-and-map-container {
+    display: flex;
+    width: 100%;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+}
