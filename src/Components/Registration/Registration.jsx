@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
-import  './Registration.css';
+import React, { useState } from 'react';
+import './Registration.css';
 import { useForm } from 'react-hook-form';
 import { useNavigate, NavLink } from "react-router-dom";
 import axios from "axios";
 import image3 from '../img/img-3.jpg';
+import image4 from '../img/img-4.jpg';
+import image5 from '../img/img-5.jpg';
+import image6 from '../img/img-6.avif';
+import image7 from '../img/img-7.avif';
 import image8 from '../img/img-8.avif';
 import image9 from '../img/img-9.avif';
 import image10 from '../img/img-10.jpg';
@@ -47,14 +51,20 @@ const Registration = () => {
 
     return (
         <div className='body'>
-         <header className="header container-fluid">
-         <div className="row align-items-center justify-content-between">
-            <h2 className="h2 col-auto"><a href="#">TheIndianWedding</a></h2>
-        <div className="button col-auto">
-            <a href="#" onClick={() => navigateTo('/login')}><span>Login In</span></a>
-        </div>
-        </div>
-        </header>
+            <header className="header container-fluid">
+                <div className="row align-items-center justify-content-between">
+                    {/* <!-- Logo --> */}
+                    <h2 className="h2 col-12 col-md-auto text-center text-md-left">
+                        <a href="#">TheIndianWedding</a>
+                    </h2>
+
+                    {/* <!-- Login Button --> */}
+                    <div className="button col-12 col-md-auto text-center">
+                        <a href="#" onClick={() => navigateTo('/login')}><span>Login In</span></a>
+                    </div>
+                </div>
+            </header>
+
 
 
             <div className="parent-container">
@@ -163,263 +173,307 @@ const Registration = () => {
             </div>
 
             <div className="parent-container2">
-    <div className="container2">
-        <div className="img3">
-            <img loading="lazy" decoding="async" srcSet="" sizes="(max-width: 480px) 150px" src={image3} alt="img-3" className="" width="645" height="500" title="" role="img" />
-        </div>
-    
-        <div className="about">
-            <h2>Our Story</h2>
-            <p>The IndianWedding is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
-            <div className="hr"></div>
-            <p className="info">Follow Us</p>
-            
-            <div className="social-menu">
-                <ul>
-                    <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
-                    <li><a href="" target="blank"><i className="fab fa-youtube"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+                <div className="container2">
+                    <div className="img63">
+                        <img loading="lazy" decoding="async" srcSet="" sizes="(max-width: 480px) 150px" src={image3} alt="Our Story Image" width="645" height="500" title="Our Story" />
+                    </div>
 
+                    <div className="about">
+                        <h2>Our Story</h2>
+                        <p>The IndianWedding is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
+                        <div className="hr"></div>
+                        <p className="info">Follow Us</p>
 
-
-      <div className="parent-container3">
-        <div className="container3">
-            <h2>Our Services</h2>
-        </div>
-
-        <div className="img-stack">
-            <div className="img-stack1">
-                <h3>Profiles</h3>
-                
-            </div>
-            <div className="img-stack2">
-                <h3>Matchmaking</h3>
-               
-            </div>
-            <div className="img-stack3">
-                <h3>Wedding Shopping</h3>
-                
-            </div>
-            <div className="img-stack4">
-                <h3>Events</h3>
-                
-            </div>
-        </div> 
-      </div>
-
-
-      <div className="parent-container4">
-        <div className="container4">
-            <div>
-                <h2>Find Your Perfect Match</h2>
-            </div>
-            <div>
-                <p>Start your journey to a happy and fulfilled married life by joining The IndianWedding and finding your perfect match based on compatibility and shared values.</p>
-            </div>
-        </div>
-      </div>
-
-
-      <div className="parent-container5">
-    <div className="work">
-        <h2>Our Work</h2>
-    </div>
-    
-    <div className="container5">
-        <div className="img10">
-            <figure>
-                <img srcSet={image10} alt="img-10" />
-                <figcaption>Destination Weddings</figcaption>
-            </figure>
-        </div>
-        
-        <div className="img11">
-            <figure>
-                <img srcSet={image11} alt="img-11" />
-                <figcaption>Engagements</figcaption>
-            </figure>
-        </div>
-        
-        <div className="img12">
-            <figure>
-                <img srcSet={image12} alt="img-12" />
-                <figcaption>Love Stories</figcaption>
-            </figure>
-        </div>
-        
-        <div className="img9">
-            <figure>
-                <img srcSet={image9} alt="img-9" />
-                <figcaption>Lifestyle</figcaption>
-            </figure>
-        </div>
-        
-        <div className="img8">
-            <figure>
-                <img srcSet={image8} alt="img-8" />
-                <figcaption>Celebrations</figcaption>
-            </figure>
-        </div>
-    </div>
-</div>
-
-<div className="parent-container6">
-    <div className="couples">
-        <h2>Happy Couples</h2>
-    </div>
-    
-    <div className="batch1">
-        <div className="star" title="5/5">
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-        </div>
-
-        <div className="info1">
-            <div>
-                <p className="message">We are grateful to The IndianWedding for bringing us together. We found true love and a partner for life!</p>
-            </div>
-            <div className="img13">
-                <img srcSet={image13} alt="img-13"></img>
-            </div>
-            <p className="name">Riya &amp; Arjun</p>
-        </div>
-    </div>
-
-    <div className="batch2">
-        <div className="star1" title="5/5">
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-        </div>
-
-        <div className="info2">
-            <div>
-                <p className="message2">The IndianWedding helped us find our soulmates. We couldn't be happier with our life partners!</p>
-            </div>
-            <div className="img14">
-                <img srcSet={image14} alt="img-14"></img>
-            </div>
-            <p className="name1">Smita &amp; Deepak</p>
-        </div>
-    </div>
-
-    <div className="batch3">
-        <div className="star2" title="5/5">
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-        </div>
-
-        <div className="info3">
-            <div>
-                <p className="message3">Thanks to The IndianWedding, we found true love and are excited to start our journey together as a married couple.</p>
-            </div>
-            <div className="img15">
-                <img srcSet={image15} alt="img-15"></img>
-            </div>
-            <p className="name2">Pooja &amp; Rahul</p>
-        </div>
-    </div>
-</div>
-
-
-      <div className="parent-container7">
-        <div className="check">
-            <h2>Check Out Our Recent Work On Instagram</h2>
-            <div className="insta">
-                <a href="#" target="_self" rel="noopener noreferrer">Follow Us On Instagram</a>
-            </div>
-        </div>
-        <div className="container7">
-            <div className="img16">
-                <figure>
-                    <img srcSet={image16} alt="img-16"></img>
-                </figure>
-            </div>
-            <div className="img17">
-                <figure>
-                    <img srcSet={image17} alt="img-17"></img>
-                </figure>
-            </div>
-            <div className="img18">
-                <figure>
-                    <img srcSet={image18} alt="img-18"></img>
-                </figure>
-            </div>
-            <div className="img19">
-                <figure>
-                    <img srcSet={image19} alt="img-19"></img>
-                </figure>
-            </div>
-            <div className="img20">
-                <figure>
-                    <img srcSet={image20} alt="img-20"></img>
-                </figure>
-            </div>
-          </div>
-        </div>
-
-
-        <div className="parent-container8">
-        <div className="container8">
-        
-                <div className="find">
-                    <h2>Find Your Soulmate Today</h2>
+                        <div className="social-menu1">
+                            <ul>
+                                <li><a href="#" target="_blank"><i className="fab fa-facebook"></i></a></li>
+                                <li><a href="#" target="_blank"><i className="fab fa-instagram"></i></a></li>
+                                <li><a href="#" target="_blank"><i className="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <p className="info4">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
-        
-        </div>
-        </div>
+            </div>
 
 
-      <div className="parent-container9">
-      <div className="contact-container">
-        <div className="contact-item">
-            <h2>Phone</h2>
-            <p>202-555-0188</p>
-        </div>
-        <div className="contact-item">
-            <h2>Follow Us</h2>
-            <div className="social-icons">
-                <ul>
-                    <li><a href="#" target="blank"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="#" target="blank"><i className="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i className="fab fa-youtube" target="blank"></i></a></li>
-                </ul>
+
+
+            <div className="container-fluid parent-container3 p-0">
+                <div className="container3 text-center">
+                    <h2>Our Services</h2>
+                </div>
+
+                <div className="img-stack d-flex justify-content-center">
+                    <div className="img-stack-item">
+                        <img src={image4} alt="Profiles" className="img-fluid" />
+                        <h3>Profiles</h3>
+                    </div>
+                    <div className="img-stack-item">
+                        <img src={image5} alt="Matchmaking" className="img-fluid" />
+                        <h3>Matchmaking</h3>
+                    </div>
+                    <div className="img-stack-item">
+                        <img src={image6} alt="Wedding Shopping" className="img-fluid" />
+                        <h3>Wedding Shopping</h3>
+                    </div>
+                    <div className="img-stack-item">
+                        <img src={image7} alt="Events" className="img-fluid" />
+                        <h3>Events</h3>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div className="container-fluid">
+                <div className="parent-container4 mx-4"> {/* Bootstrap mx-4 for side margins */}
+                    <div className="container container4">
+                        <div>
+                            <h2>Find Your Perfect Match</h2>
+                        </div>
+                        <div>
+                            <p>Start your journey to a happy and fulfilled married life by joining The IndianWedding and finding your perfect match based on compatibility and shared values.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div className="parent-container5">
+                <div className="work">
+                    <h2>Our Work</h2>
+                </div>
+
+                <div className="container5 d-flex justify-content-center">
+                    <div className="img10">
+                        <figure>
+                            <img srcSet={image10} alt="img-10" />
+                            <figcaption>Destination Weddings</figcaption>
+                        </figure>
+                    </div>
+
+                    <div className="img11">
+                        <figure>
+                            <img srcSet={image11} alt="img-11" />
+                            <figcaption>Engagements</figcaption>
+                        </figure>
+                    </div>
+
+                    <div className="img12">
+                        <figure>
+                            <img srcSet={image12} alt="img-12" />
+                            <figcaption>Love Stories</figcaption>
+                        </figure>
+                    </div>
+
+                    <div className="img8">
+                        <figure>
+                            <img srcSet={image8} alt="img-8" />
+                            <figcaption>Celebrations</figcaption>
+                        </figure>
+                    </div>
+
+                    <div className="img9">
+                        <figure>
+                            <img srcSet={image9} alt="img-9" />
+                            <figcaption>Lifestyle</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div className="parent-container6">
+                <div className="couples">
+                    <h2>Happy Couples</h2>
+                </div>
+
+                <div className="batch1">
+                    <div className="star" title="5/5">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                    </div>
+
+                    <div className="info1">
+                        <div>
+                            <p className="message">We are grateful to The IndianWedding for bringing us together. We found true love and a partner for life!</p>
+                        </div>
+                        <div className="img13">
+                            <img srcSet={image13} alt="img-13"></img>
+                        </div>
+                        <p className="name">Riya &amp; Arjun</p>
+                    </div>
+                </div>
+
+                <div className="batch2">
+                    <div className="star1" title="5/5">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                    </div>
+
+                    <div className="info2">
+                        <div>
+                            <p className="message2">The IndianWedding helped us find our soulmates. We couldn't be happier with our life partners!</p>
+                        </div>
+                        <div className="img14">
+                            <img srcSet={image14} alt="img-14"></img>
+                        </div>
+                        <p className="name1">Smita &amp; Deepak</p>
+                    </div>
+                </div>
+
+                <div className="batch3">
+                    <div className="star2" title="5/5">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                    </div>
+
+                    <div className="info3">
+                        <div>
+                            <p className="message3">Thanks to The IndianWedding, we found true love and are excited to start our journey together as a married couple.</p>
+                        </div>
+                        <div className="img15">
+                            <img srcSet={image15} alt="img-15"></img>
+                        </div>
+                        <p className="name2">Pooja &amp; Rahul</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div className="parent-container7">
+                <div className="check1">
+                    <h2>Check Out Our Recent Work On Instagram</h2>
+                </div>
+                <div className="insta1">
+                    <a href="#" target="_self" rel="noopener noreferrer">
+                        Follow Us On Instagram
+                    </a>
+                </div>
+                <div className="container7">
+                    <div className="row justify-content-center">
+                        <div className="col-auto">
+                            <div className="image16">
+                                <figure>
+                                    <img srcSet={image16} alt="img-16" />
+                                </figure>
+                            </div>
+                        </div>
+                        <div className="col-auto">
+                            <div className="image17">
+                                <figure>
+                                    <img srcSet={image17} alt="img-17" />
+                                </figure>
+                            </div>
+                        </div>
+                        <div className="col-auto">
+                            <div className="image18">
+                                <figure>
+                                    <img srcSet={image18} alt="img-18" />
+                                </figure>
+                            </div>
+                        </div>
+                        <div className="col-auto">
+                            <div className="image19">
+                                <figure>
+                                    <img srcSet={image19} alt="img-19" />
+                                </figure>
+                            </div>
+                        </div>
+                        <div className="col-auto">
+                            <div className="image20">
+                                <figure>
+                                    <img srcSet={image20} alt="img-20" />
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="parent-container8">
+                <div className="container8 text-center">
+                    <div className="find mb-4">
+                        <h2>Find Your Soulmate Today</h2>
+                    </div>
+                    <p className="info4">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
+                </div>
+            </div>
+
+
+            <div class="parent-container54">
+                <div class="contact-container5">
+                    <div class="contact-item5">
+                        <h2>Phone</h2>
+                        <p>202-555-0188</p>
+                    </div>
+                    <div class="contact-item5">
+                        <h2>Follow Us</h2>
+                        <div class="social-icons5">
+                            <ul>
+                                <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contact-item5">
+                        <h2>Email</h2>
+                        <p>contact@example.com</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="parent-container55">
+
+                <nav class="container55">
+
+                    <ul id="info39">
+                        <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
+                        <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
+                        <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
+                        <li><a href="#" onClick={() => navigateTo('/portfolio')}>Portfolio</a></li>
+                        <li><a href="#" onClick={() => navigateTo('/testimonials')}>Testimonials</a></li>
+                        <li><a href="#" onClick={() => navigateTo('/blog')}>Blog</a></li>
+                        <li><a href="#" onClick={() => navigateTo('/contact')}>Contact</a></li>
+                    </ul>
+
+                </nav>
+
+            </div>
+
+
+
+            <div class="parent-container56">
+                <div class="container56">
+                    <p>Copyright © 2024 theindianwedding</p>
+                </div>
             </div>
         </div>
-        <div className="contact-item">
-            <h2>Email</h2>
-            <p>contact@example.com</p>
-        </div>
-      </div>
-      </div>
-                      
-                                
-
-<div className="parent-container10">
-	<div className="container10">
-        <p>Copyright © 2024 theindianwedding</p>
-    </div>			
-</div>	
 
 
-
-</div>
-    
-    
-  );
+    );
 };
 export default Registration

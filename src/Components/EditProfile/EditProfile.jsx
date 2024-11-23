@@ -965,77 +965,84 @@ const EditProfile = () => {
 
       </div>
 
-      <div className="parent-container79">
-        <div className="check">
+      <div className="parent-container7">
+        <div className="check1">
           <h2>Check Out Our Recent Work On Instagram</h2>
-          <div className="insta">
-            <a href="" target="_self" rel="noopener noreferrer">Follow Us On Instagram</a>
-          </div>
         </div>
-        <div className="container79">
-          <div className="img16">
-            <figure>
-              <img src={image16} alt="img-16"></img>
-            </figure>
-          </div>
-          <div className="img17">
-            <figure>
-              <img src={image17} alt="img-17"></img>
-            </figure>
-          </div>
-          <div className="img18">
-            <figure>
-              <img src={image18} alt="img-18"></img>
-            </figure>
-          </div>
-          <div className="img19">
-            <figure>
-              <img src={image19} alt="img-19"></img>
-            </figure>
-          </div>
-          <div className="img20">
-            <figure>
-              <img src={image20} alt="img-20"></img>
-            </figure>
+        <div className="insta1">
+          <a href="#" target="_self" rel="noopener noreferrer">
+            Follow Us On Instagram
+          </a>
+        </div>
+        <div className="container7">
+          <div className="row justify-content-center">
+            <div className="col-auto">
+              <div className="image16">
+                <figure>
+                  <img srcSet={image16} alt="img-16" />
+                </figure>
+              </div>
+            </div>
+            <div className="col-auto">
+              <div className="image17">
+                <figure>
+                  <img srcSet={image17} alt="img-17" />
+                </figure>
+              </div>
+            </div>
+            <div className="col-auto">
+              <div className="image18">
+                <figure>
+                  <img srcSet={image18} alt="img-18" />
+                </figure>
+              </div>
+            </div>
+            <div className="col-auto">
+              <div className="image19">
+                <figure>
+                  <img srcSet={image19} alt="img-19" />
+                </figure>
+              </div>
+            </div>
+            <div className="col-auto">
+              <div className="image20">
+                <figure>
+                  <img srcSet={image20} alt="img-20" />
+                </figure>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
 
-      <div className="parent-container80">
-        <div className="container80">
-
-          <div className="find">
+      <div className="parent-container8">
+        <div className="container8 text-center">
+          <div className="find mb-4">
             <h2>Find Your Soulmate Today</h2>
           </div>
-          <p className="info54">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
-          <div className="button20">
-            <a href="" target="_self" rel="noopener noreferrer" role="button" onClick={() => navigate('/contact')}>
-              <span>Join Now</span>
-            </a>
-          </div>
-
+          <p className="info4">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
         </div>
       </div>
 
 
-      <div className="parent-container81">
-        <div className="contact-container8">
-          <div className="contact-item8">
+      <div class="parent-container54">
+        <div class="contact-container5">
+          <div class="contact-item5">
             <h2>Phone</h2>
             <p>202-555-0188</p>
           </div>
-          <div className="contact-item8">
+          <div class="contact-item5">
             <h2>Follow Us</h2>
-            <div className="social-icons8">
+            <div class="social-icons5">
               <ul>
-                <li><a href="" target="blank"><i className="fab fa-facebook"></i></a></li>
-                <li><a href="" target="blank"><i className="fab fa-instagram"></i></a></li>
-                <li><a href=""><i className="fab fa-youtube" target="blank"></i></a></li>
+                <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
               </ul>
             </div>
           </div>
-          <div className="contact-item8">
+          <div class="contact-item5">
             <h2>Email</h2>
             <p>contact@example.com</p>
           </div>
@@ -1045,9 +1052,9 @@ const EditProfile = () => {
 
 
 
-      <div className="parent-container82">
+      <div class="parent-container55">
 
-        <nav className="container82">
+        <nav class="container55">
 
           <ul id="info55">
             <li><a href="" onClick={() => navigate('/home')}>Home</a></li>
@@ -1065,12 +1072,13 @@ const EditProfile = () => {
 
 
 
-      <div className="parent-container83">
-        <div className="container83">
+      <div class="parent-container56">
+        <div class="container56">
           <p>Copyright © 2024 theindianwedding</p>
         </div>
       </div>
     </div>
+
 
 
   );
