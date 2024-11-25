@@ -2,23 +2,31 @@ body {
     font-family: 'Inria Serif', serif;
     margin: 0;
     padding: 0;
-}
+}   
 
 /* General Header Styling */
 .header3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
     flex-wrap: wrap;
     color: white;
+    padding: 10px 20px;
+    background-color: #f2f4f6;
 }
 
-/* Logo Styling */
-.h2b a {
-    text-decoration: none;
-    color: black;
-    font-size: 28px;
+.website-title2 a {
+    font-size: 36px; /* Adjust size */
+    font-weight: 700; /* Make the text bold */
+    color: black; /* Dark color for the text */
+    text-decoration: none; /* Remove underline */
+    letter-spacing: 2px; /* Adds spacing between letters */
+    font-family: 'Dancing Script', cursive; /* Beautiful script font */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.website-title2 a:hover {
+    color: #9335B6; /* Change color when hovering */
 }
 
 /* Navigation Styling */
@@ -53,7 +61,6 @@ body {
     color: #9335B6;
 }
 
-
 /* Styling active link for mobile view */
 .header3 nav ul li a.active {
     background-color: #f4eaf9;
@@ -63,9 +70,8 @@ body {
     box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 /* Profile Picture Styling */
-.profile-picture-container {
+.profile-picture-container1 {
     position: relative;
     cursor: pointer;
     display: flex;
@@ -81,12 +87,12 @@ body {
     transition: transform 0.3s ease;
 }
 
-.profile-picture-container:hover .profile-picture1 {
+.profile-picture-container1:hover .profile-picture1 {
     transform: scale(1.1);
 }
 
 /* Dropdown Styling */
-.dropdown-menu {
+.dropdown-menu1 {
     position: absolute;
     top: 100%;
     right: 0;
@@ -103,14 +109,14 @@ body {
     pointer-events: none;
 }
 
-.profile-picture-container:hover .dropdown-menu,
-.dropdown-menu:hover {
+.profile-picture-container1:hover .dropdown-menu1,
+.dropdown-menu1:hover {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
 }
 
-.dropdown-menu button {
+.dropdown-menu1 button {
     width: 100%;
     padding: 10px 16px;
     text-align: left;
@@ -122,89 +128,43 @@ body {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.dropdown-menu button:hover {
+.dropdown-menu1 button:hover {
     background-color: #f4eaf9;
     color: #9335B6;
 }
 
-@media (max-width: 767px) {
-    .header3 {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 20px;
-        width: 100%;
-    }
-
-    .h2b {
-        flex: 1;
-        margin: 0;
-        padding-top: 10px;
-    }
-
-    .h2b a {
-        font-size: 24px;
-        text-align: left;
-        margin: 0;
-    }
-
-    /* Profile picture aligned to the top right corner */
-    .profile-picture-container {
-        margin-left: auto;
-        /* Pushes the profile picture container to the far right */
-        position: absolute;
-        right: 20px;
-        /* Adjust this for desired spacing from the right */
-        top: 10px;
-        /* Adjust this for desired spacing from the top */
-    }
-
-    /* Navigation links stacked vertically below logo and profile picture */
-    nav {
-        width: 100%;
-        margin-top: 60px;
-        /* Push navigation down to clear space for the profile picture */
-    }
-
-    .header3 nav ul {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        background: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px 0;
-        border-radius: 8px;
-        margin: 10px 0;
-    }
-
-    /* Individual list items centered */
-    .header3 nav ul li {
-        width: 100%;
-        text-align: center;
-        margin: 5px 0;
-    }
-
-    /* Styling active link for mobile view */
-    .header3 nav ul li a.active {
-        background-color: #f4eaf9;
-        color: #9335B6;
-        width: 100%;
-        padding: 15px 0;
-        box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Increasing padding and font size */
-    .header3 nav ul li a {
-        padding: 15px;
-        font-size: 1.2rem;
-    }
+.nav-toggle1 {
+    display: none;
+    font-size: 20px;
+    background-color: #9335B6; /* Primary color for the button */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
+/* Hover effect */
+.nav-toggle1:hover {
+    background-color: #d195ef; 
+    transform: scale(1.05); 
+}
+
+/* Active effect (when clicked) */
+.nav-toggle1:active {
+    background-color: #5c176a; /* Even darker shade for active state */
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Optional: Style for focus (accessibility) */
+.nav-toggle1:focus {
+    outline: 2px solid #f4eaf9;
+    outline-offset: 2px;
+}
 
 /* Styles for medium-sized screens up to 1024px */
 @media (max-width: 1024px) {
-
     /* Header layout with logo on the left and profile picture on the right */
     .header3 {
         display: flex;
@@ -215,22 +175,20 @@ body {
     }
 
     /* Logo positioning on the top-left */
-    .h2b {
+    .website-title2 {
         align-self: flex-start;
         margin: 0;
     }
 
-    .h2b a {
+    .website-title2 a {
         color: black;
         text-decoration: none;
-        font-size: 1.5rem;
         font-weight: bold;
     }
 
     /* Profile picture positioning fixed to the top right */
-    .profile-picture-container {
+    .profile-picture-container1 {
         position: absolute;
-        top: 20px;
         right: 20px;
         margin-right: 0;
     }
@@ -238,25 +196,20 @@ body {
     /* Navigation list centered horizontally below the header */
     .header3 nav {
         width: 100%;
-        display: flex;
-        justify-content: center;
+        justify-items: center;
         margin-top: 60px;
-        /* Margin to push nav below profile picture */
     }
 
     .header3 nav ul {
         display: flex;
         justify-content: space-around;
-        /* Spreads links evenly across the row */
         flex-wrap: wrap;
-        /* Wraps items onto the next line if needed */
         background: white;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 10px 20px;
         border-radius: 8px;
         gap: 10px;
         width: 90%;
-        /* Keeps navigation within screen boundaries */
     }
 
     /* Styling active link for mobile view */
@@ -271,16 +224,97 @@ body {
     /* Responsive link styling */
     .header3 nav ul li {
         flex: 1 1 auto;
-        /* Allows links to shrink and grow within the row */
         text-align: center;
     }
 
     /* Ensures that each link remains on a single line */
     .header3 nav ul li a {
         white-space: nowrap;
-        /* Prevents text wrapping within each link */
         padding: 8px 1px;
-        /* Smaller padding to allow more links on the same line */
+        font-size: 1rem;
+    }
+}
+
+/* Styles for screens up to 767px */
+@media (max-width: 767px) {
+    /* Flex layout for mobile */
+    .header3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .website-title2 {
+        flex: 1;
+        margin: 0;
+    }
+
+    .website-title2 a {
+        font-size: 26px;
+        text-align: left;
+        margin: 0;
+    }
+
+    /* Profile picture aligned to the top right corner */
+    .profile-picture-container1 {
+        margin-left: auto; /* Pushes the profile picture container to the far right */
+        position: absolute;
+        right: 20px; /* Adjust this for desired spacing from the right */
+    }
+
+    .profile-picture1{
+        width: 35px;
+        height: 35px;
+    }
+
+
+    .nav-toggle1 {
+        display: block;
+    }
+
+    /* Navigation links stacked vertically below logo and profile picture */
+    .header3 nav {
+        display: none;
+    }
+
+    .header3 nav.visible {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin-top: 40px; 
+    }
+
+    .header3 nav ul {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        border-radius: 8px;
+        margin: 10px 0;
+    }
+
+    /* Individual list items centered */
+    .header3 nav ul li {
+        width: 90%;
+        text-align: center;
+    }
+
+    /* Styling active link for mobile view */
+    .header3 nav ul li a.active {
+        background-color: #f4eaf9;
+        color: #9335B6;
+        width: 90%;
+        padding: 10px 0;
+        box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Increasing padding and font size */
+    .header3 nav ul li a {
+        padding: 15px;
         font-size: 1rem;
     }
 }
@@ -302,7 +336,7 @@ body {
 .search-fields {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; 
 }
 
 .search-field {
@@ -333,7 +367,7 @@ body {
     max-width: 200px;
     margin: 20px auto 0;
     padding: 10px;
-    background-color: #e3baf8;
+    background-color: #9335B6;
     color: white;
     border: none;
     border-radius: 4px;
@@ -341,12 +375,13 @@ body {
 }
 
 .search-form button:hover {
-    background-color: #9335B6;
+    background-color: #f0d4ff;
+    color: #9335B6;
 }
 
 
 
-.parent-container21 {
+.parent-container23 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -356,35 +391,32 @@ body {
 }
 
 
-.container21 {
+.container23 {
     flex: 1;
-    background: #f4eaf9;
+    background:#f4eaf9;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 150px;
     width: 45%;
     height: 550px;
-    padding: 50px;
-    /* More padding for a spacious look */
+    padding: 50px; /* More padding for a spacious look */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* Centers content vertically */
-    text-align: left;
-    /* Aligns text to the left */
+    justify-content: center; /* Centers content vertically */
+    text-align: left; /* Aligns text to the left */
     box-sizing: border-box;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 
-.container21 h1 {
+.container23 h1 {
     font-size: 3rem;
     font-weight: 600;
     font-family: 'Inria Serif', serif;
-    color: #000;
+    color:#000;
     margin-bottom: 20px;
 }
 
-.container21 p {
+.container23 p {
     font-size: 1.1rem;
     color: #000;
     font-family: 'Inria Serif', serif;
@@ -399,8 +431,7 @@ body {
     height: 550px;
 }
 
-.image1a,
-.image2a {
+.image1a, .image2a {
     width: 280px;
     height: 100%;
     object-fit: cover;
@@ -426,17 +457,14 @@ body {
 
 @media (max-width: 1200px) {
 
-
-    .container21 {
+    
+    .container23 {
         padding: 80px 30px;
     }
-
-    .container21 h1 {
+    .container23 h1 {
         font-size: 2.5rem;
     }
-
-    .image1a,
-    .image2a {
+    .image1a, .image2a {
         width: 350px;
         height: 500px;
     }
@@ -445,50 +473,44 @@ body {
 
 @media (max-width: 767px) {
 
-    .parent-container21 {
+    .parent-container23 {
         flex-direction: column;
         height: auto;
-        align-items: center;
-        /* Ensure the content is centered horizontally */
+        align-items: center; /* Ensure the content is centered horizontally */
     }
 
-    .container21 {
+    .container23 {
         width: 100%;
         padding: 50px 20px;
-        margin-left: 0;
+        margin-left: 0; 
         margin-bottom: 25px;
         border-bottom-right-radius: 50px;
-        box-sizing: border-box;
-        /* Ensure padding does not affect width calculation */
+        box-sizing: border-box; /* Ensure padding does not affect width calculation */
     }
 
-    .container21 h1 {
+    .container23 h1 {
         font-size: 1.9rem;
     }
 
-    .container21 p {
+    .container23 p {
         font-size: 0.95rem;
     }
 
     /* Ensure both images have the same size and are aligned */
-    .image1a,
-    .image2a {
+    .image1a, .image2a {
         width: 250px;
         height: 370px;
-        border-radius: 0;
-        /* Remove border radius */
-        object-fit: cover;
-        /* Ensure the image fits the container */
+        border-radius: 0; /* Remove border radius */
+        object-fit: cover; /* Ensure the image fits the container */
     }
 
     .image-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        /* Center images horizontally */
+        align-items: center; /* Center images horizontally */
         margin-top: 1rem;
-        padding-right: 0;
+        padding-right: 0; 
         height: auto;
     }
 }
@@ -498,75 +520,71 @@ body {
 
 
 /* Parent container styling */
-.parent-container2 {
+.parent-container24 {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 100px;
     margin-bottom: 100px;
-    padding: 0 20px;
-    /* Ensure equal padding on both sides */
-    box-sizing: border-box;
-    /* Prevent overflow */
+    padding: 0 20px; /* Ensure equal padding on both sides */
+    box-sizing: border-box; /* Prevent overflow */
     height: auto;
-    min-height: 400px;
-    /* Optional: Set a minimum height to make it look more centered */
+    min-height: 400px; /* Optional: Set a minimum height to make it look more centered */
 }
 
 /* Container for the content */
-.container2 {
+.container24 {
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* Ensure everything inside is centered horizontally */
+    justify-content: center; /* Ensure everything inside is centered horizontally */
     flex-direction: row;
     width: 100%;
-    max-width: 1200px;
-    /* Ensure content doesn't stretch too wide */
+    max-width: 1200px; /* Ensure content doesn't stretch too wide */
     box-sizing: border-box;
-    text-align: center;
-    /* Align text in the center */
+    text-align: center; /* Align text in the center */
     gap: 50px;
 }
 
 /* Image container styling */
-.img63 {
-    width: 100%;
-    /* Full width of the parent container */
-    max-width: 645px;
-    /* Maximum width for the image */
-    height: auto;
-    /* Maintain aspect ratio */
-    border-radius: 10px;
-    /* Top-left corner rounded */
-    overflow: hidden;
-    /* Ensure the image stays within the rounded corner */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    /* Optional: Add shadow to make image stand out */
+.img3 {
+    width: 100%; /* Full width of the parent container */
+    max-width: 645px; /* Maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px ; /* Top-left corner rounded */
+    overflow: hidden; /* Ensure the image stays within the rounded corner */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow to make image stand out */
     display: flex;
-    justify-content: center;
-    /* Center image inside container */
+    justify-content: center; /* Center image inside container */
     align-items: center;
 }
 
 /* Image inside container */
-.img63 img {
-    width: 100%;
-    /* Ensure the image fits within the container */
-    height: auto;
-    /* Maintain aspect ratio */
-    object-fit: cover;
-    /* Ensure the image covers the area without stretching */
+.img3 img {
+    width: 100%; /* Ensure the image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area without stretching */
 }
 
+.img3 .image-hover-focus {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+}
+
+.img3 .image-hover-focus:hover,
+.img3 .image-hover-focus:focus {
+    transform: scale(1.05); /* Slightly zoom in the image */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    outline: none; /* Remove the default focus outline (optional) */
+}
+
+
 /* About section styling */
-.about {
+.about2 {
     flex: 2;
     text-align: left;
 }
 
 /* Heading styling */
-.about h2 {
+.about2 h2 {
     margin: 0 0 20px;
     font-size: 2.25rem;
     font-weight: 700;
@@ -575,7 +593,7 @@ body {
 }
 
 /* Paragraph styling */
-.about p {
+.about2 p {
     margin: 1em 0;
     font-size: 16px;
     font-family: 'DM Sans', sans-serif;
@@ -583,7 +601,7 @@ body {
 }
 
 /* Divider styling */
-.hr {
+.hr2 {
     border-top: 1px solid #EAD5F3;
     width: 100%;
     margin-bottom: 10px;
@@ -600,31 +618,31 @@ body {
 }
 
 /* Social menu styling */
-.social-menu1 {
+.social-menu3 {
     display: flex;
     justify-content: left;
     margin-top: 50px;
 }
 
-.social-menu1 ul {
+.social-menu3 ul {
     display: flex;
     padding: 0px;
     margin: 0px;
 }
 
-.social-menu1 ul li {
+.social-menu3 ul li {
     list-style: none;
     margin: 0 12px;
 }
 
-.social-menu1 ul li .fab {
+.social-menu3 ul li .fab {
     font-size: 30px;
     line-height: 60px;
     transition: .3s;
     color: #000;
 }
 
-.social-menu1 ul li a {
+.social-menu3 ul li a {
     position: relative;
     display: block;
     width: 60px;
@@ -633,162 +651,128 @@ body {
     background-color: #fff;
     text-align: center;
     transition: .6s;
-    box-shadow: 0 5px 4px rgba(0, 0, 0, .5);
+    box-shadow: 0 5px 4px rgba(0,0,0,.5);
 }
 
-.social-menu1 ul li a:hover {
+.social-menu3 ul li a:hover {
     transform: translate(0, -10%);
 }
 
 /* Social media icon hover effect */
-.social-menu1 ul li:nth-child(1) a:hover {
-    background-color: #1877F2;
-    /* Facebook */
+.social-menu3 ul li:nth-child(1) a:hover {
+    background-color: #1877F2; /* Facebook */
 }
-
-.social-menu1 ul li:nth-child(2) a:hover {
-    background-color: #FCAF45;
-    /* Instagram */
+.social-menu3 ul li:nth-child(2) a:hover {
+    background-color: #FCAF45; /* Instagram */
 }
-
-.social-menu1 ul li:nth-child(3) a:hover {
-    background-color: #FF0000;
-    /* YouTube */
+.social-menu3 ul li:nth-child(3) a:hover {
+    background-color: #FF0000; /* YouTube */
 }
 
 /* Responsive styling */
 @media (max-width: 1024px) {
-    .parent-container2 {
-        padding: 0 10px;
-        /* Add small padding for smaller screens */
+    .parent-container24 {
+        padding: 0 10px; /* Add small padding for smaller screens */
     }
 
-    .container2 {
-        flex-direction: column;
-        /* Stack elements vertically */
-        padding: 0;
-        /* Adjust padding for smaller screens */
+    .container24 {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 0; /* Adjust padding for smaller screens */
         width: 100%;
-        max-width: 100%;
-        /* Ensure it doesn't overflow */
+        max-width: 100%; /* Ensure it doesn't overflow */
     }
 
-    .about {
-        text-align: center;
-        /* Center-align the text */
-        padding: 0 10px;
-        /* Add padding for content */
+    .about2 {
+        text-align: center; /* Center-align the text */
+        padding: 0 10px; /* Add padding for content */
     }
 
-    .about h2 {
-        font-size: 1.75rem;
-        /* Adjust heading size */
+    .about2 h2 {
+        font-size: 1.75rem; /* Adjust heading size */
     }
 
-    .about p {
-        font-size: 14px;
-        /* Adjust paragraph font size */
+    .about2 p {
+        font-size: 14px; /* Adjust paragraph font size */
     }
 
     .info {
-        font-size: 12px;
-        /* Adjust font size for mobile */
+        font-size: 12px; /* Adjust font size for mobile */
     }
 
-    .img63 {
-        margin-right: 0;
-        /* Remove right margin */
-        margin-bottom: 20px;
-        /* Add bottom margin for spacing */
-        max-width: 100%;
-        /* Make image fully responsive */
-        width: 100%;
-        /* Ensure it doesn't go outside the screen */
+    .img3 {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add bottom margin for spacing */
+        max-width: 100%; /* Make image fully responsive */
+        width: 100%; /* Ensure it doesn't go outside the screen */
         margin-left: auto;
         margin-right: auto;
-        border-radius: 10px;
-        /* Keep the rounded top-left corner */
+        border-radius: 10px; /* Keep the rounded top-left corner */
     }
 
-    .social-menu1 {
-        justify-content: center;
-        /* Center items on smaller screens */
-        margin-top: 20px;
-        /* Adjust margin for smaller screens */
+    .social-menu3 {
+        justify-content: center; /* Center items on smaller screens */
+        margin-top: 20px; /* Adjust margin for smaller screens */
     }
 }
 
 @media (max-width: 768px) {
+  
 
-
-    .container2 {
-        padding: 0 15px;
-        /* Adjust padding for mobile */
+    .container24 {
+        padding: 0 15px; /* Adjust padding for mobile */
     }
 
-    .img63 {
-        margin-right: 0;
-        /* Remove right margin */
-        margin-bottom: 20px;
-        /* Add margin at the bottom for spacing */
-        max-width: 100%;
-        /* Ensure image is responsive */
-        width: 100%;
-        /* Ensure image doesn't go out of bounds */
+    .img3 {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add margin at the bottom for spacing */
+        max-width: 100%; /* Ensure image is responsive */
+        width: 100%; /* Ensure image doesn't go out of bounds */
         margin-left: auto;
         margin-right: auto;
     }
 
-    .about {
-        text-align: center;
-        /* Center-align the text */
-        padding: 0 10px;
-        /* Add padding for content */
+    .about2 {
+        text-align: center; /* Center-align the text */
+        padding: 0 10px; /* Add padding for content */
     }
 
-    .about h2 {
-        font-size: 1.75rem;
-        /* Adjust heading size */
+    .about2 h2 {
+        font-size: 1.75rem; /* Adjust heading size */
     }
 
-    .about p {
-        font-size: 14px;
-        /* Adjust paragraph font size */
+    .about2 p {
+        font-size: 14px; /* Adjust paragraph font size */
     }
 
     .info {
-        font-size: 12px;
-        /* Adjust font size for mobile */
+        font-size: 12px; /* Adjust font size for mobile */
     }
 
-    .social-menu1 {
-        justify-content: center;
-        /* Center social icons */
-        margin-top: 20px;
-        /* Adjust top margin */
+    .social-menu3 {
+        justify-content: center; /* Center social icons */
+        margin-top: 20px; /* Adjust top margin */
     }
 
-    .social-menu1 ul li {
-        margin: 0 10px;
-        /* Adjust margin for mobile */
+    .social-menu3 ul li {
+        margin: 0 10px; /* Adjust margin for mobile */
     }
 }
 
 
 
 /* Parent container styling */
-.parent-container3 {
+.parent-container25 {
     padding: 0;
     margin-top: 100px;
     margin-bottom: 100px;
 }
 
 /* Container for the title */
-.container3 {
+.container25 {
     margin-bottom: 30px;
 }
 
-.container3 h2 {
+.container25 h2 {
     font-size: 2rem;
     font-weight: 700;
     font-family: 'Inria Serif', serif;
@@ -797,47 +781,33 @@ body {
 /* Image stack container */
 .img-stack {
     display: flex;
-    justify-content: space-between;
-    /* Distribute images evenly */
-    gap: 20px;
-    /* Adds a gap between the images */
-    width: 100%;
-    /* Ensure it takes up the entire width of the container */
-    box-sizing: border-box;
-    /* Includes padding and border in width */
+    justify-content: space-between; /* Distribute images evenly */
+    gap: 20px; /* Adds a gap between the images */
+    width: 100%; /* Ensure it takes up the entire width of the container */
+    box-sizing: border-box; /* Includes padding and border in width */
 }
 
 /* Individual image item styling */
 .img-stack-item {
     text-align: center;
-    flex: 1;
-    /* Ensure each image item takes up equal width */
-    max-width: 23%;
-    /* Ensure images do not stretch too much on large screens */
-    position: relative;
-    /* For positioning shadow effect */
+    flex: 1; /* Ensure each image item takes up equal width */
+    max-width: 23%; /* Ensure images do not stretch too much on large screens */
+    position: relative; /* For positioning shadow effect */
 }
 
 /* Image styling */
 .img-stack-item img {
-    width: 100%;
-    /* Ensure image takes up full width of its container */
-    height: 400px;
-    /* Set fixed height for all images */
-    object-fit: cover;
-    /* Ensure images cover the area without distortion */
-    border-radius: 10px;
-    /* Optional: add rounded corners */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Smooth transition for hover effect */
+    width: 100%; /* Ensure image takes up full width of its container */
+    height: 400px; /* Set fixed height for all images */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    border-radius: 10px; /* Optional: add rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
 /* Hover effect for images */
 .img-stack-item img:hover {
-    transform: scale(1.05);
-    /* Slightly increase the size */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    /* Add a shadow around the image */
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Add a shadow around the image */
 }
 
 /* Styling for the headings below each image */
@@ -852,73 +822,60 @@ body {
 /* Responsive styling */
 @media (max-width: 1024px) {
     .img-stack {
-        gap: 15px;
-        /* Adjust gap for smaller screens */
+        gap: 15px; /* Adjust gap for smaller screens */
     }
 
     .img-stack-item img {
-        width: 100%;
-        /* Make image responsive */
-        height: 180px;
-        /* Adjust height for tablets */
+        width: 100%; /* Make image responsive */
+        height: 180px; /* Adjust height for tablets */
     }
 
     .img-stack-item h3 {
-        font-size: 0.9rem;
-        /* Adjust heading size for smaller screens */
+        font-size: 0.9rem; /* Adjust heading size for smaller screens */
     }
 }
 
 @media (max-width: 768px) {
     .img-stack {
-        flex-direction: column;
-        /* Stack images vertically on mobile */
-        gap: 10px;
-        /* Adjust gap for mobile */
-        align-items: center;
-        /* Center items */
+        flex-direction: column; /* Stack images vertically on mobile */
+        gap: 10px; /* Adjust gap for mobile */
+        align-items: center; /* Center items */
     }
 
     .img-stack-item {
-        width: 100%;
-        /* Make each image take the entire width of the container */
-        max-width: 100%;
-        /* Remove max-width constraint */
+        width: 100%; /* Make each image take the entire width of the container */
+        max-width: 100%; /* Remove max-width constraint */
     }
 
     .img-stack-item img {
-        width: 90%;
-        /* Ensure image takes up the entire width on small screens */
-        height: 200px;
-        /* Adjust height for mobile */
+        width: 90%; /* Ensure image takes up the entire width on small screens */
+        height: 200px; /* Adjust height for mobile */
     }
 
     .img-stack-item h3 {
-        font-size: 0.8rem;
-        /* Adjust heading size for mobile */
+        font-size: 0.8rem; /* Adjust heading size for mobile */
     }
 }
 
 
 /* Parent container */
-.parent-container4 {
+.parent-container26 {
     background-color: #f4eaf9;
     border-radius: 120px 0px 120px 0px;
     margin-top: 100px;
     margin-bottom: 100px;
-    padding: 0 15px;
-    /* Adds some space on smaller screens */
+    padding: 0 15px; /* Adds some space on smaller screens */
 }
 
 /* Inner container */
-.container4 {
+.container26 {
     text-align: center;
     padding: 80px 70px;
     max-width: 100%;
 }
 
 /* Heading styling */
-.container4 h2 {
+.container26 h2 {
     font-size: 2.25rem;
     font-weight: 700;
     font-family: 'Inria Serif', serif;
@@ -928,7 +885,7 @@ body {
 }
 
 /* Paragraph styling */
-.container4 p {
+.container26 p {
     font-size: 1.2rem;
     color: rgb(95, 86, 86);
     font-family: 'Inria Serif', serif;
@@ -939,45 +896,38 @@ body {
 
 /* For mobile screens (max-width: 768px) */
 @media (max-width: 768px) {
-    .container4 {
-        padding: 40px 30px;
-        /* Adjust padding for mobile */
+    .container26 {
+        padding: 40px 30px;  /* Adjust padding for mobile */
     }
 
-    .container4 h2 {
-        font-size: 1.75rem;
-        /* Adjust font size for smaller screens */
+    .container26 h2 {
+        font-size: 1.75rem;  /* Adjust font size for smaller screens */
     }
 
-    .container4 p {
-        font-size: 1rem;
-        /* Adjust paragraph size */
+    .container26 p {
+        font-size: 1rem;  /* Adjust paragraph size */
     }
 }
 
 /* For tablet and iPad screens (min-width: 769px and max-width: 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .container4 {
-        padding: 60px 40px;
-        /* Adjust padding for tablets */
+    .container26 {
+        padding: 60px 40px;  /* Adjust padding for tablets */
     }
 
-    .container4 h2 {
-        font-size: 2rem;
-        /* Slightly smaller font for tablets */
+    .container26 h2 {
+        font-size: 2rem;  /* Slightly smaller font for tablets */
     }
 
-    .container4 p {
-        font-size: 1.1rem;
-        /* Adjust paragraph size */
+    .container26 p {
+        font-size: 1.1rem;  /* Adjust paragraph size */
     }
 }
 
 
 /* Parent container */
-.parent-container5 {
-    margin: 0 40px 80px;
-    /* Keep the margin as specified */
+.parent-container27 {
+    margin: 0 40px 80px; /* Keep the margin as specified */
 }
 
 /* Work section styling */
@@ -990,241 +940,157 @@ body {
 }
 
 /* Container for images */
-.container5 {
+.container27 {
     display: flex;
-    justify-content: center;
-    /* Horizontally center the items */
-    align-items: center;
-    /* Vertically center the items */
-    gap: 20px;
-    /* Adds space between images */
-    width: 100%;
-    /* Ensure container takes full width */
+    justify-content: center; /* Horizontally center the items */
+    align-items: center; /* Vertically center the items */
+    gap: 20px; /* Adds space between images */
+    width: 100%; /* Ensure container takes full width */
 }
 
 /* Individual image styles */
-.img10,
-.img11,
-.img12,
-.img8,
-.img9 {
+.img10, .img11, .img12, .img8, .img9 {
     display: flex;
-    justify-content: center;
-    /* Centers the image inside the div */
-    align-items: center;
-    /* Centers the image inside the div */
-    text-align: center;
-    /* Ensures caption is also centered */
-    transition: transform 0.3s ease-in-out;
-    /* Adds smooth transition for hover effect */
-    width: 100%;
-    /* Ensures the image container takes up 100% of the parent width */
-    height: auto;
-    /* Ensures the image container takes up 100% of the parent height */
+    justify-content: center; /* Centers the image inside the div */
+    align-items: center; /* Centers the image inside the div */
+    text-align: center; /* Ensures caption is also centered */
+    transition: transform 0.3s ease-in-out; /* Adds smooth transition for hover effect */
+    width: 100%; /* Ensures the image container takes up 100% of the parent width */
+    height: auto; /* Ensures the image container takes up 100% of the parent height */
 }
 
 /* Standard size for images - allow them to expand to fill container */
-.img10,
-.img8,
-.img11,
-.img9 {
-    width: 18%;
-    /* Adjusted to fit images horizontally */
-    height: auto;
-    /* Maintain aspect ratio */
+.img10, .img8, .img11, .img9 {
+    width: 18%; /* Adjusted to fit images horizontally */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .img12 {
-    width: 22%;
-    /* Larger image will take 22% width */
-    height: auto;
-    /* Maintain aspect ratio */
+    width: 22%; /* Larger image will take 22% width */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Ensure images fill their containers */
-.img10 img,
-.img11 img,
-.img12 img,
-.img8 img,
-.img9 img {
-    width: 100%;
-    /* Make image fill its container */
-    height: 100%;
-    /* Make image fill its container */
-    object-fit: cover;
-    /* Ensure image covers the container without distortion */
-    transition: transform 0.3s ease-in-out;
-    /* Smooth zoom effect */
+.img10 img, .img11 img, .img12 img, .img8 img, .img9 img {
+    width: 100%; /* Make image fill its container */
+    height: 100%; /* Make image fill its container */
+    object-fit: cover; /* Ensure image covers the container without distortion */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
 }
 
 /* Caption styling */
-.container5 figcaption {
+.container27 figcaption {
     text-align: center;
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 1.4em;
     margin-top: 20px;
-    color: #333;
-    /* Default text color */
-    transition: color 0.3s ease-in-out;
-    /* Smooth color transition */
+    color: #333; /* Default text color */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
 }
 
 /* Hover effects */
-.img10:hover img,
-.img11:hover img,
-.img12:hover img,
-.img8:hover img,
-.img9:hover img {
-    transform: scale(1.1);
-    /* Slightly zoom the image on hover */
+.img10:hover img, .img11:hover img, .img12:hover img, .img8:hover img, .img9:hover img {
+    transform: scale(1.1); /* Slightly zoom the image on hover */
 }
 
-.container5 .img10:hover figcaption,
-.container5 .img11:hover figcaption,
-.container5 .img12:hover figcaption,
-.container5 .img8:hover figcaption,
-.container5 .img9:hover figcaption {
-    color: #9335B6;
-    /* Change caption color to purple on hover */
+.container27 .img10:hover figcaption,
+.container27 .img11:hover figcaption,
+.container27 .img12:hover figcaption,
+.container27 .img8:hover figcaption,
+.container27 .img9:hover figcaption {
+    color: #9335B6; /* Change caption color to purple on hover */
 }
 
 /* Responsive Styles */
 
 /* For mobile screens (max-width: 768px) */
 @media (max-width: 768px) {
-    .container5 {
-        flex-direction: column !important;
-        /* Force stacking of images vertically */
-        align-items: center;
-        /* Center images */
-        gap: 30px;
-        /* Adds more space between stacked images */
-        margin: 50px auto;
-        /* Adjust the margin for better alignment */
+    .container27 {
+        flex-direction: column !important; /* Force stacking of images vertically */
+        align-items: center; /* Center images */
+        gap: 30px; /* Adds more space between stacked images */
+        margin: 50px auto; /* Adjust the margin for better alignment */
     }
 
     /* Adjust image size for mobile - full container width */
-    .img10,
-    .img8,
-    .img11,
-    .img9 {
-        width: 100% !important;
-        /* Make images take full width of the container */
-        height: auto !important;
-        /* Ensure images fill container height */
+    .img10, .img8, .img11, .img9 {
+        width: 100% !important; /* Make images take full width of the container */
+        height: auto !important; /* Ensure images fill container height */
     }
 
     .img12 {
-        width: 100% !important;
-        /* Make the larger image take full width */
-        height: auto !important;
-        /* Ensure it fills container height */
+        width: 100% !important; /* Make the larger image take full width */
+        height: auto !important; /* Ensure it fills container height */
     }
 }
 
 /* For tablet screens (max-width: 1024px) */
 @media (max-width: 1024px) {
-    .container5 {
-        flex-direction: row;
-        /* Align images horizontally in a row */
-        justify-content: center;
-        /* Center images horizontally */
-        gap: 20px;
-        /* Add space between images */
+    .container27 {
+        flex-direction: row; /* Align images horizontally in a row */
+        justify-content: center; /* Center images horizontally */
+        gap: 20px; /* Add space between images */
         margin-top: 50px;
     }
 
-    .img10,
-    .img8,
-    .img11,
-    .img9 {
-        width: 28%;
-        /* Adjust image size for tablet screens */
-        height: auto;
-        /* Maintain aspect ratio */
+    .img10, .img8, .img11, .img9 {
+        width: 28%; /* Adjust image size for tablet screens */
+        height: auto; /* Maintain aspect ratio */
     }
 
     .img12 {
-        width: 35%;
-        /* Adjust the larger image for tablet */
-        height: auto;
-        /* Maintain aspect ratio */
+        width: 35%; /* Adjust the larger image for tablet */
+        height: auto; /* Maintain aspect ratio */
     }
 }
 
 /* For desktop screens (min-width: 1024px) */
 @media (min-width: 1024px) {
-    .container5 {
-        display: flex;
-        /* Make the container a flexbox */
-        flex-direction: row;
-        /* Align items in a horizontal row */
-        justify-content: center;
-        /* Center images horizontally */
-        gap: 20px;
-        /* Space between images */
-        margin-top: 50px;
-        /* Add top margin for better spacing */
-        width: 100%;
-        /* Ensure the container takes up full width */
+    .container27 {
+        display: flex; /* Make the container a flexbox */
+        flex-direction: row; /* Align items in a horizontal row */
+        justify-content: center; /* Center images horizontally */
+        gap: 20px; /* Space between images */
+        margin-top: 50px; /* Add top margin for better spacing */
+        width: 100%; /* Ensure the container takes up full width */
     }
 
-    .img10,
-    .img8,
-    .img11,
-    .img9 {
-        width: 18%;
-        /* Each image will take up 18% of the container's width */
-        height: auto;
-        /* Maintain the image's aspect ratio */
-        text-align: center;
-        /* Center the caption text */
+    .img10, .img8, .img11, .img9 {
+        width: 18%; /* Each image will take up 18% of the container's width */
+        height: auto; /* Maintain the image's aspect ratio */
+        text-align: center; /* Center the caption text */
     }
 
     .img12 {
-        width: 22%;
-        /* Make this image take the full width */
-        height: auto;
-        /* Maintain aspect ratio */
+        width: 22%; /* Make this image take the full width */
+        height: auto; /* Maintain aspect ratio */
     }
 
     /* Adjust image size for larger images */
-    .img10 img,
-    .img11 img,
-    .img12 img,
-    .img8 img,
-    .img9 img {
-        width: 100%;
-        /* Make the images fill their respective containers */
-        height: auto;
-        /* Maintain the aspect ratio */
-        object-fit: cover;
-        /* Ensure the image covers the container */
+    .img10 img, .img11 img, .img12 img, .img8 img, .img9 img {
+        width: 100%; /* Make the images fill their respective containers */
+        height: auto; /* Maintain the aspect ratio */
+        object-fit: cover; /* Ensure the image covers the container */
     }
 }
 
 
 
-.parent-container6 {
+.parent-container28 {
     display: flex;
-    justify-content: center;
-    /* Center the heading */
-    flex-wrap: wrap;
-    /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center the heading */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
     padding: 20px;
     background-color: #f9f9f9;
     margin-bottom: 100px;
 }
 
 .couples {
-    width: 100%;
-    /* Full width for the heading */
-    text-align: center;
-    /* Center align the heading text */
-    margin-bottom: 40px;
-    /* Spacing below the heading */
+    width: 100%; /* Full width for the heading */
+    text-align: center; /* Center align the heading text */
+    margin-bottom: 40px; /* Spacing below the heading */
 }
 
 .couples h2 {
@@ -1234,9 +1100,7 @@ body {
     line-height: 1.25em;
 }
 
-.batch1,
-.batch2,
-.batch3 {
+.batch1, .batch2, .batch3 {
     background: #fff;
     border-top-left-radius: 80px;
     border-top-right-radius: 0px;
@@ -1244,52 +1108,39 @@ body {
     border-bottom-right-radius: 40px;
     padding: 40px;
     text-align: center;
-    width: 100%;
-    /* Default full width */
-    max-width: 360px;
-    /* Limit max width */
-    margin: 50px;
-    /* Space between batches */
+    width: 100%; /* Default full width */
+    max-width: 360px; /* Limit max width */
+    margin: 50px; /* Space between batches */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.star,
-.star1,
-.star2 {
+.star, .star1, .star2 {
     color: #FFA500;
     font-size: 24px;
     margin-bottom: 15px;
 }
 
-.info1,
-.info2,
-.info3 {
+.info1, .info2, .info3 {
     background-color: #f7f7ff;
     border-radius: 20px;
     padding: 10px;
     margin-top: 10px;
 }
 
-.message,
-.message2,
-.message3 {
+.message, .message2, .message3 {
     font-size: 16px;
     color: black;
     margin-bottom: 15px;
 }
 
-.img13 img,
-.img14 img,
-.img15 img {
+.img13 img, .img14 img, .img15 img {
     border-radius: 50%;
     width: 60px;
     height: 60px;
     margin-bottom: 10px;
 }
 
-.name,
-.name1,
-.name2 {
+.name, .name1, .name2 {
     font-weight: bold;
     font-size: 18px;
     color: black;
@@ -1297,49 +1148,36 @@ body {
 
 /* For max-width 1024px */
 @media (max-width: 1024px) {
-    .parent-container6 {
-        justify-content: center;
-        /* Keep centered */
+    .parent-container28 {
+        justify-content: center; /* Keep centered */
     }
 
-    .batch1,
-    .batch2,
-    .batch3 {
-        width: 40%;
-        /* Keep the design in 3 columns for tablet screens */
-        max-width: 360px;
-        /* Limit max width */
+    .batch1, .batch2, .batch3 {
+        width: 40%; /* Keep the design in 3 columns for tablet screens */
+        max-width: 360px; /* Limit max width */
     }
 }
 
 /* For max-width 768px */
 @media (max-width: 768px) {
-    .parent-container6 {
+    .parent-container28 {
         display: flex;
-        flex-direction: column;
-        /* Stack the batches vertically */
-        justify-content: center;
-        /* Center vertically */
-        align-items: center;
-        /* Align items center horizontally */
+        flex-direction: column; /* Stack the batches vertically */
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Align items center horizontally */
     }
 
-    .batch1,
-    .batch2,
-    .batch3 {
-        width: 90%;
-        /* Take more width on small screens */
-        max-width: 400px;
-        /* Limit max width */
-        margin: 20px 0;
-        /* Vertical spacing between batches */
+    .batch1, .batch2, .batch3 {
+        width: 90%; /* Take more width on small screens */
+        max-width: 400px; /* Limit max width */
+        margin: 20px 0; /* Vertical spacing between batches */
     }
 }
 
 
 
 /* Base container styling */
-.parent-container7 {
+.parent-container29 {
     padding: 60px 40px;
     background-color: #f4eaf9;
     display: flex;
@@ -1382,11 +1220,10 @@ body {
     color: #9335B6;
 }
 
-.container7 {
+.container29 {
     margin-top: 40px;
     display: flex;
-    justify-content: center;
-    /* Centering container7 within parent-container7 */
+    justify-content: center; /* Centering container7 within parent-container7 */
     width: 100%;
 }
 
@@ -1403,15 +1240,9 @@ body {
 }
 
 /* Image containers */
-.image16,
-.image17,
-.image18,
-.image19,
-.image20 {
-    width: 200px;
-    /* Fixed width of 300px */
-    height: 200px;
-    /* Fixed height of 300px */
+.image16, .image17, .image18, .image19, .image20 {
+    width: 200px;  /* Fixed width of 300px */
+    height: 200px; /* Fixed height of 300px */
     overflow: hidden;
     position: relative;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -1419,106 +1250,64 @@ body {
 }
 
 /* Individual images - fill container */
-.image16 img,
-.image17 img,
-.image18 img,
-.image19 img,
-.image20 img {
-    width: 200px;
-    /* Ensures the image fills the width of the container */
-    height: 200px;
-    /* Ensures the image fills the height of the container */
-    object-fit: cover;
-    /* Ensures the image covers the entire container without distortion */
+.image16 img, .image17 img, .image18 img, .image19 img, .image20 img {
+    width: 200px;  /* Ensures the image fills the width of the container */
+    height: 200px; /* Ensures the image fills the height of the container */
+    object-fit: cover; /* Ensures the image covers the entire container without distortion */
     transition: transform 0.3s ease-in-out;
 }
 
 /* Hover effect */
-.image16:hover,
-.image17:hover,
-.image18:hover,
-.image19:hover,
-.image20:hover {
-    transform: scale(1.05);
-    /* Slight zoom */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    /* Add shadow */
+.image16:hover, .image17:hover, .image18:hover, .image19:hover, .image20:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
 
-.image16:hover img,
-.image17:hover img,
-.image18:hover img,
-.image19:hover img,
-.image20:hover img {
-    transform: scale(1.05);
-    /* Slight zoom for the image itself */
+.image16:hover img, .image17:hover img, .image18:hover img, .image19:hover img, .image20:hover img {
+    transform: scale(1.05); /* Slight zoom for the image itself */
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .row {
-        gap: 20px;
-        /* Adjust gap for medium screens */
+        gap: 20px; /* Adjust gap for medium screens */
     }
 
-    .image16,
-    .image17,
-    .image18,
-    .image19,
-    .image20 {
-        width: 200px;
-        /* Fixed width of 300px */
-        height: 200px;
-        /* Fixed height of 300px */
+    .image16, .image17, .image18, .image19, .image20 {
+        width: 200px;  /* Fixed width of 300px */
+        height: 200px; /* Fixed height of 300px */
     }
 
     /* Ensure images fill the container */
-    .image16 img,
-    .image17 img,
-    .image18 img,
-    .image19 img,
-    .image20 img {
+    .image16 img, .image17 img, .image18 img, .image19 img, .image20 img {
         width: 200px;
         height: 200px;
-        object-fit: cover;
-        /* Ensures the image fills the container without distortion */
+        object-fit: cover; /* Ensures the image fills the container without distortion */
     }
 }
 
 @media (max-width: 768px) {
-
+   
     .row {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
 
-    .image16,
-    .image17,
-    .image18,
-    .image19,
-    .image20 {
-        width: 300px;
-        /* Fixed width of 300px */
-        height: 300px;
-        /* Fixed height of 300px */
+    .image16, .image17, .image18, .image19, .image20 {
+        width: 300px;  /* Fixed width of 300px */
+        height: 300px; /* Fixed height of 300px */
     }
 
     /* Ensure images fill the container */
-    .image16 img,
-    .image17 img,
-    .image18 img,
-    .image19 img,
-    .image20 img {
+    .image16 img, .image17 img, .image18 img, .image19 img, .image20 img {
         width: 300px;
         height: 300px;
-        object-fit: cover;
-        /* Ensures the image fills the container without distortion */
+        object-fit: cover; /* Ensures the image fills the container without distortion */
     }
 
     /* Make .check1 and .about1 stack vertically on smaller screens */
-    .check1,
-    .about1 {
+    .check1, .about1 {
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -1530,30 +1319,28 @@ body {
         text-align: center;
     }
 
-
+    
 
     .about1 {
         margin-top: 20px;
     }
 }
+  
+  
 
-
-
-.parent-container8 {
-    background-color: #f5eafa;
+.parent-container30 {
+    background-color: #f5eafa; 
     padding: 50px 0;
-    background: linear-gradient(0deg, #1e0118 50%, #f5eafa 50%);
+    background: linear-gradient(0deg, #170A1C 50%, #f5eafa 50%);
 }
 
-.container8 {
+.container30 {
     background-color: #fff;
     box-shadow: 0px 0px #00000070;
-    padding: 70px 30px;
-    /* Simplified padding */
+    padding: 70px 30px; /* Simplified padding */
     border-top-left-radius: 120px;
     border-bottom-right-radius: 120px;
-    margin: 0 50px;
-    /* Simplified margin */
+    margin: 0 50px; /* Simplified margin */
 }
 
 .find h2 {
@@ -1563,15 +1350,15 @@ body {
 }
 
 .info4 {
-    font-size: 1.2em;
-    color: black;
+    font-size: 1.2em; 
+    color: black; 
     margin-bottom: 28px;
     font-family: 'Inria Serif', serif;
     font-weight: lighter;
 }
 
 /* Contact Section */
-.parent-container54 {
+.parent-container31 {
     background-color: #170A1C;
     color: white;
     display: flex;
@@ -1581,77 +1368,68 @@ body {
     flex-direction: column;
 }
 
-.contact-container5 {
+.contact-container31 {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    flex-wrap: wrap;
-    /* Allow wrapping on smaller screens */
-    flex-direction: row;
-    /* Stack items horizontally */
-    align-items: center;
-    /* Center items horizontally */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-direction: row; /* Stack items horizontally */
+    align-items: center; /* Center items horizontally */
 }
 
-.contact-item5 {
+.contact-item31 {
     justify-content: space-between;
-    width: 30%;
-    /* Adjust width as necessary */
+    width: 30%; /* Adjust width as necessary */
     margin: 20px 0;
     justify-items: center;
     padding-bottom: 20px;
 }
 
-.contact-item5 h2 {
+.contact-item31 h2 {
     font-size: 1.4em;
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-.contact-item5 p {
+.contact-item31 p {
     font-size: 1.2em;
     margin: 0;
 }
 
-.social-icons5 {
+.social-icons3 {
     display: flex;
     gap: 20px;
     margin-top: 20px;
-    justify-content: center;
-    /* Center the social icons horizontally */
-    align-items: center;
-    /* Center the social icons vertically */
+    justify-content: center; /* Center the social icons horizontally */
+    align-items: center; /* Center the social icons vertically */
 }
 
-.social-icons5 ul {
+.social-icons3 ul {
     display: flex;
-    flex-direction: row;
-    /* Align list items horizontally */
+    flex-direction: row; /* Align list items horizontally */
     padding: 0;
     margin: 0;
-    gap: 20px;
-    /* Add gap between icons */
+    gap: 20px; /* Add gap between icons */
 }
 
-.social-icons5 ul li {
+.social-icons3 ul li {
     list-style: none;
 }
 
-.social-icons5 ul li .fab {
+.social-icons3 ul li .fab {
     font-size: 1.5em;
     line-height: 40px;
     transition: 0.3s;
     color: #000;
 }
 
-.social-icons5 ul li .fab:hover {
+.social-icons3 ul li .fab:hover {
     color: #fff;
 }
 
-.social-icons5 ul li a {
+.social-icons3 ul li a {
     position: relative;
     display: block;
     width: 45px;
@@ -1663,26 +1441,26 @@ body {
     box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
 }
 
-.social-icons5 ul li:nth-child(1) a:hover {
+.social-icons3 ul li:nth-child(1) a:hover {
     background-color: #1877F2;
 }
 
-.social-icons5 ul li:nth-child(2) a:hover {
+.social-icons3 ul li:nth-child(2) a:hover {
     background-color: #FCAF45;
 }
 
-.social-icons5 ul li:nth-child(3) a:hover {
+.social-icons3 ul li:nth-child(3) a:hover {
     background-color: #FF0000;
 }
 
 /* Footer Navigation */
-.parent-container55 {
+.parent-container550 {
     background-color: #170A1C;
     padding: 0px 20px;
     text-align: center;
 }
 
-.container55 {
+.container550 {
     display: inline-block;
 }
 
@@ -1712,7 +1490,7 @@ body {
 }
 
 /* Footer Copyright */
-.parent-container56 {
+.parent-container560 {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -1723,46 +1501,37 @@ body {
     background-color: #170A1C;
 }
 
-.container56 {
+.container560 {
     color: white;
 }
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
-
     /* Adjust contact section to be horizontally aligned */
-    .contact-container5 {
-        flex-direction: row;
-        /* Stack horizontally */
-        align-items: flex-start;
-        /* Align items at the top */
+    .contact-containe31 {
+        flex-direction: row; /* Stack horizontally */
+        align-items: flex-start; /* Align items at the top */
     }
 
-    .contact-item5 {
-        width: 30%;
-        /* Ensure equal width of each item */
-        margin-bottom: 20px;
-        /* Reduce bottom margin */
+    .contact-item31 {
+        width: 30%; /* Ensure equal width of each item */
+        margin-bottom: 20px; /* Reduce bottom margin */
     }
 
-    .social-icons5 {
-        flex-direction: row;
-        /* Stack icons horizontally */
+    .social-icons3 {
+        flex-direction: row; /* Stack icons horizontally */
         gap: 15px;
-        justify-content: center;
-        /* Center the social icons */
+        justify-content: center; /* Center the social icons */
     }
 
-    .social-icons5 ul {
-        flex-direction: row;
-        /* Align list items horizontally */
+    .social-icons3 ul {
+        flex-direction: row; /* Align list items horizontally */
         gap: 20px;
     }
 
     /* Navigation adjustment for max-width 1200px */
     #info39 {
-        justify-content: space-between;
-        /* Ensure horizontal spacing */
+        justify-content: space-between; /* Ensure horizontal spacing */
         gap: 20px;
     }
 
@@ -1777,42 +1546,34 @@ body {
 
 /* Mobile-First Design for Smaller Screens */
 @media (max-width: 767px) {
-    .contact-container5 {
+    .contact-container31 {
         flex-direction: column;
         align-items: center;
         width: 100%;
         padding: 0px;
     }
 
-    .contact-item5 {
-        width: 80%;
-        /* Adjust for smaller screens */
+    .contact-item31 {
+        width: 80%; /* Adjust for smaller screens */
         margin-bottom: 20px;
-        border-bottom: 2px solid #fff;
-        /* Add a horizontal line separator */
-        padding-bottom: 20px;
-        /* Ensure space for the separator */
+        border-bottom: 2px solid #fff; /* Add a horizontal line separator */
+        padding-bottom: 20px; /* Ensure space for the separator */
     }
 
-    .social-icons5 {
-        flex-direction: row;
-        /* Stack icons horizontally */
+    .social-icons3 {
+        flex-direction: row; /* Stack icons horizontally */
         gap: 10px;
-        justify-content: center;
-        /* Center the social icons */
-        align-items: center;
-        /* Center the icons vertically */
+        justify-content: center; /* Center the social icons */
+        align-items: center; /* Center the icons vertically */
     }
 
-    .social-icons5 ul {
-        display: flex;
-        /* Ensure horizontal stacking */
-        flex-direction: row;
-        /* Align list items horizontally */
+    .social-icons3 ul {
+        display: flex; /* Ensure horizontal stacking */
+        flex-direction: row; /* Align list items horizontally */
         gap: 30px;
     }
 
-    .social-icons5 ul li .fab {
+    .social-icons3 ul li .fab {
         font-size: 1.2em;
     }
 
@@ -1827,9 +1588,5 @@ body {
 
     #info39 a {
         font-size: 1em;
-    }
-
-    .parent-container54 {
-        padding: 0px 20px;
     }
 }

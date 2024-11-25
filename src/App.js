@@ -13,6 +13,10 @@ import Contact from './Components/Contact/Contact'
 import EditProfile from './Components/EditProfile/EditProfile'
 import Profile from './Components/Profile/Profile'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@fontsource/dancing-script'; // Default weight 400
+import '@fontsource/great-vibes'; // Default weight 400
+import '@fontsource/pacifico'; // Default weight 400
 
 
 

@@ -9,16 +9,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
     flex-wrap: wrap;
     color: white;
+    padding: 10px 20px;
+    background-color: #f2f4f6;
 }
 
-/* Logo Styling */
-.h2f a {
-    text-decoration: none;
-    color: black;
-    font-size: 28px;
+.website-title6 a {
+    font-size: 36px; /* Adjust size */
+    font-weight: 700; /* Make the text bold */
+    color: black; /* Dark color for the text */
+    text-decoration: none; /* Remove underline */
+    letter-spacing: 2px; /* Adds spacing between letters */
+    font-family: 'Dancing Script', cursive; /* Beautiful script font */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.website-title6 a:hover {
+    color: #9335B6; /* Change color when hovering */
 }
 
 /* Navigation Styling */
@@ -53,9 +61,8 @@ body {
     color: #9335B6;
 }
 
-
-  /* Styling active link for mobile view */
-  .header7 nav ul li a.active {
+/* Styling active link for mobile view */
+.header7 nav ul li a.active {
     background-color: #f4eaf9;
     color: #9335B6;
     width: 100%;
@@ -63,16 +70,15 @@ body {
     box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 /* Profile Picture Styling */
-.profile-picture-container {
+.profile-picture-container5 {
     position: relative;
     cursor: pointer;
     display: flex;
     justify-content: flex-end;
 }
 
-.profile-picture1 {
+.profile-picture5 {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -81,12 +87,12 @@ body {
     transition: transform 0.3s ease;
 }
 
-.profile-picture-container:hover .profile-picture1 {
+.profile-picture-container5:hover .profile-picture5 {
     transform: scale(1.1);
 }
 
 /* Dropdown Styling */
-.dropdown-menu {
+.dropdown-menu5 {
     position: absolute;
     top: 100%;
     right: 0;
@@ -103,14 +109,14 @@ body {
     pointer-events: none;
 }
 
-.profile-picture-container:hover .dropdown-menu,
-.dropdown-menu:hover {
+.profile-picture-container5:hover .dropdown-menu5,
+.dropdown-menu5:hover {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
 }
 
-.dropdown-menu button {
+.dropdown-menu5 button {
     width: 100%;
     padding: 10px 16px;
     text-align: left;
@@ -122,81 +128,40 @@ body {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.dropdown-menu button:hover {
+.dropdown-menu5 button:hover {
     background-color: #f4eaf9;
     color: #9335B6;
 }
 
-@media (max-width: 767px) {
-    .header7 {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 20px;
-        width: 100%;
-    }
-
-    .h2f {
-        flex: 1;
-        margin: 0;
-        padding-top: 10px;
-    }
-
-    .h2f a {
-        font-size: 24px;
-        text-align: left;
-        margin: 0;
-    }
-
-    /* Profile picture aligned to the top right corner */
-    .profile-picture-container {
-        margin-left: auto; /* Pushes the profile picture container to the far right */
-        position: absolute;
-        right: 20px; /* Adjust this for desired spacing from the right */
-        top: 10px; /* Adjust this for desired spacing from the top */
-    }
-
-    /* Navigation links stacked vertically below logo and profile picture */
-    nav {
-        width: 100%;
-        margin-top: 60px; /* Push navigation down to clear space for the profile picture */
-    }
-
-    .header7 nav ul {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        background: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px 0;
-        border-radius: 8px;
-        margin: 10px 0;
-    }
-
-   /* Individual list items centered */
-   .header7 nav ul li {
-    width: 100%;
-    text-align: center;
-    margin: 5px 0;
-    }
-
-     /* Styling active link for mobile view */
-     .header7 nav ul li a.active {
-        background-color: #f4eaf9;
-        color: #9335B6;
-        width: 100%;
-        padding: 15px 0;
-        box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Increasing padding and font size */
-    .header7 nav ul li a {
-        padding: 15px;
-        font-size: 1.2rem;
-    }
+.nav-toggle5 {
+    display: none;
+    font-size: 20px;
+    background-color: #9335B6; /* Primary color for the button */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
+/* Hover effect */
+.nav-toggle5:hover {
+    background-color: #d195ef; 
+    transform: scale(1.05); 
+}
+
+/* Active effect (when clicked) */
+.nav-toggle5:active {
+    background-color: #5c176a; /* Even darker shade for active state */
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Optional: Style for focus (accessibility) */
+.nav-toggle5:focus {
+    outline: 2px solid #f4eaf9;
+    outline-offset: 2px;
+}
 
 /* Styles for medium-sized screens up to 1024px */
 @media (max-width: 1024px) {
@@ -210,22 +175,20 @@ body {
     }
 
     /* Logo positioning on the top-left */
-    .h2f {
+    .website-title6 {
         align-self: flex-start;
         margin: 0;
     }
 
-    .h2f a {
+    .website-title6 a {
         color: black;
         text-decoration: none;
-        font-size: 1.5rem;
         font-weight: bold;
     }
 
     /* Profile picture positioning fixed to the top right */
-    .profile-picture-container {
+    .profile-picture-container5 {
         position: absolute;
-        top: 20px;
         right: 20px;
         margin-right: 0;
     }
@@ -233,25 +196,24 @@ body {
     /* Navigation list centered horizontally below the header */
     .header7 nav {
         width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 60px; /* Margin to push nav below profile picture */
+        justify-items: center;
+        margin-top: 60px;
     }
 
     .header7 nav ul {
         display: flex;
-        justify-content: space-around; /* Spreads links evenly across the row */
-        flex-wrap: wrap; /* Wraps items onto the next line if needed */
+        justify-content: space-around;
+        flex-wrap: wrap;
         background: white;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 10px 20px;
         border-radius: 8px;
         gap: 10px;
-        width: 90%; /* Keeps navigation within screen boundaries */
+        width: 90%;
     }
 
-     /* Styling active link for mobile view */
-     .header7 nav ul li a.active {
+    /* Styling active link for mobile view */
+    .header7 nav ul li a.active {
         background-color: #f4eaf9;
         color: #9335B6;
         width: 100%;
@@ -261,14 +223,97 @@ body {
 
     /* Responsive link styling */
     .header7 nav ul li {
-        flex: 1 1 auto; /* Allows links to shrink and grow within the row */
+        flex: 1 1 auto;
         text-align: center;
     }
 
     /* Ensures that each link remains on a single line */
     .header7 nav ul li a {
-        white-space: nowrap; /* Prevents text wrapping within each link */
-        padding: 8px 1px; /* Smaller padding to allow more links on the same line */
+        white-space: nowrap;
+        padding: 8px 1px;
+        font-size: 1rem;
+    }
+}
+
+/* Styles for screens up to 767px */
+@media (max-width: 767px) {
+    /* Flex layout for mobile */
+    .header7 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding:10px 20px;
+        width: 100%;
+    }
+
+    .website-title6 {
+        flex: 1;
+        margin: 0;
+    }
+
+    .website-title6 a {
+        font-size: 26px;
+        text-align: left;
+        margin: 0;
+    }
+
+    /* Profile picture aligned to the top right corner */
+    .profile-picture-container5 {
+        margin-left: auto; /* Pushes the profile picture container to the far right */
+        position: absolute;
+        right: 20px; /* Adjust this for desired spacing from the right */
+    }
+
+    .profile-picture5 {
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav-toggle5 {
+        display: block;
+    }
+
+    /* Navigation links stacked vertically below logo and profile picture */
+    .header7 nav {
+        display: none;
+    }
+
+    .header7 nav.visible {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin-top: 40px; 
+    }
+
+    .header7 nav ul {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        border-radius: 8px;
+        margin: 10px 0;
+    }
+
+    /* Individual list items centered */
+    .header7 nav ul li {
+        width: 90%;
+        text-align: center;
+    }
+
+    /* Styling active link for mobile view */
+    .header7 nav ul li a.active {
+        background-color: #f4eaf9;
+        color: #9335B6;
+        width: 90%;
+        padding: 10px 0;
+        box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Increasing padding and font size */
+    .header7 nav ul li a {
+        padding: 15px;
         font-size: 1rem;
     }
 }
@@ -604,6 +649,36 @@ body {
     color:black;
 }
 
+
+
+/* Media Query for screens with max-width 1200px */
+@media (max-width: 1200px) {
+    .patch9, .patch10 {
+        width: calc(50% - 20px); /* Ensures they still take up half the width */
+        min-width: 300px;
+    }
+    
+    .patch11{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .patch12 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .batch10, .batch11, .batch13, .batch14 {
+        width: 48%; /* Adjust width of each batch inside patch 11 and patch 12 to 48% */
+        box-sizing: border-box;
+    }
+}
+
+
 @media (max-width: 768px) {
     .parent-container58 {
         flex-direction: column;
@@ -665,33 +740,6 @@ body {
         display: flex;
         justify-content: center; /* Center the stars rating */
         margin-bottom: 10px; /* Add space between rating and text */
-    }
-}
-
-/* Media Query for screens with max-width 1200px */
-@media (max-width: 1200px) {
-    .patch9, .patch10 {
-        width: calc(50% - 20px); /* Ensures they still take up half the width */
-        min-width: 300px;
-    }
-    
-    .patch11{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    .patch12 {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    .batch10, .batch11, .batch13, .batch14 {
-        width: 48%; /* Adjust width of each batch inside patch 11 and patch 12 to 48% */
-        box-sizing: border-box;
     }
 }
 
@@ -851,7 +899,7 @@ body {
 .parent-container8 {
     background-color: #f5eafa; 
     padding: 50px 0;
-    background: linear-gradient(0deg, #1e0118 50%, #f5eafa 50%);
+    background: linear-gradient(0deg, #170A1C 50%, #f5eafa 50%);
 }
 
 .container8 {

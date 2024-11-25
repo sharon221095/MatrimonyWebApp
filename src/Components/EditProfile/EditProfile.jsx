@@ -14,7 +14,7 @@ import image63 from '../img/user.png'
 
 const EditProfile = () => {
   // React Router's `useNavigate` hook for programmatic navigation
-  const navigate = useNavigate();
+  const navigateTo = useNavigate();
 
   // React Hook Form hooks and methods for managing form state
   const {
@@ -247,7 +247,7 @@ const EditProfile = () => {
       console.log('API Response:', response);
       if (response.status === 200) {
         alert('Profile updated successfully!');
-        navigate('/home'); // Redirect to the home page on successful update
+        navigateTo('/home'); // Redirect to the home page on successful update
       } else {
         alert('Profile update failed.');
       }
@@ -277,10 +277,7 @@ const EditProfile = () => {
     }
   };
 
-  // Handle image deletion
-  // const handleDeleteImage = (index) => {
-  //   setProfileImages((prevImages) => prevImages.filter((_, i) => i !== index));
-  // };
+  
 
   const handleDeleteImage = async (index) => {
     const imageToDelete = profileImages[index];
@@ -332,6 +329,7 @@ const EditProfile = () => {
   };
 
   return (
+    <div className="body">
     <div className="parent-container78">
       <h1 className="text">Welcome!!</h1>
       <div className="container78">
@@ -367,7 +365,7 @@ const EditProfile = () => {
               </td>
               <td>:</td>
               <td>
-                <div className="form-group mb-4 text-center">
+              
                   <input
                     type="file"
                     id="AdditionalImages"
@@ -384,15 +382,17 @@ const EditProfile = () => {
                           <img
                             src={image.preSignedUrl} // Use preSignedUrl for images already in DB
                             alt={`Preview ${index}`}
-                            className="img-fluid rounded"
+                            className="img-fluid rounded shadow"
+                            style={{ cursor: 'pointer' }}
                           />
                           <button
                             type="button"
-                            className="btn btn-danger position-absolute"
+                             className="btn btn-danger btn-sm position-absolute top-0 end-0 m-1"
                             onClick={(e) => {
                               e.stopPropagation(); // Prevent click event from propagating to parent div
                               handleDeleteImage(index); // Call delete for images in the database
                             }}
+                            title="Delete Image"
                           >
                             <i className="bi bi-x-circle"></i>
                           </button>
@@ -425,21 +425,32 @@ const EditProfile = () => {
                   </div>
 
                   {/* Preview Modal */}
-                  {selectedImage && (
-                    <div className="preview-modal show" onClick={closePreviewModal}>
-                      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <img src={selectedImage} alt="Selected Preview" />
-                        <button onClick={() => handleSetProfileImage(selectedImage)}>
-                          Set as Profile Picture
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
+{selectedImage && (
+  <div className="preview-modal show" onClick={closePreviewModal}>
+    <div className="modal-dialog modal-dialog-centered" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">Image Preview</h5>
+          <button type="button" className="btn-close" onClick={closePreviewModal}></button>
+        </div>
+        <div className="modal-body text-center">
+          <img src={selectedImage} alt="Selected Preview" className="img-fluid rounded shadow" />
+        </div>
+        <div className="modal-footer justify-content-center">
+          <button className="btn btn-primary" onClick={() => handleSetProfileImage(selectedImage)}>
+            Set as Profile Picture
+          </button>
+          <button className="btn btn-secondary" onClick={closePreviewModal}>
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
               </td>
             </tr>
-
-
+            
             <tr>
               <td>
                 <label>FirstName</label>
@@ -594,16 +605,12 @@ const EditProfile = () => {
               <td>
                 <select {...register('Country')}
                 >
-                  <option value="">--Select Country--</option>
-                  <option value="India">India</option>
-                  <option value="United Kingdom">United Kingdom</option>
-                  <option value="United States">United States</option>
-                  <option value="Germany">Germany</option>
-                  <option value="France">France</option>
-                  <option value="Italy">Italy</option>
-                  <option value="Spain">Spain</option>
-                  <option value="Pakistan">Pakistan</option>
-                  <option value="Japan">Japan</option>
+                  <option value="">Select Country</option>
+                    <option value="USA">USA</option>
+                    <option value="India">India</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
                 </select>
 
               </td>
@@ -677,7 +684,8 @@ const EditProfile = () => {
                 >
                   <option value="">--Select Gender--</option>
                   <option value="Male">Male</option>
-                  <option value="Female">Female</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
                 </select>
 
               </td>
@@ -746,7 +754,7 @@ const EditProfile = () => {
                 >
                   <option value="">--Select Marital-Status--</option>
                   <option value="Single">Single</option>
-                  <option value="Married">Married</option>
+                  <option value="Married">Widowed</option>
                   <option value="Divorced">Divorced</option>
                 </select>
 
@@ -801,10 +809,12 @@ const EditProfile = () => {
                 <select {...register('Religion'
                 )}
                 >
-                  <option value="">--Select Religion--</option>
-                  <option value="Hindu">Hindu</option>
-                  <option value="Christian">Christian</option>
-                  <option value="Muslim">Muslim</option>
+                 <option value="">Select Religion</option>
+                 <option value="Christianity">Christianity</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Hinduism">Hinduism</option>
+                    <option value="Buddhism">Buddhism</option>
+                    <option value="Other">Other</option>
                 </select>
 
               </td>
@@ -903,16 +913,12 @@ const EditProfile = () => {
                 <select {...register('PreferredPartnerLocation'
                 )}
                 >
-                  <option value="">--Select Location--</option>
-                  <option value="India">India</option>
-                  <option value="United Kingdom">United Kingdom</option>
-                  <option value="United States">United States</option>
-                  <option value="Germany">Germany</option>
-                  <option value="France">France</option>
-                  <option value="Italy">Italy</option>
-                  <option value="Spain">Spain</option>
-                  <option value="Pakistan">Pakistan</option>
-                  <option value="Japan">Japan</option>
+                  <option value="">Select Country</option>
+                    <option value="USA">USA</option>
+                    <option value="India">India</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
                 </select>
 
               </td>
@@ -930,9 +936,11 @@ const EditProfile = () => {
                 )}
                 >
                   <option value="">--Select Religion--</option>
-                  <option value="Hindu">Hindu</option>
-                  <option value="Christian">Christian</option>
-                  <option value="Muslim">Muslim</option>
+                  <option value="Christianity">Christianity</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Hinduism">Hinduism</option>
+                    <option value="Buddhism">Buddhism</option>
+                    <option value="Other">Other</option>
                 </select>
 
               </td>
@@ -964,119 +972,121 @@ const EditProfile = () => {
         </form>
 
       </div>
+      </div>
+    
 
       <div className="parent-container7">
-        <div className="check1">
-          <h2>Check Out Our Recent Work On Instagram</h2>
-        </div>
-        <div className="insta1">
-          <a href="#" target="_self" rel="noopener noreferrer">
-            Follow Us On Instagram
-          </a>
-        </div>
-        <div className="container7">
-          <div className="row justify-content-center">
-            <div className="col-auto">
-              <div className="image16">
-                <figure>
-                  <img srcSet={image16} alt="img-16" />
-                </figure>
-              </div>
-            </div>
-            <div className="col-auto">
-              <div className="image17">
-                <figure>
-                  <img srcSet={image17} alt="img-17" />
-                </figure>
-              </div>
-            </div>
-            <div className="col-auto">
-              <div className="image18">
-                <figure>
-                  <img srcSet={image18} alt="img-18" />
-                </figure>
-              </div>
-            </div>
-            <div className="col-auto">
-              <div className="image19">
-                <figure>
-                  <img srcSet={image19} alt="img-19" />
-                </figure>
-              </div>
-            </div>
-            <div className="col-auto">
-              <div className="image20">
-                <figure>
-                  <img srcSet={image20} alt="img-20" />
-                </figure>
-              </div>
-            </div>
-          </div>
+  <div className="check1">
+    <h2>Check Out Our Recent Work On Instagram</h2>
+    </div>
+    <div className="insta1">
+      <a href="#" target="_self" rel="noopener noreferrer">
+        Follow Us On Instagram
+      </a>
+    </div>
+  <div className="container7">
+    <div className="row justify-content-center"> 
+      <div className="col-auto">
+        <div className="image16">
+          <figure>
+            <img srcSet={image16} alt="img-16" />
+          </figure>
         </div>
       </div>
+      <div className="col-auto">
+        <div className="image17">
+          <figure>
+            <img srcSet={image17} alt="img-17" />
+          </figure>
+        </div>
+      </div>
+      <div className="col-auto">
+        <div className="image18">
+          <figure>
+            <img srcSet={image18} alt="img-18" />
+          </figure>
+        </div>
+      </div>
+      <div className="col-auto">
+        <div className="image19">
+          <figure>
+            <img srcSet={image19} alt="img-19" />
+          </figure>
+        </div>
+      </div>
+      <div className="col-auto">
+        <div className="image20">
+          <figure>
+            <img srcSet={image20} alt="img-20" />
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-      <div className="parent-container8">
-        <div className="container8 text-center">
-          <div className="find mb-4">
+    <div className="parent-container8">
+    <div className="container8 text-center">
+        <div className="find mb-4"> 
             <h2>Find Your Soulmate Today</h2>
-          </div>
-          <p className="info4">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
         </div>
-      </div>
+        <p className="info4">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
+    </div>
+    </div>
 
 
-      <div class="parent-container54">
-        <div class="contact-container5">
-          <div class="contact-item5">
+    <div class="parent-container54">
+    <div class="contact-container5">
+        <div class="contact-item5">
             <h2>Phone</h2>
             <p>202-555-0188</p>
-          </div>
-          <div class="contact-item5">
+        </div>
+        <div class="contact-item5">
             <h2>Follow Us</h2>
             <div class="social-icons5">
-              <ul>
-                <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
-              </ul>
+                <ul>
+                    <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
+                </ul>
             </div>
-          </div>
-          <div class="contact-item5">
+        </div>
+        <div class="contact-item5">
             <h2>Email</h2>
             <p>contact@example.com</p>
-          </div>
         </div>
-      </div>
+    </div>
+    </div>
+    
+    
+    
+        
+<div class="parent-container55">
 
+    <nav class="container55">
 
+            <ul id="info39">
+                <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
+                <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
+                <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
+                <li><a href="#"onClick={() => navigateTo('/portfolio')}>Portfolio</a></li>
+                <li><a href="#" onClick={() => navigateTo('/testimonials')}>Testimonials</a></li>
+                <li><a href="#" onClick={() => navigateTo('/blog')}>Blog</a></li>
+                <li><a href="#" onClick={() => navigateTo('/contact')}>Contact</a></li>
+            </ul>
 
+    </nav>
 
-      <div class="parent-container55">
+</div>			
+                      
+                                
 
-        <nav class="container55">
-
-          <ul id="info55">
-            <li><a href="" onClick={() => navigate('/home')}>Home</a></li>
-            <li><a href="" onClick={() => navigate('/about')}>About Us</a></li>
-            <li><a href="" onClick={() => navigate('/services')}>Services</a></li>
-            <li><a href="" onClick={() => navigate('/portfolio')}>Portfolio</a></li>
-            <li><a href="" onClick={() => navigate('/testimonials')}>Testimonials</a></li>
-            <li><a href="" onClick={() => navigate('/blog')}>Blog</a></li>
-            <li><a href="" onClick={() => navigate('/contact')}>Contact</a></li>
-          </ul>
-
-        </nav>
-
-      </div>
-
-
-
-      <div class="parent-container56">
-        <div class="container56">
-          <p>Copyright © 2024 theindianwedding</p>
-        </div>
-      </div>
+<div class="parent-container56">
+	<div class="container56">
+        <p>Copyright © 2024 theindianwedding</p>
+    </div>			
+</div> 
     </div>
 
 
