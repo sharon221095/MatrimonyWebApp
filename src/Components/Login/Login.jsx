@@ -310,7 +310,7 @@ const Login = () => {
   <div className="check1">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
-    <div className="insta1">
+    <div className="insta-log">
       <a href="#" target="_self" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
@@ -362,7 +362,7 @@ const Login = () => {
         <div className="find mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info4">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-log">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 

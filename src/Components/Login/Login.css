@@ -15,7 +15,7 @@ body {
 .header1 {
     color: white;
     padding: 10px 20px;
-    background-color: #f8f9fa;
+    background-color: #A02334;
 }
 
     
@@ -23,7 +23,7 @@ body {
 .website-title1 a {
     font-size: 36px; /* Adjust size */
     font-weight: 700; /* Make the text bold */
-    color: black; /* Dark color for the text */
+    color: #F1C27D; /* Dark color for the text */
     text-decoration: none; /* Remove underline */
     letter-spacing: 2px; /* Adds spacing between letters */
     font-family: 'Dancing Script', cursive; /* Beautiful script font */
@@ -31,14 +31,14 @@ body {
 }
 
 .website-title1 a:hover {
-    color: #9335B6; /* Change color when hovering */
+    color: #F1C27D; /* Change color when hovering */
 }
 
 
 .button4 a{
-    color: #9335B6;
-    background: #f4eaf9;
-    border-color: #f4eaf9;
+    color: #F1C27D;
+    background: #A02334;
+    border-color: #A02334;
     border-radius: 25px;
     transition: all 0.2s linear;
     padding: 14px 12px;
@@ -49,7 +49,7 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
-    border: 2px solid #f4eaf9;
+    border: 2px solid #F1C27D;
     text-decoration: none;
     width: 100%; /* Make sure button doesn’t overflow */
     white-space: nowrap;
@@ -58,9 +58,9 @@ body {
 
 /* Hover effect for the button */
 .button4 a:hover {
-    background-color: #9335B6; /* Change background on hover */
+    background-color: #F1C27D; /* Change background on hover */
     color: white; /* Change text color on hover */
-    border-color: #9335B6; /* Change border color on hover */
+    border-color: #F1C27D; /* Change border color on hover */
 }
 
 /* Forcing a recalculation of the layout when the screen is resized */
@@ -79,9 +79,9 @@ body {
     }
 
     .button4 a:hover {
-        background-color: #9335B6; /* Change background on hover */
+        background-color: #F1C27D; /* Change background on hover */
         color: white; /* Change text color on hover */
-        border-color: #9335B6; /* Change border color on hover */
+        border-color: #F1C27D; /* Change border color on hover */
     }
 
     .row {
@@ -111,9 +111,9 @@ body {
     }
 
     .button4 a:hover {
-        background-color: #9335B6; /* Change background on hover */
+        background-color: #F1C27D; /* Change background on hover */
         color: white; /* Change text color on hover */
-        border-color: #9335B6; /* Change border color on hover */
+        border-color: #F1C27D; /* Change border color on hover */
     }
 }
 
@@ -128,9 +128,9 @@ body {
     }
 
     .button4 a:hover {
-        background-color: #9335B6; /* Change background on hover */
+        background-color: #F1C27D; /* Change background on hover */
         color: white; /* Change text color on hover */
-        border-color: #9335B6; /* Change border color on hover */
+        border-color: #F1C27D; /* Change border color on hover */
     }
 }
 
@@ -152,9 +152,9 @@ body {
     }
 
     .button4 a:hover {
-        background-color: #9335B6; /* Change background on hover */
+        background-color: #F1C27D; /* Change background on hover */
         color: white; /* Change text color on hover */
-        border-color: #9335B6; /* Change border color on hover */
+        border-color: #F1C27D; /* Change border color on hover */
     }
 }
 
@@ -170,7 +170,7 @@ body {
 /* Left container with heading and description */
 .container12 {
     flex: 1;
-    background:#f4eaf9;
+    background:#A02334;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 150px;
     width: 45%;
@@ -190,13 +190,13 @@ body {
     font-size: 3rem;
     font-weight: 600;
     font-family: 'Inria Serif', serif;
-    color:#000;
+    color:#F1C27D;
     margin-bottom: 20px;
 }
 
 .container12 p {
     font-size: 1.1rem;
-    color: #000;
+    color: #F1C27D;
     font-family: 'Inria Serif', serif;
 }
 
@@ -214,7 +214,7 @@ body {
 .form1 {
     width: 100%;
     max-width: 400px;
-    background: #f4eaf9;
+    background: #A02334;
     padding: 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 80px;
@@ -226,7 +226,7 @@ body {
 .form1 h1 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: black;
+    color: #F1C27D;
 }
 
 /* Input fields styling */
@@ -255,7 +255,7 @@ body {
     width: 30%;
     max-width: 150px;
     padding: 10px;
-    background-color: #9335B6;
+    background-color: #F1C27D;
     color: white;
     border: none;
     border-top-left-radius: 18px;
@@ -269,7 +269,7 @@ body {
 
 .form1 button:hover {
     background-color: #f4eaf9;
-    color: #9335B6;
+    color: #F1C27D;
 }
 
 /* Link styling */
@@ -277,7 +277,7 @@ body {
     display: block;
     margin-top: 20px;
     text-align: center;
-    color: #9335B6;
+    color: #F1C27D;
     text-decoration: none;
 }
 
@@ -667,7 +667,7 @@ body {
 
 /* Parent container */
 .parent-container15 {
-    background-color: #f4eaf9;
+    background-color: #A02334;
     border-radius: 120px 0px 120px 0px;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -687,15 +687,14 @@ body {
     font-weight: 700;
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
-    color: #000000;
+    color: #F1C27D;
     margin-bottom: 30px;
 }
 
 /* Paragraph styling */
 .container15 p {
     font-size: 1.2rem;
-    color: rgb(95, 86, 86);
-    font-family: 'Inria Serif', serif;
+    color:#F1C27D;
     margin-top: 20px;
 }
 
@@ -807,7 +806,7 @@ body {
 .container16 .img12:hover figcaption,
 .container16 .img8:hover figcaption,
 .container16 .img9:hover figcaption {
-    color: #9335B6; /* Change caption color to purple on hover */
+    color: #F1C27D; /* Change caption color to purple on hover */
 }
 
 /* Responsive Styles */
@@ -986,7 +985,7 @@ body {
 /* Base container styling */
 .parent-container18 {
     padding: 60px 40px;
-    background-color: #f4eaf9;
+    background-color: #A02334;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1005,26 +1004,27 @@ body {
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
     margin: 0 33px;
+    color: #F1C27D;
 }
 
-.insta1 {
+.insta-log {
     display: flex;
 }
 
-.insta1 a {
+.insta-log a {
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid transparent;
-    background-color: #8e3bb6;
+    background-color: #F1C27D;
     color: white;
     transition: background-color 0.3s, color 0.3s;
 }
 
-.insta1 a:hover {
+.insta-log a:hover {
     background-color: white;
-    color: #9335B6;
+    color: #F1C27D;
 }
 
 .container18 {
@@ -1136,13 +1136,13 @@ body {
   
 
 .parent-container19 {
-    background-color: #f5eafa; 
+    background-color: #A02334; 
     padding: 50px 0;
-    background: linear-gradient(0deg, #170A1C 50%, #f5eafa 50%);
+    background: linear-gradient(0deg, #A02334 50%, #A02334 50%);
 }
 
 .container19 {
-    background-color: #fff;
+    background-color: #F1C27D;
     box-shadow: 0px 0px #00000070;
     padding: 70px 30px; /* Simplified padding */
     border-top-left-radius: 120px;
@@ -1154,11 +1154,12 @@ body {
     font-size: 2.25em;
     margin-bottom: 20px;
     font-family: 'Inria Serif', serif;
+    color: white;
 }
 
-.info4 {
+.info-log {
     font-size: 1.2em; 
-    color: black; 
+    color: white; 
     margin-bottom: 28px;
     font-family: 'Inria Serif', serif;
     font-weight: lighter;
@@ -1166,7 +1167,7 @@ body {
 
 /* Contact Section */
 .parent-container20 {
-    background-color: #170A1C;
+    background-color: #A02334;
     color: white;
     display: flex;
     justify-content: center;
@@ -1184,6 +1185,8 @@ body {
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     flex-direction: row; /* Stack items horizontally */
     align-items: center; /* Center items horizontally */
+    background-color: #A02334;
+    color: #F1C27D;
 }
 
 .contact-item20 {
@@ -1305,11 +1308,11 @@ body {
     padding-right: 20px;
     min-height: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.25);
-    background-color: #170A1C;
+    background-color: #A02334;
 }
 
 .container22 {
-    color: white;
+    color: #F1C27D;
 }
 
 /* Responsive Styles */

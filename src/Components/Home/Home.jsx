@@ -383,63 +383,86 @@ const Home = () => {
 </form>
 
 
-
-            {isSearchPerformed ? (
-                <div className="search-results">
-                    {searchResults.length > 0 ? (
-                        <div className="row justify-content-center">
-                            {searchResults.map((result) => (
-                                <div key={result.id} className="profile-card col-lg-3 col-md-4 col-sm-6 mb-4">
-                                    <div className="card shadow-sm border-light">
-                                        <img
-                                            src={result.profilePictureUrl || 'default-image-url'}
-                                            alt={`${result.firstName} ${result.lastName} Profile`}
-                                            className="card-img-top"
-                                        />
-                                        <div className="card-body text-center">
-                                            <h5 className="card-title">{result.firstName} {result.lastName}</h5>
-                                            <p className="card-text">Age: {result.age}</p>
-                                            <p className="card-text">Height: {result.height} cm</p>
-                                            <p className="card-text">Religion: {result.religion}</p>
-                                            <p className="card-text">Gender: {result.gender}</p>
-                                            <button
-                                                className="btn btn-primary"
-                                                onClick={() => handleViewProfile(result.userId)}
-                                            >
-                                                View Profile
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+{isSearchPerformed ? (
+    <div className="search-results">
+        {searchResults.length > 0 ? (
+            <div className="row justify-content-center g-3">
+                {searchResults.map((result) => (
+                    <div
+                        key={result.id}
+                        className="profile-card col-xl-3 col-lg-4 col-md-6 col-sm-12"
+                    >
+                        <div className="card shadow-sm border-0 h-100">
+                            <img
+                                src={result.profilePictureUrl || 'default-image-url'}
+                                alt={`${result.firstName} ${result.lastName} Profile`}
+                                className="card-img-top rounded-top"
+                                style={{ objectFit: 'cover', height: '200px' }}
+                            />
+                            <div className="card-body text-center">
+                                <h5 className="card-title text-primary fw-bold">
+                                    {result.firstName} {result.lastName}
+                                </h5>
+                                <p className="card-text text-muted mb-1">
+                                    <i className="bi bi-calendar-heart me-2"></i>Age: {result.age}
+                                </p>
+                                <p className="card-text text-muted mb-1">
+                                    <i className="bi bi-ruler me-2"></i>Height: {result.height} cm
+                                </p>
+                                <p className="card-text text-muted mb-1">
+                                    <i className="bi bi-heart me-2"></i>Religion: {result.religion}
+                                </p>
+                                <p className="card-text text-muted mb-3">
+                                    <i className="bi bi-gender-ambiguous me-2"></i>Gender: {result.gender}
+                                </p>
+                                <button
+                                    className="btn btn-outline-primary w-100"
+                                    onClick={() => handleViewProfile(result.userId)}
+                                >
+                                    View Profile
+                                </button>
+                            </div>
                         </div>
-                    ) : (
-                        <p className="text-center">No profiles found.</p>
-                    )}
-                </div>
-            ) : (
-                <p className="text-center">Please perform a search to see results.</p>
-            )}
+                    </div>
+                ))}
+            </div>
+        ) : (
+            <div className="text-center mt-5">
+                <p className="text-muted fs-5">No profiles found. Try refining your search.</p>
+            </div>
+        )}
+    </div>
+) : (
+    <div className="text-center mt-5">
+        <p className="text-muted fs-5">Please perform a search to see results.</p>
+    </div>
+)}
 
-            {/* Pagination controls */}
-            {isSearchPerformed && totalPages > 1 && (
-                <div className="pagination-controls text-center mt-4">
-                    <nav aria-label="Page navigation">
-                        <ul className="pagination justify-content-center">
-                            {Array.from({ length: totalPages }, (_, index) => (
-                                <li className={`page-item ${pageNumber === index + 1 ? 'active' : ''}`} key={index}>
-                                    <button
-                                        className="page-link"
-                                        onClick={() => handlePageChange(index + 1)} // Passes the correct page number
-                                    >
-                                        {index + 1}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                </div>
-            )}
+{/* Pagination controls */}
+{isSearchPerformed && totalPages > 1 && (
+    <div className="pagination-controls text-center mt-4">
+        <nav aria-label="Page navigation">
+            <ul className="pagination justify-content-center">
+                {Array.from({ length: totalPages }, (_, index) => (
+                    <li
+                        className={`page-item ${
+                            pageNumber === index + 1 ? 'active' : ''
+                        }`}
+                        key={index}
+                    >
+                        <button
+                            className="page-link rounded-pill"
+                            onClick={() => handlePageChange(index + 1)}
+                        >
+                            {index + 1}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    </div>
+)}
+
 
 
 
@@ -661,7 +684,7 @@ const Home = () => {
   <div className="check1">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
-    <div className="insta1">
+    <div className="insta-home">
       <a href="#" target="_self" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
@@ -713,7 +736,7 @@ const Home = () => {
         <div className="find mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info4">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-home">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
@@ -748,7 +771,7 @@ const Home = () => {
 
     <nav class="container550">
 
-            <ul id="info39">
+            <ul id="info39-home">
                 <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
                 <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
                 <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>

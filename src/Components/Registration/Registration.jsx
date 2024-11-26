@@ -387,16 +387,16 @@ const Registration = () => {
 
 
 
-<div className="parent-container7">
+<div className="parent-container711">
   <div className="check1">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
-    <div className="insta1">
+    <div className="insta-reg">
       <a href="#" target="_self" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
     </div>
-  <div className="container7">
+  <div className="container711">
     <div className="row justify-content-center"> 
       <div className="col-auto">
         <div className="image16">
@@ -438,12 +438,12 @@ const Registration = () => {
 </div>
 
 
-    <div className="parent-container8">
-    <div className="container8 text-center">
+    <div className="parent-container81">
+    <div className="container81 text-center">
         <div className="find mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info4">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-reg">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
