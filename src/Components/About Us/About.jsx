@@ -410,16 +410,16 @@ const About = () => {
     
 
 
-    <div className="parent-container7">
-  <div className="check1">
+    <div className="parent-container770">
+  <div className="check14">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
-    <div className="insta1">
+    <div className="insta-about">
       <a href="#" target="_self" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
     </div>
-  <div className="container7">
+  <div className="container770">
     <div className="row justify-content-center"> 
       <div className="col-auto">
         <div className="image16">
@@ -461,25 +461,25 @@ const About = () => {
 </div>
 
 
-    <div className="parent-container8">
-    <div className="container8 text-center">
-        <div className="find mb-4"> 
+    <div className="parent-container880">
+    <div className="container880 text-center">
+        <div className="find-about mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info4">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-about">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
 
-    <div class="parent-container54">
-    <div class="contact-container5">
-        <div class="contact-item5">
+    <div class="parent-container540">
+    <div class="contact-container540">
+        <div class="contact-item540">
             <h2>Phone</h2>
             <p>202-555-0188</p>
         </div>
-        <div class="contact-item5">
+        <div class="contact-item540">
             <h2>Follow Us</h2>
-            <div class="social-icons5">
+            <div class="social-icons540">
                 <ul>
                     <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
                     <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
@@ -487,7 +487,7 @@ const About = () => {
                 </ul>
             </div>
         </div>
-        <div class="contact-item5">
+        <div class="contact-item540">
             <h2>Email</h2>
             <p>contact@example.com</p>
         </div>
@@ -497,11 +497,11 @@ const About = () => {
     
     
         
-<div class="parent-container55">
+<div class="parent-container550">
 
-    <nav class="container55">
+    <nav class="container550">
 
-            <ul id="info39">
+            <ul id="info-about">
                 <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
                 <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
                 <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
@@ -517,8 +517,8 @@ const About = () => {
                       
                                 
 
-<div class="parent-container56">
-	<div class="container56">
+<div class="parent-container566">
+	<div class="container566">
         <p>Copyright © 2024 NRImarriage</p>
     </div>			
 </div> 

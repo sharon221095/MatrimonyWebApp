@@ -308,7 +308,7 @@ const Home = () => {
                 label: 'Min Age:', 
                 name: 'MinAge', 
                 type: 'select', 
-                options: ['Select Min Age', ...Array.from({ length: 53 }, (_, i) => i + 18)] // 18 to 70 
+                options: ['Select Min Age', ...Array.from({ length: 53 }, (_, i) => i + 18)] 
             },
             { 
                 label: 'Max Age:', 
@@ -320,7 +320,7 @@ const Home = () => {
                 label: 'Min Height (cm):', 
                 name: 'MinHeight', 
                 type: 'select', 
-                options: ['Select Min Height', ...Array.from({ length: 101 }, (_, i) => i + 140)] // 140cm to 240cm
+                options: ['Select Min Height', ...Array.from({ length: 101 }, (_, i) => i + 140)] 
             },
             { 
                 label: 'Max Height (cm):', 
@@ -400,7 +400,7 @@ const Home = () => {
                                 style={{ objectFit: 'cover', height: '200px' }}
                             />
                             <div className="card-body text-center">
-                                <h5 className="card-title text-primary fw-bold">
+                                <h5 className="card-title  fw-bold">
                                     {result.firstName} {result.lastName}
                                 </h5>
                                 <p className="card-text text-muted mb-1">
@@ -438,7 +438,7 @@ const Home = () => {
     </div>
 )}
 
-{/* Pagination controls */}
+
 {isSearchPerformed && totalPages > 1 && (
     <div className="pagination-controls text-center mt-4">
         <nav aria-label="Page navigation">
@@ -681,7 +681,7 @@ const Home = () => {
 
 
 <div className="parent-container29">
-  <div className="check1">
+  <div className="check13">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
     <div className="insta-home">
@@ -733,7 +733,7 @@ const Home = () => {
 
     <div className="parent-container30">
     <div className="container30 text-center">
-        <div className="find mb-4"> 
+        <div className="find3 mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
         <p className="info-home">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
@@ -771,7 +771,7 @@ const Home = () => {
 
     <nav class="container550">
 
-            <ul id="info39-home">
+            <ul id="info390">
                 <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
                 <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
                 <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>

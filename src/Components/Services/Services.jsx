@@ -329,16 +329,16 @@ const Services = () => {
         </div>
     </div>
 
-    <div className="parent-container7">
-  <div className="check1">
+    <div className="parent-container780">
+  <div className="check15">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
-    <div className="insta1">
+    <div className="insta-services">
       <a href="#" target="_self" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
     </div>
-  <div className="container7">
+  <div className="container780">
     <div className="row justify-content-center"> 
       <div className="col-auto">
         <div className="image16">
@@ -380,25 +380,25 @@ const Services = () => {
 </div>
 
 
-    <div className="parent-container8">
-    <div className="container8 text-center">
-        <div className="find mb-4"> 
+    <div className="parent-container890">
+    <div className="container890 text-center">
+        <div className="find-services mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info4">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-services">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
 
-    <div class="parent-container54">
-    <div class="contact-container5">
-        <div class="contact-item5">
+    <div class="parent-container560">
+    <div class="contact-container560">
+        <div class="contact-item560">
             <h2>Phone</h2>
             <p>202-555-0188</p>
         </div>
-        <div class="contact-item5">
+        <div class="contact-item560">
             <h2>Follow Us</h2>
-            <div class="social-icons5">
+            <div class="social-icons560">
                 <ul>
                     <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
                     <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
@@ -406,7 +406,7 @@ const Services = () => {
                 </ul>
             </div>
         </div>
-        <div class="contact-item5">
+        <div class="contact-item560">
             <h2>Email</h2>
             <p>contact@example.com</p>
         </div>
@@ -416,11 +416,11 @@ const Services = () => {
     
     
         
-<div class="parent-container55">
+<div class="parent-container555">
 
-    <nav class="container55">
+    <nav class="container555">
 
-            <ul id="info39">
+            <ul id="info-services">
                 <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
                 <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
                 <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
@@ -436,8 +436,8 @@ const Services = () => {
                       
                                 
 
-<div class="parent-container56">
-	<div class="container56">
+<div class="parent-container566">
+	<div class="container566">
         <p>Copyright © 2024 NRImarriage</p>
     </div>			
 </div> 

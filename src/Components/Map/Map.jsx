@@ -34,7 +34,7 @@ const MapComponent = () => {
         };
     }, []);
 
-    return <div id="map" className="map-container" style={{ height: '500px', width: '50%' }}></div>;
+    return <div id="map" className="map-container" style={{ height: '500px', width: '100%' }}></div>;
 };
 
 export default MapComponent;

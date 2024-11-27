@@ -18,7 +18,7 @@ body {
 .website-title2 a {
     font-size: 36px; /* Adjust size */
     font-weight: 700; /* Make the text bold */
-    color: #F1C27D; /* Dark color for the text */
+    color: #FFB900; /* Dark color for the text */
     text-decoration: none; /* Remove underline */
     letter-spacing: 2px; /* Adds spacing between letters */
     font-family: 'Dancing Script', cursive; /* Beautiful script font */
@@ -26,7 +26,7 @@ body {
 }
 
 .website-title2 a:hover {
-    color: #F1C27D; /* Change color when hovering */
+    color: #FFB900; /* Change color when hovering */
 }
 
 /* Navigation Styling */
@@ -44,7 +44,7 @@ body {
 }
 
 .header3 nav ul li a {
-    color: #F1C27D;;
+    color: #FFB900;
     text-decoration: none;
     padding: 12px 12px;
     font-weight: 400;
@@ -57,13 +57,13 @@ body {
 
 /* Hover effect for links */
 .header3 nav ul li a:hover {
-    background-color: #F1C27D;
+    background-color: #FFB900;
     color: #A02334;
 }
 
 /* Styling active link for mobile view */
 .header3 nav ul li a.active {
-    background-color: #F1C27D;
+    background-color: #FFB900;
     color: white;
     width: 100%;
     padding: 10px 10px;
@@ -83,7 +83,7 @@ body {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #F1C27D;
+    border: 2px solid #FFB900;
     transition: transform 0.3s ease;
 }
 
@@ -96,7 +96,7 @@ body {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #F1C27D;
+    background-color: #FFB900;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     overflow: hidden;
@@ -130,14 +130,14 @@ body {
 
 .dropdown-menu1 button:hover {
     background-color: #A02334;
-    color: #F1C27D;
+    color: #FFB900;
     border-radius: 8px;
 }
 
 .nav-toggle1 {
     display: none;
     font-size: 20px;
-    background-color: #9335B6; /* Primary color for the button */
+    background-color: #FFB900; /* Primary color for the button */
     color: white; /* Text color */
     border: none;
     border-radius: 8px; /* Rounded corners */
@@ -148,19 +148,19 @@ body {
 
 /* Hover effect */
 .nav-toggle1:hover {
-    background-color: #d195ef; 
+    background-color: #FFB900; 
     transform: scale(1.05); 
 }
 
 /* Active effect (when clicked) */
 .nav-toggle1:active {
-    background-color: #5c176a; /* Even darker shade for active state */
+    background-color: #FFB900; /* Even darker shade for active state */
     transform: scale(0.95); /* Slightly shrink on click */
 }
 
 /* Optional: Style for focus (accessibility) */
 .nav-toggle1:focus {
-    outline: 2px solid #f4eaf9;
+    outline: 2px solid #FFB900;
     outline-offset: 2px;
 }
 
@@ -182,7 +182,7 @@ body {
     }
 
     .website-title2 a {
-        color: #F1C27D;
+        color: #FFB900;
         text-decoration: none;
         font-weight: bold;
     }
@@ -211,11 +211,12 @@ body {
         border-radius: 8px;
         gap: 10px;
         width: 90%;
+        border: 2px solid #FFB900;
     }
 
     /* Styling active link for mobile view */
     .header3 nav ul li a.active {
-        background-color: #F1C27D;
+        background-color: #FFB900;
         color: white;
         width: 100%;
         padding: 10px 10px;
@@ -291,11 +292,12 @@ body {
         width: 90%;
         flex-direction: column;
         align-items: center;
-        background: white;
+        background: #A02334;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 10px 0;
         border-radius: 8px;
         margin: 10px 0;
+        border: 2px solid #FFB900;
     }
 
     /* Individual list items centered */
@@ -307,7 +309,7 @@ body {
     /* Styling active link for mobile view */
     .header3 nav ul li a.active {
         background-color: #f4eaf9;
-        color: #9335B6;
+        color: #FFB900;
         width: 90%;
         padding: 10px 0;
         box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -369,14 +371,14 @@ body {
     margin: 20px auto 0;
     padding: 10px;
     background-color: #A02334;
-    color: #F1C27D;
+    color: #FFB900;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .search-form button:hover {
-    background-color: #F1C27D;
+    background-color: #FFB900;
     color: white;
 }
 
@@ -411,7 +413,7 @@ body {
 }
 
 .profile-card .card-title {
-    color: #007bff;
+    color: #A02334;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
@@ -425,11 +427,15 @@ body {
     font-size: 0.9rem;
     border-radius: 20px;
     transition: all 0.3s ease;
+    color: #FFB900;
+    background-color: #A02334;
+    border: none;
 }
 
 .profile-card .btn:hover {
-    background-color: #0056b3;
+    background-color: #FFB900;
     color: #ffffff;
+    border: 2px solid #A02334;
 }
 
 /* Pagination Controls */
@@ -574,13 +580,13 @@ body {
     font-size: 3rem;
     font-weight: 600;
     font-family: 'Inria Serif', serif;
-    color:#F1C27D;
+    color:#FFB900;
     margin-bottom: 20px;
 }
 
 .container23 p {
     font-size: 1.1rem;
-    color: #F1C27D;
+    color: #FFB900;
     font-family: 'Inria Serif', serif;
 }
 
@@ -1042,14 +1048,14 @@ body {
     font-weight: 700;
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
-    color: #F1C27D;
+    color: #FFB900;
     margin-bottom: 30px;
 }
 
 /* Paragraph styling */
 .container26 p {
     font-size: 1.2rem;
-    color: #F1C27D;
+    color: #FFB900;
     margin-top: 20px;
 }
 
@@ -1161,7 +1167,7 @@ body {
 .container27 .img12:hover figcaption,
 .container27 .img8:hover figcaption,
 .container27 .img9:hover figcaption {
-    color: #F1C27D; /* Change caption color to purple on hover */
+    color: #FFB900; /* Change caption color to purple on hover */
 }
 
 /* Responsive Styles */
@@ -1346,20 +1352,19 @@ body {
     align-items: center;
 }
 
-.check1 {
+.check13 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.check1 h2 {
+.check13 h2 {
     font-size: 2.25rem;
     font-weight: 700;
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
-    margin: 0 33px;
-    color: #F1C27D;
+    color: #FFB900;
 }
 
 .insta-home {
@@ -1372,14 +1377,14 @@ body {
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid transparent;
-    background-color: #F1C27D;
+    background-color: #FFB900;
     color: white;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .insta-home a:hover {
     background-color: white;
-    color: #F1C27D;;
+    color: #FFB900;
 }
 
 .container29 {
@@ -1469,14 +1474,14 @@ body {
     }
 
     /* Make .check1 and .about1 stack vertically on smaller screens */
-    .check1, .about1 {
+    .check13, .about1 {
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
 
     /* Adjust spacing for vertical layout */
-    .check1 {
+    .check13 {
         margin-bottom: 30px;
         text-align: center;
     }
@@ -1497,24 +1502,25 @@ body {
 }
 
 .container30 {
-    background-color:#F1C27D;;
+    background-color:#A02334;
     box-shadow: 0px 0px #00000070;
     padding: 70px 30px; /* Simplified padding */
     border-top-left-radius: 120px;
     border-bottom-right-radius: 120px;
     margin: 0 50px; /* Simplified margin */
+    border: 2px solid #FFB900;
 }
 
-.find h2 {
+.find3 h2 {
     font-size: 2.25em;
     margin-bottom: 20px;
     font-family: 'Inria Serif', serif;
-    color: white;
+    color:#FFB900;
 }
 
 .info-home {
     font-size: 1.2em; 
-    color: white; 
+    color: #FFB900; 
     margin-bottom: 28px;
     font-family: 'Inria Serif', serif;
     font-weight: lighter;
@@ -1556,13 +1562,13 @@ body {
     font-size: 1.4em;
     margin-bottom: 15px;
     font-weight: bold;
-    color: #F1C27D;
+    color: #FFB900;
 }
 
 .contact-item31 p {
     font-size: 1.2em;
     margin: 0;
-    color: #F1C27D;
+    color: #FFB900;
 }
 
 .social-icons3 {
@@ -1631,7 +1637,7 @@ body {
     display: inline-block;
 }
 
-#info39-home{
+#info390 {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -1640,19 +1646,19 @@ body {
     gap: 20px;
 }
 
-#info39-home li {
+#info390 li {
     display: inline;
 }
 
-#info39-home a {
+#info390 a {
     text-decoration: none;
-    color: #F1C27D;
+    color: #FFB900;
     font-family: Arial, sans-serif;
     font-size: 0.875rem;
     transition: color 0.3s ease;
 }
 
-#info39-home a:hover {
+#info390 a:hover {
     color: white;
 }
 
@@ -1669,7 +1675,7 @@ body {
 }
 
 .container560 {
-    color: #F1C27D;
+    color: #FFB900;
 }
 
 /* Responsive Styles */
@@ -1697,16 +1703,16 @@ body {
     }
 
     /* Navigation adjustment for max-width 1200px */
-    #info39 {
+    #info390 {
         justify-content: space-between; /* Ensure horizontal spacing */
         gap: 20px;
     }
 
-    #info39 li {
+    #info390 li {
         margin: 0;
     }
 
-    #info39 a {
+    #info390 a {
         font-size: 1em;
     }
 }
@@ -1744,16 +1750,16 @@ body {
         font-size: 1.2em;
     }
 
-    #info39 {
+    #info390 {
         flex-direction: column;
         align-items: center;
     }
 
-    #info39 li {
+    #info390 li {
         margin: 10px 0;
     }
 
-    #info39 a {
+    #info390 a {
         font-size: 1em;
     }
 }

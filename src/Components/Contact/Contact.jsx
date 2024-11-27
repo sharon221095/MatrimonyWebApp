@@ -265,44 +265,44 @@ const Contact = () => {
         <div class="patch13">
 
         <div class="info52">
-            <h2>Contact Us for Assistance and Inquiries</h2>
+            <h1>Contact Us for Assistance and Inquiries</h1>
         </div>
         
         
         
         <div class="phone">
-            <p>Phone</p>
-            <h3>202-555-0188</h3>
+            <h3>Phone</h3>
+            <p>202-555-0188</p>
 
-            <div class="hr"></div>
+            <div class="hr9"></div>
         </div>
         
         
         
         <div class="email">
-            <p>Email</p>
-            <h3>contact@example.com</h3>
+            <h3>Email</h3>
+            <p>contact@example.com</p>
 
-            <div class="hr1"></div>
+            <div class="hr10"></div>
         </div>
         
         
         
         <div class="address">
-            <p>Address</p>
-            <h3>2360 Hood Avenue, San Diego, CA, 92123</h3>
+            <h3>Address</h3>
+            <p>2360 Hood Avenue, San Diego, CA, 92123</p>
 
-            <div class="hr2"></div>
+            <div class="hr11"></div>
         </div>
 
         <div class="social">
-            <p class="info53">Follow Us</p>
+            <h3 class="info53">Follow Us</h3>
 
-            <div class="social-menu2">
+            <div className="social-menu10">
                 <ul>
-                    <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
+                    <li><a href="#" target="_blank"><i className="fab fa-facebook"></i></a></li>
+                    <li><a href="#" target="_blank"><i className="fab fa-instagram"></i></a></li>
+                    <li><a href="#" target="_blank"><i className="fab fa-youtube"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -312,7 +312,7 @@ const Contact = () => {
         </div>
     </div>
 
-            <div class="hr3"></div>
+            <div className='parent-container72'>
             <div class="form-container">
                 <h1>Send Us a Message</h1>
                 <p>Fill out the form below to reach our team. We will respond to your inquiry promptly.</p>
@@ -363,18 +363,19 @@ const Contact = () => {
             </div>
 
             <MapComponent />
+            </div>
 
 
-            <div className="parent-container7">
-  <div className="check1">
+            <div className="parent-container702">
+  <div className="check19">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
-    <div className="insta1">
+    <div className="insta-contact">
       <a href="#" target="_self" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
     </div>
-  <div className="container7">
+  <div className="container702">
     <div className="row justify-content-center"> 
       <div className="col-auto">
         <div className="image16">
@@ -416,25 +417,25 @@ const Contact = () => {
 </div>
 
 
-    <div className="parent-container8">
-    <div className="container8 text-center">
-        <div className="find mb-4"> 
+    <div className="parent-container803">
+    <div className="container803 text-center">
+        <div className="find-contact mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info4">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-contact">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
 
-    <div class="parent-container54">
-    <div class="contact-container5">
-        <div class="contact-item5">
+    <div class="parent-container519">
+    <div class="contact-container519">
+        <div class="contact-item519">
             <h2>Phone</h2>
             <p>202-555-0188</p>
         </div>
-        <div class="contact-item5">
+        <div class="contact-item519">
             <h2>Follow Us</h2>
-            <div class="social-icons5">
+            <div class="social-icons519">
                 <ul>
                     <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
                     <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
@@ -442,7 +443,7 @@ const Contact = () => {
                 </ul>
             </div>
         </div>
-        <div class="contact-item5">
+        <div class="contact-item519">
             <h2>Email</h2>
             <p>contact@example.com</p>
         </div>
@@ -452,11 +453,11 @@ const Contact = () => {
     
     
         
-<div class="parent-container55">
+<div class="parent-container553">
 
-    <nav class="container55">
+    <nav class="container553">
 
-            <ul id="info39">
+            <ul id="info-contact">
                 <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
                 <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
                 <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
@@ -472,8 +473,8 @@ const Contact = () => {
                       
                                 
 
-<div class="parent-container56">
-	<div class="container56">
+<div class="parent-container563">
+	<div class="container563">
         <p>Copyright © 2024 NRImarriage</p>
     </div>			
 </div> 

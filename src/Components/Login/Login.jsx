@@ -307,7 +307,7 @@ const Login = () => {
 
 
 <div className="parent-container18">
-  <div className="check1">
+  <div className="check12">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
     <div className="insta-log">
@@ -359,7 +359,7 @@ const Login = () => {
 
     <div className="parent-container19">
     <div className="container19 text-center">
-        <div className="find mb-4"> 
+        <div className="find2 mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
         <p className="info-log">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>

@@ -388,7 +388,7 @@ const Registration = () => {
 
 
 <div className="parent-container711">
-  <div className="check1">
+  <div className="check11">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
     <div className="insta-reg">
@@ -440,7 +440,7 @@ const Registration = () => {
 
     <div className="parent-container81">
     <div className="container81 text-center">
-        <div className="find mb-4"> 
+        <div className="find1 mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
         <p className="info-reg">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>

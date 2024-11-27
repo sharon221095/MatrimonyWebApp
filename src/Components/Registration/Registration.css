@@ -22,7 +22,7 @@ body {
 .website-title a {
     font-size: 36px; /* Adjust size */
     font-weight: 700; /* Make the text bold */
-    color: #F1C27D; /* Dark color for the text */
+    color: #FFB900; /* Dark color for the text */
     text-decoration: none; /* Remove underline */
     letter-spacing: 2px; /* Adds spacing between letters */
     font-family: 'Dancing Script', cursive; /* Beautiful script font */
@@ -30,13 +30,13 @@ body {
 }
 
 .website-title a:hover {
-    color: #F1C27D; /* Change color when hovering */
+    color: #FFB900; /* Change color when hovering */
 }
 
 
 
 .button a {
-    color: #F1C27D;
+    color: #FFB900;
     background: #A02334;
     border-color: #A02334;
     border-radius: 25px;
@@ -49,7 +49,7 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
-    border: 2px solid #F1C27D;
+    border: 2px solid #FFB900;
     text-decoration: none;
     width: 100%; /* Make sure button doesn’t overflow */
     white-space: nowrap;
@@ -57,9 +57,9 @@ body {
 
 /* Hover effect for the button */
 .button a:hover {
-    background-color: #F1C27D; /* Change background on hover */
+    background-color: #FFB900; /* Change background on hover */
     color: white; /* Change text color on hover */
-    border-color: #F1C27D; /* Change border color on hover */
+    border-color: #FFB900; /* Change border color on hover */
 }
 
 /* Forcing a recalculation of the layout when the screen is resized */
@@ -78,9 +78,9 @@ body {
     }
 
     .button a:hover {
-        background-color: #F1C27D; /* Change background on hover */
+        background-color: #FFB900; /* Change background on hover */
         color: white; /* Change text color on hover */
-        border-color: #F1C27D; /* Change border color on hover */
+        border-color: #FFB900; /* Change border color on hover */
     }
 
     .row {
@@ -110,9 +110,9 @@ body {
     }
 
     .button a:hover {
-        background-color: #9335B6; /* Change background on hover */
+        background-color: #FFB900; /* Change background on hover */
         color: white; /* Change text color on hover */
-        border-color: #9335B6; /* Change border color on hover */
+        border-color: #FFB900; /* Change border color on hover */
     }
 }
 
@@ -195,7 +195,7 @@ body {
 
 .containera p {
     font-size: 1.1rem;
-    color: #F1C27D;
+    color: #FFB900;
     font-family: 'Inria Serif', serif;
 }
 
@@ -225,7 +225,7 @@ body {
 .form h1 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #F1C27D;
+    color: #FFB900;
 }
 
 /* Input fields styling */
@@ -269,7 +269,7 @@ body {
     width: 30%;
     max-width: 150px;
     padding: 10px;
-    background-color: #F1C27D;
+    background-color: #FFB900;
     color: white;
     border: none;
     border-top-left-radius: 18px;
@@ -283,7 +283,7 @@ body {
 
 .button1:hover {
     background-color: #f4eaf9;
-    color: #F1C27D;
+    color: #FFB900;
 }
 
 /* Link styling */
@@ -291,7 +291,7 @@ body {
     display: block;
     margin-top: 20px;
     text-align: center;
-    color: #F1C27D;
+    color: #FFB900;
     text-decoration: none;
 }
 
@@ -702,14 +702,14 @@ body {
     font-weight: 700;
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
-    color: #F1C27D;
+    color: #FFB900;
     margin-bottom: 30px;
 }
 
 /* Paragraph styling */
 .container4 p {
     font-size: 1.1rem;
-    color: #F1C27D;
+    color: #FFB900;
     margin-top: 20px;
 }
 
@@ -821,7 +821,7 @@ body {
 .container5 .img12:hover figcaption,
 .container5 .img8:hover figcaption,
 .container5 .img9:hover figcaption {
-    color: #F1C27D; /* Change caption color to purple on hover */
+    color: #FFB900; /* Change caption color to purple on hover */
 }
 
 /* Responsive Styles */
@@ -1024,20 +1024,20 @@ body {
     align-items: center;
 }
 
-.check1 {
+.check11 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.check1 h2 {
+.check11 h2 {
     font-size: 2.25rem;
     font-weight: 700;
     font-family: 'Inria Serif', serif;
     line-height: 1.25em;
     margin: 0 33px;
-    color: #F1C27D;
+    color: #FFB900;
 }
 
 .insta-reg {
@@ -1050,14 +1050,14 @@ body {
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid transparent;
-    background-color: #F1C27D;
+    background-color: #FFB900;
     color: white;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .insta-reg a:hover {
     background-color: white;
-    color: #F1C27D;
+    color: #FFB900;
 }
 
 .container711 {
@@ -1147,14 +1147,14 @@ body {
     }
 
     /* Make .check1 and .about1 stack vertically on smaller screens */
-    .check1, .about1 {
+    .check11, .about1 {
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
 
     /* Adjust spacing for vertical layout */
-    .check1 {
+    .check11 {
         margin-bottom: 30px;
         text-align: center;
     }
@@ -1175,24 +1175,25 @@ body {
 }
 
 .container81 {
-    background-color: #F1C27D;
+    background-color: #A02334;
     box-shadow: 0px 0px #00000070;
     padding: 70px 30px; /* Simplified padding */
     border-top-left-radius: 120px;
     border-bottom-right-radius: 120px;
     margin: 0 50px; /* Simplified margin */
+    border: 2px solid #FFB900;
 }
 
-.find h2 {
+.find1 h2 {
     font-size: 2.25em;
     margin-bottom: 20px;
     font-family: 'Inria Serif', serif;
-    color: white;
+    color: #FFB900;
 }
 
 .info-reg {
     font-size: 1.2em; 
-    color: white; 
+    color: #FFB900; 
     margin-bottom: 28px;
     font-family: 'Inria Serif', serif;
     font-weight: lighter;
@@ -1219,7 +1220,7 @@ body {
     flex-direction: row; /* Stack items horizontally */
     align-items: center; /* Center items horizontally */
     background-color: #A02334;
-    color: #F1C27D;;
+    color: #FFB900;
 }
 
 .contact-item1 {
@@ -1345,7 +1346,7 @@ body {
 }
 
 .container11 {
-    color: #F1C27D;
+    color: #FFB900;
 }
 
 /* Responsive Styles */

@@ -463,16 +463,16 @@ const Portfolio = () => {
     </div>
 
 
-    <div className="parent-container7">
-  <div className="check1">
+    <div className="parent-container790">
+  <div className="check16">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
-    <div className="insta1">
+    <div className="insta-portfolio">
       <a href="#" target="_self" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
     </div>
-  <div className="container7">
+  <div className="container790">
     <div className="row justify-content-center"> 
       <div className="col-auto">
         <div className="image16">
@@ -514,25 +514,25 @@ const Portfolio = () => {
 </div>
 
 
-    <div className="parent-container8">
-    <div className="container8 text-center">
-        <div className="find mb-4"> 
+    <div className="parent-container800">
+    <div className="container800 text-center">
+        <div className="find-portfolio mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info4">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-portfolio">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
 
-    <div class="parent-container54">
-    <div class="contact-container5">
-        <div class="contact-item5">
+    <div class="parent-container570">
+    <div class="contact-container570">
+        <div class="contact-item570">
             <h2>Phone</h2>
             <p>202-555-0188</p>
         </div>
-        <div class="contact-item5">
+        <div class="contact-item570">
             <h2>Follow Us</h2>
-            <div class="social-icons5">
+            <div class="social-icons570">
                 <ul>
                     <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
                     <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
@@ -540,7 +540,7 @@ const Portfolio = () => {
                 </ul>
             </div>
         </div>
-        <div class="contact-item5">
+        <div class="contact-item570">
             <h2>Email</h2>
             <p>contact@example.com</p>
         </div>
@@ -550,11 +550,11 @@ const Portfolio = () => {
     
     
         
-<div class="parent-container55">
+<div class="parent-container559">
 
-    <nav class="container55">
+    <nav class="container559">
 
-            <ul id="info39">
+            <ul id="info-portfolio">
                 <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
                 <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
                 <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
@@ -570,8 +570,8 @@ const Portfolio = () => {
                       
                                 
 
-<div class="parent-container56">
-	<div class="container56">
+<div class="parent-container569">
+	<div class="container569">
         <p>Copyright © 2024 theindianwedding</p>
     </div>			
 </div> 
