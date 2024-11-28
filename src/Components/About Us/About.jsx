@@ -109,7 +109,7 @@ const About = () => {
     <div className='body'>
         <header class="header4">
         <h1 className="website-title3 col-12 col-md-auto text-left text-md-left">
-            <a href="#">NRImarriage</a>
+            <a href="#">NRImatch</a>
         </h1>
 
          
@@ -210,7 +210,7 @@ const About = () => {
         <div class="container32">
 
                 <h1>Connecting Souls for a Lifetime</h1>
-                <p>Discover your perfect life partner within the vibrant Indian community through NRImarriage’s comprehensive matrimonial platform.</p>
+                <p>Discover your perfect life partner within the vibrant Indian community through NRImatch’s comprehensive matrimonial platform.</p>
 
         </div>
 
@@ -221,7 +221,7 @@ const About = () => {
     <div class="parent-container33">
 
             <div class="info15">
-                <h2>Welcome to NRImarriage</h2>
+                <h2>Welcome to NRImatch</h2>
             </div>
 
 
@@ -238,7 +238,7 @@ const About = () => {
         
         
                 <div class="info16">
-                    <h3>With years of experience in the industry, NRImarriage is a trusted platform that connects individuals seeking marriage partners within the Indian community.</h3>
+                    <h3>With years of experience in the industry, NRImatch is a trusted platform that connects individuals seeking marriage partners within the Indian community.</h3>
                 </div>
         
         
@@ -332,7 +332,7 @@ const About = () => {
                         <h2>Our Mission</h2>
                         <p>Empowering individuals to find love and companionship</p>
                     </div>
-                        <p class="para1">At NRImarriage, our mission is to provide a reliable and user-friendly platform that empowers individuals to find their perfect life partner within the Indian community. We are committed to leveraging technology and innovation to simplify and enhance the process of matchmaking, ensuring positive and lasting connections.</p>
+                        <p class="para1">At NRImatch, our mission is to provide a reliable and user-friendly platform that empowers individuals to find their perfect life partner within the Indian community. We are committed to leveraging technology and innovation to simplify and enhance the process of matchmaking, ensuring positive and lasting connections.</p>
                 </div>
         
         
@@ -369,7 +369,7 @@ const About = () => {
         <div class="container35">
             <div class="info22">
                 <h2>Unveiling Our Process</h2>
-                <p>Working with NRImarriage behind the scenes is a seamless and personalized experience. Our dedicated team of professionals ensures meticulous attention to detail, delivering exceptional customer service and support throughout the matchmaking journey. From profile creation to finalizing matches, we are there every step of the way.</p>
+                <p>Working with NRImatch behind the scenes is a seamless and personalized experience. Our dedicated team of professionals ensures meticulous attention to detail, delivering exceptional customer service and support throughout the matchmaking journey. From profile creation to finalizing matches, we are there every step of the way.</p>
             </div>
             <div class="row1">
                 <div class="img-25">
@@ -466,7 +466,7 @@ const About = () => {
         <div className="find-about mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info-about">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-about">Join NRImatch today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
@@ -519,7 +519,7 @@ const About = () => {
 
 <div class="parent-container566">
 	<div class="container566">
-        <p>Copyright © 2024 NRImarriage</p>
+        <p>Copyright © 2024 NRImatch</p>
     </div>			
 </div> 
     </div>

@@ -110,7 +110,7 @@ const Blog = () => {
     <div className='body'>
         <header class="header8">
         <h1 className="website-title7 col-12 col-md-auto text-left text-md-left">
-            <a href="#">NRImarriage</a>
+            <a href="#">NRImatch</a>
             </h1>
 
         <nav className={navVisible ? 'visible' : 'hidden'}>
@@ -209,7 +209,7 @@ const Blog = () => {
         <div class="container64">
 
                 <h1>Discover Inspiring Stories and Advice</h1>
-                <p>Explore a collection of articles covering relationships, marriage tips, and success stories in the world of the 'NRImarriage'.</p>
+                <p>Explore a collection of articles covering relationships, marriage tips, and success stories in the world of the 'NRImatch'.</p>
 
         </div>
 
@@ -377,7 +377,7 @@ const Blog = () => {
         <div className="find-blog mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info-blog">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-blog">Join NRImatch today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
@@ -430,7 +430,7 @@ const Blog = () => {
 
 <div class="parent-container562">
 	<div class="container562">
-        <p>Copyright © 2024 NRImarriage</p>
+        <p>Copyright © 2024 NRImatch</p>
     </div>			
 </div> 
     </div>

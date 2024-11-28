@@ -108,7 +108,7 @@ const Testimonials = () => {
 
         <header class="header7">
         <h1 className="website-title6 col-12 col-md-auto text-left text-md-left">
-            <a href="#">NRImarriage</a>
+            <a href="#">NRImatch</a>
             </h1>
 
          
@@ -212,7 +212,7 @@ const Testimonials = () => {
         <div class="container57">
 
                 <h1>Happily Ever Afters</h1>
-                <p>Read what our happy couples have to say about their experience with the 'NRImarriage'. Their stories will make you believe in the power of true love.</p>
+                <p>Read what our happy couples have to say about their experience with the 'NRImatch'. Their stories will make you believe in the power of true love.</p>
 
         </div>
 
@@ -238,7 +238,7 @@ const Testimonials = () => {
                         </svg>
                     </div>
                     <h2>Riya &amp; Arjun</h2>
-                    <p>We are grateful to the 'NRImarriage' for bringing us together. We found true love and a partner for life!</p>
+                    <p>We are grateful to the 'NRImatch' for bringing us together. We found true love and a partner for life!</p>
                 </div>
 
             </div>
@@ -261,7 +261,7 @@ const Testimonials = () => {
                         </svg>
                     </div>
                     <h2>Smita &amp; Deepak</h2>
-                    <p>The 'NRImarriage' helped us find our soulmates. We couldn’t be happier with our life partners!</p>
+                    <p>The 'NRImatch' helped us find our soulmates. We couldn’t be happier with our life partners!</p>
                 </div>
 
             </div>
@@ -281,7 +281,7 @@ const Testimonials = () => {
         
                 <div class="info42">
                     <div>
-                        <p class="message7">We are grateful to the 'NRImarriage' for bringing us together. We found true love and a partner for life!</p>
+                        <p class="message7">We are grateful to the 'NRImatch' for bringing us together. We found true love and a partner for life!</p>
                     </div>
                 <div class="img-56">
                     <img src={image56} alt="img-56"></img>
@@ -304,7 +304,7 @@ const Testimonials = () => {
         
                 <div class="info43">
                     <div>
-                        <p class="message8">The 'NRImarriage' helped us find our soulmates. We couldn't be happier with our life partners!</p>
+                        <p class="message8">The 'NRImatch' helped us find our soulmates. We couldn't be happier with our life partners!</p>
                     </div>
                     <div class="img-57">
                         <img src={image57} alt="img-57"></img>
@@ -334,7 +334,7 @@ const Testimonials = () => {
         
                 <div class="info45">
                     <div>
-                        <p class="message10">Thanks to NRImarriage, we found love in the most unexpected way. We are forever grateful for this platform.</p>
+                        <p class="message10">Thanks to NRImatch, we found love in the most unexpected way. We are forever grateful for this platform.</p>
                     </div>
                     <div class="img-59">
                         <img src={image59} alt="img-59"></img>
@@ -358,7 +358,7 @@ const Testimonials = () => {
         
                 <div class="info46">
                     <div>
-                        <p class="message11">We had almost given up hope until we came across the 'NRImarriage'. It truly works wonders. Highly recommended!</p>
+                        <p class="message11">We had almost given up hope until we came across the 'NRImatch'. It truly works wonders. Highly recommended!</p>
                     </div>
                     <div class="img-60">
                         <img src={image60} alt="img-60"></img>
@@ -432,7 +432,7 @@ const Testimonials = () => {
         <div className="find-testimonials mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info-testimonials">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-testimonials">Join NRImatch today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
@@ -485,7 +485,7 @@ const Testimonials = () => {
 
 <div class="parent-container561">
 	<div class="container561">
-        <p>Copyright © 2024 NRImarriage</p>
+        <p>Copyright © 2024 NRImatch</p>
     </div>			
 </div> 
     </div>

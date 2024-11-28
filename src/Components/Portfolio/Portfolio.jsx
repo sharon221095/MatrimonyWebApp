@@ -117,7 +117,7 @@ const Portfolio = () => {
     <div className='body'>
         <header class="header6">
         <h1 className="website-title5 col-12 col-md-auto text-left text-md-left">
-            <a href="#">NRImarriage</a>
+            <a href="#">NRImatch</a>
             </h1>
 
         <nav className={navVisible ? 'visible' : 'hidden'}>
@@ -217,7 +217,7 @@ const Portfolio = () => {
         <div class="container48">
 
                 <h1>Love Stories in Pictures</h1>
-                <p>Explore the magical journey of couples who found their perfect match through The IndianWedding. Browse through our collection of wedding photos and get inspired for your own special day.</p>
+                <p>Explore the magical journey of couples who found their perfect match through NRImatch. Browse through our collection of wedding photos and get inspired for your own special day.</p>
 
         </div>
 
@@ -289,7 +289,7 @@ const Portfolio = () => {
         
             <div class="info33">
                 <div>
-                    <p class="message4">We cannot thank TheIndianWedding enough for bringing us together. We are grateful for this platform that made our dreams come true.</p>
+                    <p class="message4">We cannot thank NRImatch enough for bringing us together. We are grateful for this platform that made our dreams come true.</p>
                 </div>
                 <div class="img-40">
                     <img src={image40} alt="img-40"></img>
@@ -372,7 +372,7 @@ const Portfolio = () => {
         
             <div class="info35">
                 <div>
-                    <p class="message5">TheIndianWedding introduced us to our soulmates. We are forever indebted to this amazing service. Thank you!</p>
+                    <p class="message5">NRImatch introduced us to our soulmates. We are forever indebted to this amazing service. Thank you!</p>
                 </div>
                 <div class="img-47">
                     <img src={image47} alt="img-47"></img>
@@ -451,7 +451,7 @@ const Portfolio = () => {
         
             <div class="info37">
                 <div>
-                    <p class="message6">Thanks to TheIndianWedding, we found love in the most unexpected way. We are forever grateful for this platform.</p>
+                    <p class="message6">Thanks to NRImatch, we found love in the most unexpected way. We are forever grateful for this platform.</p>
                 </div>
                 <div class="img-53">
                     <img src={image53} alt="img-53"></img>
@@ -519,7 +519,7 @@ const Portfolio = () => {
         <div className="find-portfolio mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info-portfolio">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-portfolio">Join NRImatch today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
@@ -572,7 +572,7 @@ const Portfolio = () => {
 
 <div class="parent-container569">
 	<div class="container569">
-        <p>Copyright © 2024 theindianwedding</p>
+        <p>Copyright © 2024 NRImatch</p>
     </div>			
 </div> 
 

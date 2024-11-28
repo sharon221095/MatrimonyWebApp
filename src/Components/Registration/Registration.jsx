@@ -55,7 +55,7 @@ const Registration = () => {
             <div className="row align-items-center justify-content-between">
         {/* <!-- Logo --> */}
         <h1 className="website-title col-12 col-md-auto text-center text-md-left">
-            <a href="#">NRImarriage</a>
+            <a href="#">NRImatch</a>
         </h1>
 
 
@@ -208,7 +208,7 @@ const Registration = () => {
 
         <div className="about">
             <h2>Our Story</h2>
-            <p>NRImarriage is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
+            <p>NRImatch is committed to helping individuals within the Indian community find their soulmates. With a focus on compatibility and a deep understanding of cultural values, we strive to make the journey of finding love easier and more fulfilling.</p>
             <div className="hr"></div>
             <p className="info">Follow Us</p>
             
@@ -262,7 +262,7 @@ const Registration = () => {
                 <h2>Find Your Perfect Match</h2>
             </div>
             <div>
-                <p>Start your journey to a happy and fulfilled married life by joining NRImarriage and finding your perfect match based on compatibility and shared values.</p>
+                <p>Start your journey to a happy and fulfilled married life by joining NRImatch and finding your perfect match based on compatibility and shared values.</p>
             </div>
         </div>
     </div>
@@ -335,7 +335,7 @@ const Registration = () => {
 
         <div className="info1">
             <div>
-                <p className="message">We are grateful to NRImarriage for bringing us together. We found true love and a partner for life!</p>
+                <p className="message">We are grateful to NRImatch for bringing us together. We found true love and a partner for life!</p>
             </div>
             <div className="img13">
                 <img srcSet={image13} alt="img-13"></img>
@@ -355,7 +355,7 @@ const Registration = () => {
 
         <div className="info2">
             <div>
-                <p className="message2"> NRImarriage helped us find our soulmates. We couldn't be happier with our life partners!</p>
+                <p className="message2"> NRImatch helped us find our soulmates. We couldn't be happier with our life partners!</p>
             </div>
             <div className="img14">
                 <img srcSet={image14} alt="img-14"></img>
@@ -375,7 +375,7 @@ const Registration = () => {
 
         <div className="info3">
             <div>
-                <p className="message3">Thanks to NRImarriage, we found true love and are excited to start our journey together as a married couple.</p>
+                <p className="message3">Thanks to NRImatch, we found true love and are excited to start our journey together as a married couple.</p>
             </div>
             <div className="img15">
                 <img srcSet={image15} alt="img-15"></img>
@@ -443,7 +443,7 @@ const Registration = () => {
         <div className="find1 mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info-reg">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-reg">Join NRImatch today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
@@ -496,7 +496,7 @@ const Registration = () => {
 
 <div class="parent-container11">
 	<div class="container11">
-        <p>Copyright © 2024 NRImarriage</p>
+        <p>Copyright © 2024 NRImatch</p>
     </div>			
 </div> 
 </div>

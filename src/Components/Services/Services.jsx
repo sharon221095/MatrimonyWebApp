@@ -102,7 +102,7 @@ const Services = () => {
     <div className='body'>
         <header class="header5">
         <h1 className="website-title4 col-12 col-md-auto text-left text-md-left">
-            <a href="#">NRImarriage</a>
+            <a href="#">NRImatch</a>
         </h1>
 
 
@@ -385,7 +385,7 @@ const Services = () => {
         <div className="find-services mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info-services">Join NRImarriage today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-services">Join NRImatch today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
@@ -438,7 +438,7 @@ const Services = () => {
 
 <div class="parent-container566">
 	<div class="container566">
-        <p>Copyright © 2024 NRImarriage</p>
+        <p>Copyright © 2024 NRImatch</p>
     </div>			
 </div> 
 
