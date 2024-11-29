@@ -192,14 +192,12 @@ body {
 
 .nav-toggle1 {
     display: none;
-    font-size: 20px;
+    font-size: 30px;
     background-color: #FFB900;
     /* Primary color for the button */
     color: white;
     /* Text color */
     border: none;
-    border-radius: 8px;
-    /* Rounded corners */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s ease;
     /* Smooth transition */

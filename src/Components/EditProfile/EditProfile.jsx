@@ -975,16 +975,16 @@ const EditProfile = () => {
       </div>
     
 
-      <div className="parent-container7">
-  <div className="check1">
+      <div className="parent-container712">
+  <div className="check20">
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
-    <div className="insta1">
+    <div className="insta-edit">
       <a href="#" target="_self" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
     </div>
-  <div className="container7">
+  <div className="container712">
     <div className="row justify-content-center"> 
       <div className="col-auto">
         <div className="image16">
@@ -1026,25 +1026,25 @@ const EditProfile = () => {
 </div>
 
 
-    <div className="parent-container8">
-    <div className="container8 text-center">
-        <div className="find mb-4"> 
+    <div className="parent-container804">
+    <div className="container804 text-center">
+        <div className="find-edit mb-4"> 
             <h2>Find Your Soulmate Today</h2>
         </div>
-        <p className="info4">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
+        <p className="info-edit">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
     </div>
     </div>
 
 
-    <div class="parent-container54">
-    <div class="contact-container5">
-        <div class="contact-item5">
+    <div class="parent-container520">
+    <div class="contact-container520">
+        <div class="contact-item520">
             <h2>Phone</h2>
             <p>202-555-0188</p>
         </div>
-        <div class="contact-item5">
+        <div class="contact-item520">
             <h2>Follow Us</h2>
-            <div class="social-icons5">
+            <div class="social-icons520">
                 <ul>
                     <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
                     <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
@@ -1052,7 +1052,7 @@ const EditProfile = () => {
                 </ul>
             </div>
         </div>
-        <div class="contact-item5">
+        <div class="contact-item520">
             <h2>Email</h2>
             <p>contact@example.com</p>
         </div>
@@ -1062,11 +1062,11 @@ const EditProfile = () => {
     
     
         
-<div class="parent-container55">
+<div class="parent-container554">
 
-    <nav class="container55">
+    <nav class="container554">
 
-            <ul id="info39">
+            <ul id="info-edit">
                 <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
                 <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
                 <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
@@ -1082,8 +1082,8 @@ const EditProfile = () => {
                       
                                 
 
-<div class="parent-container56">
-	<div class="container56">
+<div class="parent-container564">
+	<div class="container564">
         <p>Copyright © 2024 theindianwedding</p>
     </div>			
 </div> 
