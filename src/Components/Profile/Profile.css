@@ -1,91 +1,146 @@
+
+
 .profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Center align the items */
-    margin: 20px;
-    /* Add some margin */
+    max-width: 600px;
+    margin: 20px auto;
     padding: 20px;
-    /* Add padding for better spacing */
-    border: 1px solid #ccc;
-    /* Optional border for the container */
     border-radius: 10px;
-    /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Optional shadow for depth */
-    background-color: #f9f9f9;
-    /* Light background color */
+    background-color: #FFB900; /* Slight contrast box for content */
+    color: #A02334;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.user-images {
-    display: flex;
-    /* Use flexbox for user images */
-    flex-direction: row;
-    /* Change to row layout for horizontal display */
-    align-items: center;
-    /* Center align images vertically */
-    margin-bottom: 20px;
-    /* Space below images */
+/* User details section */
+.user-details {
+    text-align: center;
 }
 
-.user-image {
-    width: 100px;
-    /* Set a fixed width for the images */
-    height: 100px;
-    /* Set a fixed height for the images */
-    object-fit: cover;
-    /* Maintain aspect ratio */
-    margin: 5px;
-    /* Space between images */
+h2 {
+    color: #FFB900;
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
 .profile-picture {
-    width: 150px;
-    /* Profile picture size */
-    height: 150px;
-    /* Profile picture size */
-    border-radius: 75px;
-    /* Circular profile picture */
-    margin-bottom: 15px;
-    /* Space below profile picture */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FFB900;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.user-details {
+.profile-picture:hover,
+.profile-picture:focus {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add a shadow */
+    outline: none; /* Remove focus outline */
+}
+
+
+/* User images */
+.user-images {
     display: flex;
-    flex-direction: column;
-    /* Stack details vertically */
-    align-items: center;
-    /* Center align details */
-    width: 100%;
-    /* Ensure it takes full width */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
+.user-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #A02334;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.user-image:hover,
+.user-image:focus {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add a shadow */
+    outline: none; /* Remove focus outline */
+    border: 2px solid #FFB900; /* Highlight border on hover/focus */
+}
+
+/* Detail rows */
 .detail-row {
     display: flex;
-    /* Use flexbox for the label and value */
     justify-content: space-between;
-    /* Space between label and value */
+    align-items: center;
     margin-bottom: 10px;
-    /* Space between rows */
-    width: 80%;
-    /* Control width for the detail rows */
+    padding: 10px;
+    border-bottom: 1px solid #FFB900;
 }
 
 .field-label {
     font-weight: bold;
-    /* Make labels bold for better visibility */
-    width: 150px;
-    /* Fixed width for labels */
-    text-align: left;
-    /* Align labels to the left */
 }
 
 .verified {
-    color: green;
-    /* Color for verified status */
+    color: #27AE60; /* Green for verified status */
+    font-weight: bold;
 }
 
 .unverified {
-    color: red;
-    /* Color for unverified status */
+    color: #E74C3C; /* Red for unverified status */
+    font-weight: bold;
 }
+
+
+
+/* Responsive design for desktop */
+@media screen and (max-width: 1024px) {
+    .profile-container {
+        padding: 15px;
+    }
+    .user-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Responsive design for mobile */
+@media screen and (max-width: 767px) {
+    .profile-container {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .user-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .detail-row {
+        display: flex;
+        justify-content: space-between; /* Align items horizontally */
+        align-items: center; /* Vertically center content */
+        gap: 10px;
+        border-bottom: 1px solid #FFB900;
+        padding: 10px;
+    }
+
+    .field-label {
+        flex: 0 0 40%; /* Ensure labels take up consistent space */
+    }
+
+    .detail-row span {
+        flex: 1; /* Results grow to fill remaining space */
+        text-align: left; /* Align text to the left */
+        word-wrap: break-word; /* Ensure long text wraps properly */
+    }
+}
+

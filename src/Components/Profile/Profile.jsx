@@ -65,68 +65,76 @@ const Profile = () => {
 
     return (
         <div className="profile-container">
-
-
-            {/* User details centered */}
-            <div className="user-details">
-                <h2>{`${userData.firstName} ${userData.lastName}`}</h2>
-                <img src={userData.profilePictureUrl || 'default-image-url'} alt={`${userData.firstName} ${userData.lastName} Profile`} className="profile-picture" />
-                {/* User images at the top */}
-                <div className="user-images">
-                    {
-                        userImages.length > 0 ? (
-                            userImages.map((image, index) => (
-                                <img key={image.imageId} src={image.preSignedUrl} alt={`User image ${index + 1}`} className="user-image" />
-                            ))
-                        ) : (
-                            <p>No images available</p>
-                        )
-                    }
-                </div>
-                <div className="detail-row">
-                    <span className="field-label">Email:</span>
-                    <span>{userData.email}</span>
-                </div>
-                <div className="detail-row">
-                    <span className="field-label">Phone Number:</span>
-                    <span>{userData.phoneNumber}</span>
-                </div>
-                <div className="detail-row">
-                    <span className="field-label">Age:</span>
-                    <span>{userData.age}</span>
-                </div>
-                <div className="detail-row">
-                    <span className="field-label">Gender:</span>
-                    <span>{userData.gender}</span>
-                </div>
-                <div className="detail-row">
-                    <span className="field-label">Country:</span>
-                    <span>{userData.country}</span>
-                </div>
-                <div className="detail-row">
-                    <span className="field-label">Occupation:</span>
-                    <span>{userData.occupation}</span>
-                </div>
-                <div className="detail-row">
-                    <span className="field-label">About Me:</span>
-                    <span>{userData.aboutMe}</span>
-                </div>
-                <div className="detail-row">
-                    <span className="field-label">Profile Status:</span>
-                    <span>{userData.profileStatus}</span>
-                </div>
-                <div className="detail-row">
-                    <span className="field-label">Verified:</span>
-                    <span className={userData.isVerified ? 'verified' : 'unverified'}>
-                        {userData.isVerified ? "Yes" : "No"}
-                    </span>
-                </div>
-                <div className="detail-row">
-                    <span className="field-label">Created On:</span>
-                    <span>{new Date(userData.createdOn).toLocaleString()}</span>
-                </div>
-            </div>
+    <div className="user-details">
+        <h2>{`${userData.firstName} ${userData.lastName}`}</h2>
+        <img
+            src={userData.profilePictureUrl || "default-image-url"}
+            alt={`${userData.firstName} ${userData.lastName} Profile`}
+            className="profile-picture"
+        />
+        <div className="user-images">
+            {userImages.length > 0 ? (
+                userImages.map((image, index) => (
+                    <img
+                        key={image.imageId}
+                        src={image.preSignedUrl}
+                        alt={`User image ${index + 1}`}
+                        className="user-image"
+                    />
+                ))
+            ) : (
+                <p>No images available</p>
+            )}
         </div>
+        <div className="detail-row">
+            <span className="field-label">Email:</span>
+            <span>{userData.email}</span>
+        </div>
+        <div className="detail-row">
+            <span className="field-label">Phone Number:</span>
+            <span>{userData.phoneNumber}</span>
+        </div>
+        <div className="detail-row">
+            <span className="field-label">Age:</span>
+            <span>{userData.age}</span>
+        </div>
+        <div className="detail-row">
+            <span className="field-label">Gender:</span>
+            <span>{userData.gender}</span>
+        </div>
+        <div className="detail-row">
+            <span className="field-label">Country:</span>
+            <span>{userData.country}</span>
+        </div>
+        <div className="detail-row">
+            <span className="field-label">Occupation:</span>
+            <span>{userData.occupation}</span>
+        </div>
+        <div className="detail-row">
+            <span className="field-label">About Me:</span>
+            <span>{userData.aboutMe}</span>
+        </div>
+        <div className="detail-row">
+            <span className="field-label">Profile Status:</span>
+            <span>{userData.profileStatus}</span>
+        </div>
+        <div className="detail-row">
+            <span className="field-label">Verified:</span>
+            <span
+                className={userData.isVerified ? "verified" : "unverified"}
+            >
+                {userData.isVerified ? "Yes" : "No"}
+            </span>
+        </div>
+        <div className="detail-row">
+            <span className="field-label">Created On:</span>
+            <span>
+                {new Date(userData.createdOn).toLocaleString()}
+            </span>
+        </div>
+    </div>
+</div>
+
     );
 };
 
