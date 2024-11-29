@@ -65,24 +65,24 @@ const Profile = () => {
 
     return (
         <div className="profile-container">
-            {/* User images at the top */}
-            <div className="user-images">
-                <h3>User Images</h3>
-                {
-                    userImages.length > 0 ? (
-                        userImages.map((image, index) => (
-                            <img key={image.imageId} src={image.preSignedUrl} alt={`User image ${index + 1}`} className="user-image" />
-                        ))
-                    ) : (
-                        <p>No images available</p>
-                    )
-                }
-            </div>
+
 
             {/* User details centered */}
             <div className="user-details">
                 <h2>{`${userData.firstName} ${userData.lastName}`}</h2>
                 <img src={userData.profilePictureUrl || 'default-image-url'} alt={`${userData.firstName} ${userData.lastName} Profile`} className="profile-picture" />
+                {/* User images at the top */}
+                <div className="user-images">
+                    {
+                        userImages.length > 0 ? (
+                            userImages.map((image, index) => (
+                                <img key={image.imageId} src={image.preSignedUrl} alt={`User image ${index + 1}`} className="user-image" />
+                            ))
+                        ) : (
+                            <p>No images available</p>
+                        )
+                    }
+                </div>
                 <div className="detail-row">
                     <span className="field-label">Email:</span>
                     <span>{userData.email}</span>

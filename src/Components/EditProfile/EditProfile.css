@@ -2,45 +2,66 @@ body {
     font-family: 'Inria Serif', serif;
     margin: 0;
     padding: 0;
-}   
+}
 
-.parent-container78{
+.parent-container78 {
     margin: 40px 20px;
     justify-items: center;
 }
+
+.image-preview {
+    max-width: 100%;
+    /* Ensure it stays responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+    max-height: 300px;
+}
+
 .container78 {
     display: flex;
     flex-direction: column;
     background: #f5eafa;
-    width: 800px; /* Fixed width for desktop */
+    width: 800px;
+    /* Fixed width for desktop */
     border: 5px solid #f5eafa;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    padding: 2rem; /* Increased padding */
-    margin: 50px auto; /* Center container */
+    padding: 2rem;
+    /* Increased padding */
+    margin: 50px auto;
+    /* Center container */
 }
 
 .button21 {
-    background: #8e44ad; /* Button color */
+    background: #8e44ad;
+    /* Button color */
     color: white;
-    padding: 12px 30px; /* Increased padding */
+    padding: 12px 30px;
+    /* Increased padding */
     border: none;
-    font-size: 16px; /* Larger font size */
+    font-size: 16px;
+    /* Larger font size */
     border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
-    width: 400px; 
-    margin-left: 165px; /* Center button horizontally */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition */
+    width: 400px;
+    margin-left: 165px;
+    /* Center button horizontally */
 }
 
 .container78 form input,
 .container78 form select {
     border-radius: 20px;
-    border: 2px solid #ddd; /* Light border */
+    border: 2px solid #ddd;
+    /* Light border */
     outline: none;
-    color: #333; /* Darker text color */
-    margin: 10px 0; /* Spacing between fields */
-    width: 100%; /* Responsive width */
+    color: #333;
+    /* Darker text color */
+    margin: 10px 0;
+    /* Spacing between fields */
+    width: 100%;
+    /* Responsive width */
     padding: 12px;
     font-size: 16px;
 }
@@ -56,88 +77,117 @@ body {
 
 .profile-image-wrapper {
     position: relative;
-    width: 150px; /* Fixed size */
-    height: 150px; /* Fixed size */
-    border-radius: 50%; /* Circular */
-    overflow: hidden; /* Prevents overflow */
-    border: 3px solid #732d91; /* Border style */
-    display: flex; /* Flexbox for centering */
-    justify-content: center; /* Center horizontally */
+    width: 150px;
+    /* Fixed size */
+    height: 150px;
+    /* Fixed size */
+    border-radius: 50%;
+    /* Circular */
+    overflow: hidden;
+    /* Prevents overflow */
+    border: 3px solid #732d91;
+    /* Border style */
+    display: flex;
+    /* Flexbox for centering */
+    justify-content: center;
+    /* Center horizontally */
 }
 
 /* Profile image styling */
 .profile-image {
-    width: 100%; /* Full width of the wrapper */
-    height: 100%; /* Full height of the wrapper */
-    object-fit: cover; /* Ensures the image covers the container */
-    transition: opacity 0.3s ease; /* Smooth transition for hover effects */
+    width: 100%;
+    /* Full width of the wrapper */
+    height: 100%;
+    /* Full height of the wrapper */
+    object-fit: cover;
+    /* Ensures the image covers the container */
+    transition: opacity 0.3s ease;
+    /* Smooth transition for hover effects */
 }
 
 
 /* Hover effect on the frame */
 .profile-image-wrapper:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border: 2px solid #732d91; /* Adds a border on hover */
+    border: 2px solid #732d91;
+    /* Adds a border on hover */
     border-radius: 8px;
     transition: border 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  /* Focus effect for the entire section */
-  .profile-image-section:focus-within {
+}
+
+/* Focus effect for the entire section */
+.profile-image-section:focus-within {
     box-shadow: 0 0 8px #732d91;
     border-radius: 8px;
-  }
+}
 
 
 /* Tablet (max-width 1200px) */
 @media (max-width: 1200px) {
     .container78 {
-        width: 70%; /* Adjust width for tablets */
-        padding: 1.5rem; /* Adjust padding for tablets */
+        width: 70%;
+        /* Adjust width for tablets */
+        padding: 1.5rem;
+        /* Adjust padding for tablets */
     }
 
     .button21 {
-        width: 100%; /* Full width for the button */
-        margin-left: 0; /* Remove margin */
+        width: 100%;
+        /* Full width for the button */
+        margin-left: 0;
+        /* Remove margin */
     }
 
     .container78 form input,
     .container78 form select {
-        width: 100%; /* Full width for inputs */
+        width: 100%;
+        /* Full width for inputs */
     }
 
     .profile-image-wrapper {
-        width: 120px; /* Slightly smaller size for tablets */
-        height: 120px; /* Slightly smaller size for tablets */
+        width: 120px;
+        /* Slightly smaller size for tablets */
+        height: 120px;
+        /* Slightly smaller size for tablets */
     }
 }
 
 /* Mobile (max-width 767px) */
 @media (max-width: 767px) {
     .container78 {
-        width: 100%; /* Full width on small screens */
-        padding: 1rem; /* Reduced padding */
-        margin: 20px; /* Reduced margin */
+        width: 100%;
+        /* Full width on small screens */
+        padding: 1rem;
+        /* Reduced padding */
+        margin: 20px;
+        /* Reduced margin */
     }
 
     .button21 {
-        width: 100%; /* Full width for the button */
-        margin-left: 0; /* Remove margin */
+        width: 100%;
+        /* Full width for the button */
+        margin-left: 0;
+        /* Remove margin */
     }
 
     .container78 form input,
     .container78 form select {
-        width: 100%; /* Full width for inputs */
+        width: 100%;
+        /* Full width for inputs */
     }
 
     .profile-image-wrapper {
-        width: 100px; /* Smaller size for mobile */
-        height: 100px; /* Smaller size for mobile */
+        width: 100px;
+        /* Smaller size for mobile */
+        height: 100px;
+        /* Smaller size for mobile */
     }
 
     .profile-image {
-        width: 100%; /* Full width of the wrapper */
-        height: 100%; /* Full height of the wrapper */
+        width: 100%;
+        /* Full width of the wrapper */
+        height: 100%;
+        /* Full height of the wrapper */
     }
 }
 
@@ -191,7 +241,8 @@ body {
 .container7 {
     margin-top: 40px;
     display: flex;
-    justify-content: center; /* Centering container7 within parent-container7 */
+    justify-content: center;
+    /* Centering container7 within parent-container7 */
     width: 100%;
 }
 
@@ -208,9 +259,15 @@ body {
 }
 
 /* Image containers */
-.image16, .image17, .image18, .image19, .image20 {
-    width: 200px;  /* Fixed width of 300px */
-    height: 200px; /* Fixed height of 300px */
+.image16,
+.image17,
+.image18,
+.image19,
+.image20 {
+    width: 200px;
+    /* Fixed width of 300px */
+    height: 200px;
+    /* Fixed height of 300px */
     overflow: hidden;
     position: relative;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -218,64 +275,106 @@ body {
 }
 
 /* Individual images - fill container */
-.image16 img, .image17 img, .image18 img, .image19 img, .image20 img {
-    width: 200px;  /* Ensures the image fills the width of the container */
-    height: 200px; /* Ensures the image fills the height of the container */
-    object-fit: cover; /* Ensures the image covers the entire container without distortion */
+.image16 img,
+.image17 img,
+.image18 img,
+.image19 img,
+.image20 img {
+    width: 200px;
+    /* Ensures the image fills the width of the container */
+    height: 200px;
+    /* Ensures the image fills the height of the container */
+    object-fit: cover;
+    /* Ensures the image covers the entire container without distortion */
     transition: transform 0.3s ease-in-out;
 }
 
 /* Hover effect */
-.image16:hover, .image17:hover, .image18:hover, .image19:hover, .image20:hover {
-    transform: scale(1.05); /* Slight zoom */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+.image16:hover,
+.image17:hover,
+.image18:hover,
+.image19:hover,
+.image20:hover {
+    transform: scale(1.05);
+    /* Slight zoom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Add shadow */
 }
 
-.image16:hover img, .image17:hover img, .image18:hover img, .image19:hover img, .image20:hover img {
-    transform: scale(1.05); /* Slight zoom for the image itself */
+.image16:hover img,
+.image17:hover img,
+.image18:hover img,
+.image19:hover img,
+.image20:hover img {
+    transform: scale(1.05);
+    /* Slight zoom for the image itself */
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .row {
-        gap: 20px; /* Adjust gap for medium screens */
+        gap: 20px;
+        /* Adjust gap for medium screens */
     }
 
-    .image16, .image17, .image18, .image19, .image20 {
-        width: 200px;  /* Fixed width of 300px */
-        height: 200px; /* Fixed height of 300px */
+    .image16,
+    .image17,
+    .image18,
+    .image19,
+    .image20 {
+        width: 200px;
+        /* Fixed width of 300px */
+        height: 200px;
+        /* Fixed height of 300px */
     }
 
     /* Ensure images fill the container */
-    .image16 img, .image17 img, .image18 img, .image19 img, .image20 img {
+    .image16 img,
+    .image17 img,
+    .image18 img,
+    .image19 img,
+    .image20 img {
         width: 200px;
         height: 200px;
-        object-fit: cover; /* Ensures the image fills the container without distortion */
+        object-fit: cover;
+        /* Ensures the image fills the container without distortion */
     }
 }
 
 @media (max-width: 768px) {
-   
+
     .row {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
 
-    .image16, .image17, .image18, .image19, .image20 {
-        width: 300px;  /* Fixed width of 300px */
-        height: 300px; /* Fixed height of 300px */
+    .image16,
+    .image17,
+    .image18,
+    .image19,
+    .image20 {
+        width: 300px;
+        /* Fixed width of 300px */
+        height: 300px;
+        /* Fixed height of 300px */
     }
 
     /* Ensure images fill the container */
-    .image16 img, .image17 img, .image18 img, .image19 img, .image20 img {
+    .image16 img,
+    .image17 img,
+    .image18 img,
+    .image19 img,
+    .image20 img {
         width: 300px;
         height: 300px;
-        object-fit: cover; /* Ensures the image fills the container without distortion */
+        object-fit: cover;
+        /* Ensures the image fills the container without distortion */
     }
 
     /* Make .check1 and .about1 stack vertically on smaller screens */
-    .check1, .about1 {
+    .check1,
+    .about1 {
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -287,17 +386,17 @@ body {
         text-align: center;
     }
 
-    
+
 
     .about1 {
         margin-top: 20px;
     }
 }
-  
-  
+
+
 
 .parent-container8 {
-    background-color: #f5eafa; 
+    background-color: #f5eafa;
     padding: 50px 0;
     background: linear-gradient(0deg, #170A1C 50%, #f5eafa 50%);
 }
@@ -305,10 +404,12 @@ body {
 .container8 {
     background-color: #fff;
     box-shadow: 0px 0px #00000070;
-    padding: 70px 30px; /* Simplified padding */
+    padding: 70px 30px;
+    /* Simplified padding */
     border-top-left-radius: 120px;
     border-bottom-right-radius: 120px;
-    margin: 0 50px; /* Simplified margin */
+    margin: 0 50px;
+    /* Simplified margin */
 }
 
 .find h2 {
@@ -318,8 +419,8 @@ body {
 }
 
 .info4 {
-    font-size: 1.2em; 
-    color: black; 
+    font-size: 1.2em;
+    color: black;
     margin-bottom: 28px;
     font-family: 'Inria Serif', serif;
     font-weight: lighter;
@@ -343,14 +444,18 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    flex-direction: row; /* Stack items horizontally */
-    align-items: center; /* Center items horizontally */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    flex-direction: row;
+    /* Stack items horizontally */
+    align-items: center;
+    /* Center items horizontally */
 }
 
 .contact-item5 {
     justify-content: space-between;
-    width: 30%; /* Adjust width as necessary */
+    width: 30%;
+    /* Adjust width as necessary */
     margin: 20px 0;
     justify-items: center;
     padding-bottom: 20px;
@@ -371,16 +476,20 @@ body {
     display: flex;
     gap: 20px;
     margin-top: 20px;
-    justify-content: center; /* Center the social icons horizontally */
-    align-items: center; /* Center the social icons vertically */
+    justify-content: center;
+    /* Center the social icons horizontally */
+    align-items: center;
+    /* Center the social icons vertically */
 }
 
 .social-icons5 ul {
     display: flex;
-    flex-direction: row; /* Align list items horizontally */
+    flex-direction: row;
+    /* Align list items horizontally */
     padding: 0;
     margin: 0;
-    gap: 20px; /* Add gap between icons */
+    gap: 20px;
+    /* Add gap between icons */
 }
 
 .social-icons5 ul li {
@@ -476,31 +585,40 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
+
     /* Adjust contact section to be horizontally aligned */
     .contact-container5 {
-        flex-direction: row; /* Stack horizontally */
-        align-items: flex-start; /* Align items at the top */
+        flex-direction: row;
+        /* Stack horizontally */
+        align-items: flex-start;
+        /* Align items at the top */
     }
 
     .contact-item5 {
-        width: 30%; /* Ensure equal width of each item */
-        margin-bottom: 20px; /* Reduce bottom margin */
+        width: 30%;
+        /* Ensure equal width of each item */
+        margin-bottom: 20px;
+        /* Reduce bottom margin */
     }
 
     .social-icons5 {
-        flex-direction: row; /* Stack icons horizontally */
+        flex-direction: row;
+        /* Stack icons horizontally */
         gap: 15px;
-        justify-content: center; /* Center the social icons */
+        justify-content: center;
+        /* Center the social icons */
     }
 
     .social-icons5 ul {
-        flex-direction: row; /* Align list items horizontally */
+        flex-direction: row;
+        /* Align list items horizontally */
         gap: 20px;
     }
 
     /* Navigation adjustment for max-width 1200px */
     #info39 {
-        justify-content: space-between; /* Ensure horizontal spacing */
+        justify-content: space-between;
+        /* Ensure horizontal spacing */
         gap: 20px;
     }
 
@@ -523,22 +641,30 @@ body {
     }
 
     .contact-item5 {
-        width: 80%; /* Adjust for smaller screens */
+        width: 80%;
+        /* Adjust for smaller screens */
         margin-bottom: 20px;
-        border-bottom: 2px solid #fff; /* Add a horizontal line separator */
-        padding-bottom: 20px; /* Ensure space for the separator */
+        border-bottom: 2px solid #fff;
+        /* Add a horizontal line separator */
+        padding-bottom: 20px;
+        /* Ensure space for the separator */
     }
 
     .social-icons5 {
-        flex-direction: row; /* Stack icons horizontally */
+        flex-direction: row;
+        /* Stack icons horizontally */
         gap: 10px;
-        justify-content: center; /* Center the social icons */
-        align-items: center; /* Center the icons vertically */
+        justify-content: center;
+        /* Center the social icons */
+        align-items: center;
+        /* Center the icons vertically */
     }
 
     .social-icons5 ul {
-        display: flex; /* Ensure horizontal stacking */
-        flex-direction: row; /* Align list items horizontally */
+        display: flex;
+        /* Ensure horizontal stacking */
+        flex-direction: row;
+        /* Align list items horizontally */
         gap: 30px;
     }
 
@@ -559,8 +685,7 @@ body {
         font-size: 1em;
     }
 
-    .parent-container54{
+    .parent-container54 {
         padding: 0px 20px;
     }
 }
-  
