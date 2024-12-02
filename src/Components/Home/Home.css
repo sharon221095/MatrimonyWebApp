@@ -4,54 +4,6 @@ body {
     padding: 0;
 }
 
-/* Ensure the toggle button is positioned on the left side */
-@media (max-width: 1024px) {
-    .nav-toggle1 {
-        display: block;
-        position: absolute;
-        left: 20px;
-        /* Position the toggle button on the left */
-        top: 20px;
-        /* Adjust top position if needed */
-    }
-
-    /* Hide the navigation menu by default on smaller screens */
-    .header3 nav {
-        display: none;
-        /* Hide by default */
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        background-color: #A02334;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        padding: 30px 0;
-    }
-
-    /* Make the navigation visible when the class 'visible' is added */
-    .header3 nav.visible {
-        display: flex;
-    }
-
-    .header3 nav ul {
-        flex-direction: column;
-        /* Stack the navigation links vertically */
-        align-items: center;
-        gap: 15px;
-    }
-
-    .header3 nav ul li {
-        text-align: center;
-    }
-
-    .title-brand {
-        margin-left: 40px;
-    }
-}
-
 /* General Header Styling */
 .header3 {
     display: flex;
@@ -192,17 +144,13 @@ body {
 
 .nav-toggle1 {
     display: none;
-    font-size: 30px;
+    font-size: 20px;
     background-color: #FFB900;
-    /* Primary color for the button */
     color: white;
-    /* Text color */
     border: none;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s ease;
-    /* Smooth transition */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    /* Subtle shadow for depth */
 }
 
 /* Hover effect */
@@ -240,7 +188,7 @@ body {
     /* Logo positioning on the top-left */
     .website-title2 {
         align-self: flex-start;
-        margin-left: 40px;
+        margin: 0;
 
     }
 
@@ -321,7 +269,7 @@ body {
     .website-title2 a {
         font-size: 26px;
         text-align: left;
-        margin-left: 40px;
+        margin-left: 25px;
     }
 
     /* Profile picture aligned to the top right corner */
@@ -341,6 +289,8 @@ body {
 
     .nav-toggle1 {
         display: block;
+        position: absolute;
+        left: 5px;
     }
 
     /* Navigation links stacked vertically below logo and profile picture */

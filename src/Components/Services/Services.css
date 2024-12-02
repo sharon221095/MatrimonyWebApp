@@ -140,7 +140,6 @@ body {
     background-color: #FFB900; /* Primary color for the button */
     color: white; /* Text color */
     border: none;
-    border-radius: 8px; /* Rounded corners */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s ease; /* Smooth transition */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
@@ -178,7 +177,7 @@ body {
     /* Logo positioning on the top-left */
     .website-title4  {
         align-self: flex-start;
-        margin: 0;
+        margin-left: 0;
     }
 
     .website-title4  a {
@@ -198,7 +197,7 @@ body {
     .header5 nav {
         width: 100%;
         justify-items: center;
-        margin-top: 60px;
+        margin-top: 30px;
     }
 
     .header5 nav ul {
@@ -256,7 +255,7 @@ body {
     .website-title4  a {
         font-size: 26px;
         text-align: left;
-        margin: 0;
+        margin-left: 25px;
     }
 
     /* Profile picture aligned to the top right corner */
@@ -273,6 +272,9 @@ body {
 
     .nav-toggle3 {
         display: block;
+        position: absolute;
+        left: 5px;
+        top: 10px;
     }
 
     /* Navigation links stacked vertically below logo and profile picture */

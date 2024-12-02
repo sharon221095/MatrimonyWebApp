@@ -34,6 +34,7 @@ const EditProfile = () => {
   const [profileImagePresent, setProfileImagePresent] = useState(profileData);
   const [profileImages, setProfileImages] = useState([]);
   const [userId, setUserId] = useState(null);
+  const [navVisible, setNavVisible] = useState(false);
 
 
   // Fetch profile data
@@ -328,8 +329,94 @@ const EditProfile = () => {
     setSelectedImage(null);
   };
 
+  const toggleNav = () => {
+    setNavVisible(!navVisible); // Toggle the nav visibility
+};
+
   return (
     <div className="body">
+
+<header className="header10">
+                <h1 className="website-title10 col-12 col-md-auto text-left text-md-left">
+                    <a className="title-brand" href="#">NRImatch</a>
+                </h1>
+
+                <nav className={navVisible ? 'visible' : 'hidden'}>
+                    <ul>
+                        <li>
+                            <a
+                                href="/home"
+                                onClick={() => navigateTo('/home')}
+                                className={location.pathname === '/home' ? 'active' : ''}
+                            >
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/about"
+                                onClick={() => navigateTo('/about')}
+                                className={location.pathname === '/about' ? 'active' : ''}
+                            >
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/services"
+                                onClick={() => navigateTo('/services')}
+                                className={location.pathname === '/services' ? 'active' : ''}
+                            >
+                                Services
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/portfolio"
+                                onClick={() => navigateTo('/portfolio')}
+                                className={location.pathname === '/portfolio' ? 'active' : ''}
+                            >
+                                Portfolio
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/testimonials"
+                                onClick={() => navigateTo('/testimonials')}
+                                className={location.pathname === '/testimonials' ? 'active' : ''}
+                            >
+                                Testimonials
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/blog"
+                                onClick={() => navigateTo('/blog')}
+                                className={location.pathname === '/blog' ? 'active' : ''}
+                            >
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/contact"
+                                onClick={() => navigateTo('/contact')}
+                                className={location.pathname === '/contact' ? 'active' : ''}
+                            >
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                
+                {/* Toggle Button for Mobile */}
+                <button className="nav-toggle10" onClick={toggleNav} aria-label="Toggle Navigation">
+                    ☰
+                </button>
+
+            </header>
+
     <div className="parent-container78">
       <h1 className="text">Welcome!!</h1>
       <div className="container78">

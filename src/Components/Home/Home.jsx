@@ -203,7 +203,7 @@ const Home = () => {
     return (
         <div className='body'>
             <header className="header3">
-                <h1 className="website-title2 col-12 col-md-auto text-left text-md-left">
+                <h1 className="website-title2  col-md-auto text-left text-md-left">
                     <a className="title-brand" href="#">NRImatch</a>
                 </h1>
 
