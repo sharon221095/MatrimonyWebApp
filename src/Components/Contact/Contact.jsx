@@ -272,7 +272,7 @@ const Contact = () => {
         
         <div class="phone">
             <h3>Phone</h3>
-            <p>202-555-0188</p>
+            <p>+44 07737024736</p>
 
             <div class="hr9"></div>
         </div>
@@ -281,7 +281,7 @@ const Contact = () => {
         
         <div class="email">
             <h3>Email</h3>
-            <p>contact@example.com</p>
+            <p>paulfortuneltd@gmail.com</p>
 
             <div class="hr10"></div>
         </div>
@@ -290,7 +290,7 @@ const Contact = () => {
         
         <div class="address">
             <h3>Address</h3>
-            <p>2360 Hood Avenue, San Diego, CA, 92123</p>
+            <p>1121/A, 5th G Block, Further Extension, BDA Layout, Anjanapura, Bangalore 560108.</p>
 
             <div class="hr11"></div>
         </div>
@@ -300,8 +300,8 @@ const Contact = () => {
 
             <div className="social-menu10">
                 <ul>
-                    <li><a href="#" target="_blank"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="#" target="_blank"><i className="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61570002380672" target="_blank"><i className="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="_blank"><i className="fab fa-instagram"></i></a></li>
                     <li><a href="#" target="_blank"><i className="fab fa-youtube"></i></a></li>
                 </ul>
             </div>
@@ -371,7 +371,7 @@ const Contact = () => {
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
     <div className="insta-contact">
-      <a href="#" target="_self" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="blank" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
     </div>
@@ -431,21 +431,21 @@ const Contact = () => {
     <div class="contact-container519">
         <div class="contact-item519">
             <h2>Phone</h2>
-            <p>202-555-0188</p>
+            <p>+44 07737024736</p>
         </div>
         <div class="contact-item519">
             <h2>Follow Us</h2>
             <div class="social-icons519">
                 <ul>
-                    <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61570002380672" target="blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="blank"><i class="fab fa-instagram"></i></a></li>
                     <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
                 </ul>
             </div>
         </div>
         <div class="contact-item519">
             <h2>Email</h2>
-            <p>contact@example.com</p>
+            <p>paulfortuneltd@gmail.com</p>
         </div>
     </div>
     </div>

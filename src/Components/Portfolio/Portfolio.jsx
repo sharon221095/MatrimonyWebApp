@@ -468,7 +468,7 @@ const Portfolio = () => {
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
     <div className="insta-portfolio">
-      <a href="#" target="_self" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="blank" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
     </div>
@@ -528,21 +528,21 @@ const Portfolio = () => {
     <div class="contact-container570">
         <div class="contact-item570">
             <h2>Phone</h2>
-            <p>202-555-0188</p>
+            <p>+44 07737024736</p>
         </div>
         <div class="contact-item570">
             <h2>Follow Us</h2>
             <div class="social-icons570">
                 <ul>
-                    <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61570002380672" target="blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="blank"><i class="fab fa-instagram"></i></a></li>
                     <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
                 </ul>
             </div>
         </div>
         <div class="contact-item570">
             <h2>Email</h2>
-            <p>contact@example.com</p>
+            <p>paulfortuneltd@gmail.com</p>
         </div>
     </div>
     </div>
