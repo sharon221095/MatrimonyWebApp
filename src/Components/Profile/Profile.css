@@ -1,11 +1,11 @@
 
-
 .profile-container {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 10px;
-    background-color: #FFB900; /* Slight contrast box for content */
+    background-color: #FFB900;
+    /* Slight contrast box for content */
     color: #A02334;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -33,9 +33,12 @@ h2 {
 
 .profile-picture:hover,
 .profile-picture:focus {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add a shadow */
-    outline: none; /* Remove focus outline */
+    transform: scale(1.1);
+    /* Slightly enlarge on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    /* Add a shadow */
+    outline: none;
+    /* Remove focus outline */
 }
 
 
@@ -54,16 +57,22 @@ h2 {
     border-radius: 8px;
     object-fit: cover;
     border: 2px solid #A02334;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
-    cursor: pointer; /* Change cursor to pointer */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth animation */
+    cursor: pointer;
+    /* Change cursor to pointer */
 }
 
 .user-image:hover,
 .user-image:focus {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add a shadow */
-    outline: none; /* Remove focus outline */
-    border: 2px solid #FFB900; /* Highlight border on hover/focus */
+    transform: scale(1.1);
+    /* Slightly enlarge on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    /* Add a shadow */
+    outline: none;
+    /* Remove focus outline */
+    border: 2px solid #FFB900;
+    /* Highlight border on hover/focus */
 }
 
 /* Detail rows */
@@ -81,12 +90,14 @@ h2 {
 }
 
 .verified {
-    color: #27AE60; /* Green for verified status */
+    color: #27AE60;
+    /* Green for verified status */
     font-weight: bold;
 }
 
 .unverified {
-    color: #E74C3C; /* Red for unverified status */
+    color: #E74C3C;
+    /* Red for unverified status */
     font-weight: bold;
 }
 
@@ -97,6 +108,7 @@ h2 {
     .profile-container {
         padding: 15px;
     }
+
     .user-image {
         width: 100px;
         height: 100px;
@@ -126,21 +138,26 @@ h2 {
 
     .detail-row {
         display: flex;
-        justify-content: space-between; /* Align items horizontally */
-        align-items: center; /* Vertically center content */
+        justify-content: space-between;
+        /* Align items horizontally */
+        align-items: center;
+        /* Vertically center content */
         gap: 10px;
         border-bottom: 1px solid #FFB900;
         padding: 10px;
     }
 
     .field-label {
-        flex: 0 0 40%; /* Ensure labels take up consistent space */
+        flex: 0 0 40%;
+        /* Ensure labels take up consistent space */
     }
 
     .detail-row span {
-        flex: 1; /* Results grow to fill remaining space */
-        text-align: left; /* Align text to the left */
-        word-wrap: break-word; /* Ensure long text wraps properly */
+        flex: 1;
+        /* Results grow to fill remaining space */
+        text-align: left;
+        /* Align text to the left */
+        word-wrap: break-word;
+        /* Ensure long text wraps properly */
     }
 }
-

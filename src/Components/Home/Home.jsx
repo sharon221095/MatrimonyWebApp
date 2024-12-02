@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Home.css'
+import Header from '../Header/Header';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
@@ -27,11 +28,7 @@ import image63 from '../img/user.png';
 
 const Home = () => {
     const navigateTo = useNavigate();
-    const [profile, setProfile] = useState(null);
-    const [dropdownOpen, setDropdownOpen] = useState(false);
     const [error, setError] = useState('');
-    const [profilePictureUrl, setProfilePictureUrl] = useState(null); // New state for profile picture
-    const dropdownRef = useRef(null);
     const [searchCriteria, setSearchCriteria] = useState({
         MinAge: '',
         MaxAge: '',
@@ -53,85 +50,15 @@ const Home = () => {
     const [pageSize] = useState(10); // Default page size, you can change this
     const [totalPages, setTotalPages] = useState(0); // Total pages returned by the backend
     const [isSearchPerformed, setIsSearchPerformed] = useState(false); // New state to track search activity
-    const location = useLocation();
-    const [navVisible, setNavVisible] = useState(false);
+
     /* =======================
        Navigation Functions
     ======================= */
-
-
     const handleViewProfile = (id) => {
         // Navigate to the profile page using the user ID
         //console.log(id)
         navigateTo(`/profile/${id}`); // Adjust the route as needed
     };
-
-    const handleEditProfile = (data) => {
-        // Navigate to the profile edit page with data
-        navigateTo('/editprofile', { state: { data } });
-    };
-
-    const handleLogout = () => {
-        // Clear auth token and navigate to login page
-        localStorage.removeItem('authToken');
-        navigateTo('/login');
-    };
-
-    /* =========================
-       Profile Picture Handling
-    ========================= */
-
-    const fetchProfilePicture = async () => {
-        try {
-            const response = await axios.get('https://nrimarriage.in/api/v1/users/GetProfileImage', {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('authToken')}`,
-                },
-                responseType: 'arraybuffer',
-            });
-
-            // Convert binary data to base64 string
-            const base64Image = btoa(
-                new Uint8Array(response.data)
-                    .reduce((data, byte) => data + String.fromCharCode(byte), '')
-            );
-
-            // Construct a data URL for the image
-            const imageUrl = `data:image/png;base64,${base64Image}`;
-            setProfilePictureUrl(imageUrl);
-        } catch (error) {
-            // Check if error response exists and is a 404 error
-            if (error.response && error.response.status === 404) {
-                console.log('No profile picture found, setting to default image.');
-                setProfilePictureUrl(image63); // Set image63 as the default image
-            } else {
-                console.error('Error fetching profile picture:', error);
-            }
-        }
-    };
-
-
-    /* =======================
-       Dropdown Handling
-    ======================= */
-
-    const toggleDropdown = () => {
-        setDropdownOpen(!dropdownOpen);
-    };
-
-    // Close dropdown if clicked outside
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setDropdownOpen(false);
-            }
-        };
-
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [dropdownRef]);
 
     /* ==========================
        Search Functionality
@@ -184,120 +111,10 @@ const Home = () => {
         await handleSearchSubmit(null, newPageNumber);
     };
 
-
-
-
-
-    /* =======================
-       Lifecycle Effects
-    ======================= */
-
-    useEffect(() => {
-        fetchProfilePicture(); // Fetch profile picture on component mount
-    }, []);
-
-    const toggleNav = () => {
-        setNavVisible(!navVisible); // Toggle the nav visibility
-    };
-
     return (
         <div className='body'>
-            <header className="header3">
-                <h1 className="website-title2  col-md-auto text-left text-md-left">
-                    <a className="title-brand" href="#">NRImatch</a>
-                </h1>
 
-                <nav className={navVisible ? 'visible' : 'hidden'}>
-                    <ul>
-                        <li>
-                            <a
-                                href="/home"
-                                onClick={() => navigateTo('/home')}
-                                className={location.pathname === '/home' ? 'active' : ''}
-                            >
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/about"
-                                onClick={() => navigateTo('/about')}
-                                className={location.pathname === '/about' ? 'active' : ''}
-                            >
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/services"
-                                onClick={() => navigateTo('/services')}
-                                className={location.pathname === '/services' ? 'active' : ''}
-                            >
-                                Services
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/portfolio"
-                                onClick={() => navigateTo('/portfolio')}
-                                className={location.pathname === '/portfolio' ? 'active' : ''}
-                            >
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/testimonials"
-                                onClick={() => navigateTo('/testimonials')}
-                                className={location.pathname === '/testimonials' ? 'active' : ''}
-                            >
-                                Testimonials
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/blog"
-                                onClick={() => navigateTo('/blog')}
-                                className={location.pathname === '/blog' ? 'active' : ''}
-                            >
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/contact"
-                                onClick={() => navigateTo('/contact')}
-                                className={location.pathname === '/contact' ? 'active' : ''}
-                            >
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <div className="profile-picture-container1" onClick={toggleDropdown} ref={dropdownRef}>
-                    <img
-                        src={profilePictureUrl ? profilePictureUrl : '/path/to/default.jpg'}
-                        alt="Profile"
-                        className="profile-picture1"
-                    />
-                    {dropdownOpen && (
-                        <div className="dropdown-menu1 show" aria-labelledby="dropdownMenuButton">
-                            <button className="dropdown-item1" onClick={() => handleEditProfile(profilePictureUrl)}>Edit Profile</button>
-                            <button className="dropdown-item1" onClick={handleLogout}>Logout</button>
-                        </div>
-                    )}
-                </div>
-
-
-                {/* Toggle Button for Mobile */}
-                <button className="nav-toggle1" onClick={toggleNav} aria-label="Toggle Navigation">
-                    ☰
-                </button>
-
-            </header>
-
-
+            <Header />
 
             <form onSubmit={handleSearchSubmit} className="search-form">
                 <h2>Search Profiles</h2>
@@ -345,9 +162,69 @@ const Home = () => {
                         { label: 'Gender:', name: 'Gender', type: 'select', options: ['Select Gender', 'Male', 'Female', 'Other'] },
                         { label: 'Marital Status:', name: 'MaritalStatus', type: 'select', options: ['Select Status', 'Single', 'Divorced', 'Widowed'] },
                         { label: 'Preferred Partner Location:', name: 'PreferredPartnerLocation', type: 'select', options: ['Select Location', 'India', 'United Kingdom', 'United States', 'Germany', 'France', 'Italy', 'Spain', 'Pakistan', 'Japan'] },
-                        { label: 'Mother Tongue:', name: 'MotherTongue', type: 'select', options: ['Select Language', 'Hindi', 'English', 'Tamil', 'Telugu'] },
-                        { label: 'Occupation:', name: 'Occupation', type: 'select', options: ['Select Occupation', 'Software Developer'] },
-                        { label: 'Education:', name: 'Education', type: 'select', options: ['Select Education', 'Bachelors in Engineering', 'Master in Engineering', 'MBBS', 'Master in Doctorate', 'Bachelor of Arts', 'Master of Science', 'Master of Business Administration', 'Higher Secondary School', 'Secondary School Certificate(SSC)'] },
+                        { label: 'Mother Tongue:', name: 'MotherTongue', type: 'select', options: ['Select Language', 'Hindi', 'English', 'Tamil', 'Telugu', 'Malayalam', 'Marathi'] },
+                        {
+                            label: 'Occupation:',
+                            name: 'Occupation',
+                            type: 'select',
+                            options: [
+                                'Select Occupation',
+                                'Software Developer',
+                                'Doctor',
+                                'Engineer',
+                                'Teacher',
+                                'Nurse',
+                                'Accountant',
+                                'Lawyer',
+                                'Architect',
+                                'Marketing Manager',
+                                'Sales Executive',
+                                'Civil Servant',
+                                'Researcher',
+                                'Data Analyst',
+                                'Business Analyst',
+                                'Entrepreneur',
+                                'Consultant',
+                                'Journalist',
+                                'Graphic Designer',
+                                'Content Writer',
+                                'Photographer',
+                                'Musician',
+                                'Actor/Actress',
+                                'Social Worker',
+                                'Scientist',
+                                'Pilot',
+                                'Chef',
+                                'Pharmacist',
+                                'Librarian',
+                                'Veterinarian',
+                                'Mechanic',
+                                'Electrician',
+                                'Plumber',
+                                'Farmer',
+                                'Police Officer',
+                                'Army Officer',
+                                'Professor',
+                                'Clerk',
+                                'Banker',
+                                'Dentist',
+                                'Psychologist',
+                                'Other'
+                            ]
+                        },
+                        {
+                            label: 'Education:', name: 'Education', type: 'select', options: ['Select Education',
+                                'High School',
+                                'Associate Degree',
+                                'Bachelor\'s Degree',
+                                'Master\'s Degree',
+                                'Doctorate (PhD)',
+                                'Diploma',
+                                'Certificate',
+                                'Professional Degree (e.g., MBA, JD, MD)',
+                                'Post-Doctorate',
+                                'Vocational Training']
+                        },
                     ].map(({ label, name, type, options }) => (
                         <div className="col-lg-3 col-md-6 col-sm-12 mb-3" key={name}>
                             <label>{label}</label>
@@ -507,7 +384,7 @@ const Home = () => {
                         <div className="social-menu3">
                             <ul>
                                 <li><a href="https://www.facebook.com/profile.php?id=61570002380672" target="_blank"><i className="fab fa-facebook"></i></a></li>
-                                <li><a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="_blank"><i className="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.instagram.com/nrimatch/" target="_blank"><i className="fab fa-instagram"></i></a></li>
                                 <li><a href="#" target="_blank"><i className="fab fa-youtube"></i></a></li>
                             </ul>
                         </div>
@@ -684,7 +561,7 @@ const Home = () => {
                     <h2>Check Out Our Recent Work On Instagram</h2>
                 </div>
                 <div className="insta-home">
-                    <a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/nrimatch/" target="_self" rel="noopener noreferrer">
                         Follow Us On Instagram
                     </a>
                 </div>
@@ -744,21 +621,21 @@ const Home = () => {
                 <div class="contact-container31">
                     <div class="contact-item31">
                         <h2>Phone</h2>
-                        <p>+44 07737024736</p>
+                        <p>202-555-0188</p>
                     </div>
                     <div class="contact-item31">
                         <h2>Follow Us</h2>
                         <div class="social-icons3">
                             <ul>
                                 <li><a href="https://www.facebook.com/profile.php?id=61570002380672" target="blank"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.instagram.com/nrimatch/" ><i class="fab fa-instagram"></i></a></li>
                                 <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="contact-item31">
                         <h2>Email</h2>
-                        <p>paulfortuneltd@gmail.com </p>
+                        <p>contact@example.com</p>
                     </div>
                 </div>
             </div>

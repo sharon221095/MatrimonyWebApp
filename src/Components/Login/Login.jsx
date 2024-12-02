@@ -134,7 +134,7 @@ const Login = () => {
             <div className="social-menu2">
                 <ul>
                     <li><a href="https://www.facebook.com/profile.php?id=61570002380672" target="_blank"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="_blank"><i className="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.instagram.com/nrimatch/" target="_blank"><i className="fab fa-instagram"></i></a></li>
                     <li><a href="#" target="_blank"><i className="fab fa-youtube"></i></a></li>
                 </ul>
             </div>
@@ -311,7 +311,7 @@ const Login = () => {
     <h2>Check Out Our Recent Work On Instagram</h2>
     </div>
     <div className="insta-log">
-      <a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="blank" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/nrimatch/" target="_self" rel="noopener noreferrer">
         Follow Us On Instagram
       </a>
     </div>
@@ -371,21 +371,21 @@ const Login = () => {
     <div class="contact-container20">
         <div class="contact-item20">
             <h2>Phone</h2>
-            <p>+44 07737024736</p>
+            <p>+447737024736</p>
         </div>
         <div class="contact-item20">
             <h2>Follow Us</h2>
             <div class="social-icons2">
                 <ul>
                     <li><a href="https://www.facebook.com/profile.php?id=61570002380672" target="blank"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/nrimatch/profilecard/?igsh=c3NsdmJxdzZ0bGUx" target="blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.instagram.com/nrimatch/"><i class="fab fa-instagram"></i></a></li>
                     <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
                 </ul>
             </div>
         </div>
         <div class="contact-item20">
             <h2>Email</h2>
-            <p>paulfortuneltd@gmail.com </p>
+            <p>paulfortuneltd@gmail.com</p>
         </div>
     </div>
     </div>

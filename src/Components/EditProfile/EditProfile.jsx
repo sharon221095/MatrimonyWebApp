@@ -9,7 +9,7 @@ import image18 from '../img/img-18.avif';
 import image19 from '../img/img-19.avif';
 import image20 from '../img/img-20.jpg';
 import image63 from '../img/user.png'
-
+import Header from "../Header/Header"
 
 
 const EditProfile = () => {
@@ -34,7 +34,6 @@ const EditProfile = () => {
   const [profileImagePresent, setProfileImagePresent] = useState(profileData);
   const [profileImages, setProfileImages] = useState([]);
   const [userId, setUserId] = useState(null);
-  const [navVisible, setNavVisible] = useState(false);
 
 
   // Fetch profile data
@@ -278,7 +277,7 @@ const EditProfile = () => {
     }
   };
 
-  
+
 
   const handleDeleteImage = async (index) => {
     const imageToDelete = profileImages[index];
@@ -329,130 +328,44 @@ const EditProfile = () => {
     setSelectedImage(null);
   };
 
-  const toggleNav = () => {
-    setNavVisible(!navVisible); // Toggle the nav visibility
-};
-
   return (
     <div className="body">
-
-<header className="header10">
-                <h1 className="website-title10 col-12 col-md-auto text-left text-md-left">
-                    <a className="title-brand" href="#">NRImatch</a>
-                </h1>
-
-                <nav className={navVisible ? 'visible' : 'hidden'}>
-                    <ul>
-                        <li>
-                            <a
-                                href="/home"
-                                onClick={() => navigateTo('/home')}
-                                className={location.pathname === '/home' ? 'active' : ''}
-                            >
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/about"
-                                onClick={() => navigateTo('/about')}
-                                className={location.pathname === '/about' ? 'active' : ''}
-                            >
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/services"
-                                onClick={() => navigateTo('/services')}
-                                className={location.pathname === '/services' ? 'active' : ''}
-                            >
-                                Services
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/portfolio"
-                                onClick={() => navigateTo('/portfolio')}
-                                className={location.pathname === '/portfolio' ? 'active' : ''}
-                            >
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/testimonials"
-                                onClick={() => navigateTo('/testimonials')}
-                                className={location.pathname === '/testimonials' ? 'active' : ''}
-                            >
-                                Testimonials
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/blog"
-                                onClick={() => navigateTo('/blog')}
-                                className={location.pathname === '/blog' ? 'active' : ''}
-                            >
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/contact"
-                                onClick={() => navigateTo('/contact')}
-                                className={location.pathname === '/contact' ? 'active' : ''}
-                            >
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
-                
-                {/* Toggle Button for Mobile */}
-                <button className="nav-toggle10" onClick={toggleNav} aria-label="Toggle Navigation">
-                    ☰
-                </button>
-
-            </header>
-
-    <div className="parent-container78">
-      <h1 className="text">Welcome!!</h1>
-      <div className="container78">
-        <h1>Enter your Details</h1>
-        <form onSubmit={handleSubmit(handleProfileSubmit)}>
-          {/* Profile Image Section */}
-          <div className="form-group mb-4 profile-image-section">
-            <div className="profile-image-wrapper">
-              <label htmlFor="ProfileImage" className="profile-image-label">
-                <img
-                  src={profileImagePresent ? profileImagePresent : profileImage ? URL.createObjectURL(profileImage) : image63} // Use a placeholder if no image
-                  alt="Profile Preview"
-                  className="profile-image"
-                />
-              </label>
+      <Header/>
+      <div className="parent-container78">
+        <div className="container78">
+          <h1 style={{ textAlign: "center" }}>Enter your Details</h1>
+          <form onSubmit={handleSubmit(handleProfileSubmit)}>
+            {/* Profile Image Section */}
+            <div className="form-group mb-4 profile-image-section">
+              <div className="profile-image-wrapper">
+                <label htmlFor="ProfileImage" className="profile-image-label">
+                  <img
+                    src={profileImagePresent ? profileImagePresent : profileImage ? URL.createObjectURL(profileImage) : image63} // Use a placeholder if no image
+                    alt="Profile Preview"
+                    className="profile-image"
+                  />
+                </label>
+              </div>
+              <input
+                type="file"
+                id="ProfileImage"
+                className="form-control d-none" // Hide the default file input
+                {...register('ProfileImage')}
+                onChange={onFileChange} // Handle profile image change separately
+              />
             </div>
-            <input
-              type="file"
-              id="ProfileImage"
-              className="form-control d-none" // Hide the default file input
-              {...register('ProfileImage')}
-              onChange={onFileChange} // Handle profile image change separately
-            />
-          </div>
 
 
 
-          <table>
+            <table>
 
-            <tr>
-              <td>
-                <label>Upload Additional Profile Images</label>
-              </td>
-              <td>:</td>
-              <td>
-              
+              <tr>
+                <td>
+                  <label>Upload Additional Profile Images</label>
+                </td>
+                <td>:</td>
+                <td>
+
                   <input
                     type="file"
                     id="AdditionalImages"
@@ -474,7 +387,7 @@ const EditProfile = () => {
                           />
                           <button
                             type="button"
-                             className="btn btn-danger btn-sm position-absolute top-0 end-0 m-1"
+                            className="btn btn-danger btn-sm position-absolute top-0 end-0 m-1"
                             onClick={(e) => {
                               e.stopPropagation(); // Prevent click event from propagating to parent div
                               handleDeleteImage(index); // Call delete for images in the database
@@ -512,668 +425,668 @@ const EditProfile = () => {
                   </div>
 
                   {/* Preview Modal */}
-{selectedImage && (
-  <div className="preview-modal show" onClick={closePreviewModal}>
-    <div className="modal-dialog modal-dialog-centered" onClick={(e) => e.stopPropagation()}>
-      <div className="modal-content">
-        <div className="modal-header">
-          <h5 className="modal-title">Image Preview</h5>
-          <button type="button" className="btn-close" onClick={closePreviewModal}></button>
-        </div>
-        <div className="modal-body text-center">
-          <img src={selectedImage} alt="Selected Preview" className="img-fluid rounded shadow" />
-        </div>
-        <div className="modal-footer justify-content-center">
-          <button className="btn btn-primary" onClick={() => handleSetProfileImage(selectedImage)}>
-            Set as Profile Picture
-          </button>
-          <button className="btn btn-secondary" onClick={closePreviewModal}>
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
-              </td>
-            </tr>
-            
-            <tr>
-              <td>
-                <label>FirstName</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="FirstName"
-                  id="FirstName"
-                  placeholder="Enter your FirstName"
-                  {...register('FirstName')} />
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>
-                <label>LastName</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="LastName"
-                  id="LastName"
-                  placeholder="Enter your LastName"
-                  {...register('LastName')}
-                />
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>
-                <label>PhoneNumber</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="number"
-                  name="PhoneNumber"
-                  id="PhoneNumber"
-                  placeholder="Enter your PhoneNumber"
-                  {...register('PhoneNumber')}
-                />
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>
-                <label>About Me</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="AboutMe"
-                  id="AboutMe"
-                  placeholder="Enter your Info"
-                  {...register('AboutMe')}
-                />
-              </td>
-            </tr>
-
-
-
-
-            <tr>
-              <td>
-                <label>Address</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="Address"
-                  id="Address"
-                  placeholder="Enter your Address"
-                  {...register('Address'
+                  {selectedImage && (
+                    <div className="preview-modal show" onClick={closePreviewModal}>
+                      <div className="modal-dialog modal-dialog-centered" onClick={(e) => e.stopPropagation()}>
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <h5 className="modal-title">Image Preview</h5>
+                            <button type="button" className="btn-close" onClick={closePreviewModal}></button>
+                          </div>
+                          <div className="modal-body text-center">
+                            <img src={selectedImage} alt="Selected Preview" className="img-fluid rounded shadow" />
+                          </div>
+                          <div className="modal-footer justify-content-center">
+                            <button className="btn btn-primary" onClick={() => handleSetProfileImage(selectedImage)}>
+                              Set as Profile Picture
+                            </button>
+                            <button className="btn btn-secondary" onClick={closePreviewModal}>
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   )}
-                />
+                </td>
+              </tr>
 
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>
-                <label>Annual Income</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="number"
-                  name="AnnualIncome"
-                  id="AnnualIncome"
-                  placeholder="Enter your Annual Income"
-                  {...register('AnnualIncome'
-                  )}
-                />
-
-              </td>
-            </tr>
+              <tr>
+                <td>
+                  <label>FirstName</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="FirstName"
+                    id="FirstName"
+                    placeholder="Enter your FirstName"
+                    {...register('FirstName')} />
+                </td>
+              </tr>
 
 
-            <tr>
-              <td>
-                <label>Caste</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="Caste"
-                  id="Caste"
-                  placeholder="Enter your caste"
-                  {...register('Caste'
-                  )}
-                />
-
-              </td>
-            </tr>
+              <tr>
+                <td>
+                  <label>LastName</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="LastName"
+                    id="LastName"
+                    placeholder="Enter your LastName"
+                    {...register('LastName')}
+                  />
+                </td>
+              </tr>
 
 
-            <tr>
-              <td>
-                <label>City</label>
-              </td>
-              <td>:</td>
-              <td>
-                <select {...register('City')}
-                >
-                  <option value="">--Select City--</option>
-                  <option value="Chennai">Chennai</option>
-                  <option value="Coimbatore">Coimbatore</option>
-                  <option value="Madurai">Madurai</option>
-                  <option value="Thiruvananthapuram">Thiruvananthapuram</option>
-                  <option value="Ernakulam">Ernakulam</option>
-                  <option value="Kochin">Kochin</option>
-                  <option value="Bangalore">Bangalore</option>
-                  <option value="Mangalore">Mangalore</option>
-                  <option value="Chitradurga">Chitradurga</option>
-                  <option value="New Delhi">New Delhi</option>
-                  <option value="Qutab Minar">Qutab Minar</option>
-                  <option value="Jahanpanah">Jahanpanah</option>
-                </select>
-
-              </td>
-            </tr>
+              <tr>
+                <td>
+                  <label>PhoneNumber</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="number"
+                    name="PhoneNumber"
+                    id="PhoneNumber"
+                    placeholder="Enter your PhoneNumber"
+                    {...register('PhoneNumber')}
+                  />
+                </td>
+              </tr>
 
 
-            <tr>
-              <td>
-                <label>Country</label>
-              </td>
-              <td>:</td>
-              <td>
-                <select {...register('Country')}
-                >
-                  <option value="">Select Country</option>
+              <tr>
+                <td>
+                  <label>About Me</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="AboutMe"
+                    id="AboutMe"
+                    placeholder="Enter your Info"
+                    {...register('AboutMe')}
+                  />
+                </td>
+              </tr>
+
+
+
+
+              <tr>
+                <td>
+                  <label>Address</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="Address"
+                    id="Address"
+                    placeholder="Enter your Address"
+                    {...register('Address'
+                    )}
+                  />
+
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  <label>Annual Income</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="number"
+                    name="AnnualIncome"
+                    id="AnnualIncome"
+                    placeholder="Enter your Annual Income"
+                    {...register('AnnualIncome'
+                    )}
+                  />
+
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  <label>Caste</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="Caste"
+                    id="Caste"
+                    placeholder="Enter your caste"
+                    {...register('Caste'
+                    )}
+                  />
+
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  <label>City</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select {...register('City')}
+                  >
+                    <option value="">--Select City--</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Madurai">Madurai</option>
+                    <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                    <option value="Ernakulam">Ernakulam</option>
+                    <option value="Kochin">Kochin</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mangalore">Mangalore</option>
+                    <option value="Chitradurga">Chitradurga</option>
+                    <option value="New Delhi">New Delhi</option>
+                    <option value="Qutab Minar">Qutab Minar</option>
+                    <option value="Jahanpanah">Jahanpanah</option>
+                  </select>
+
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  <label>Country</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select {...register('Country')}
+                  >
+                    <option value="">Select Country</option>
                     <option value="USA">USA</option>
                     <option value="India">India</option>
                     <option value="UK">UK</option>
                     <option value="Canada">Canada</option>
                     <option value="Australia">Australia</option>
-                </select>
+                  </select>
 
-              </td>
-            </tr>
+                </td>
+              </tr>
 
 
-            <tr>
-              <td>
-                <label>Age</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="number"
-                  name="Age"
-                  id="Age"
-                  placeholder="Enter your Age"
-                  {...register('Age'
+              <tr>
+                <td>
+                  <label>Age</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="number"
+                    name="Age"
+                    id="Age"
+                    placeholder="Enter your Age"
+                    {...register('Age'
+                    )}
+                  />
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label>Highest Education</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select {...register('Education')}>
+                    <option value="">--Select Highest Education--</option>
+                    <option value="Bachelors in Engineering">Bachelors in Engineering</option>
+                    <option value="Master in Engineering">Master in Engineering</option>
+                    <option value="MBBS">MBBS</option>
+                    <option value="Master in Doctorate">Master in Doctorate</option>
+                    <option value="Bachelor of Arts">Bachelor of Arts</option>
+                    <option value="Master of Science">Master of Science</option>
+                    <option value="Master of Business Administration">Master of Business Administration</option>
+                    <option value="Higher Secondary School">Higher Secondary School</option>
+                    <option value="Secondary School Certificate(SSC)">Secondary School Certificate(SSC)</option>
+                  </select>
+
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  <label>Family Details</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="FamilyDetails"
+                    id="FamilyDetails"
+                    placeholder="Enter your Family Details"
+                    {...register('FamilyDetails')}
+                  />
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label>Gender </label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select id="gender"  {...register('Gender'
                   )}
-                />
-
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <label>Highest Education</label>
-              </td>
-              <td>:</td>
-              <td>
-                <select {...register('Education')}>
-                  <option value="">--Select Highest Education--</option>
-                  <option value="Bachelors in Engineering">Bachelors in Engineering</option>
-                  <option value="Master in Engineering">Master in Engineering</option>
-                  <option value="MBBS">MBBS</option>
-                  <option value="Master in Doctorate">Master in Doctorate</option>
-                  <option value="Bachelor of Arts">Bachelor of Arts</option>
-                  <option value="Master of Science">Master of Science</option>
-                  <option value="Master of Business Administration">Master of Business Administration</option>
-                  <option value="Higher Secondary School">Higher Secondary School</option>
-                  <option value="Secondary School Certificate(SSC)">Secondary School Certificate(SSC)</option>
-                </select>
-
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>
-                <label>Family Details</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="FamilyDetails"
-                  id="FamilyDetails"
-                  placeholder="Enter your Family Details"
-                  {...register('FamilyDetails')}
-                />
-
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <label>Gender </label>
-              </td>
-              <td>:</td>
-              <td>
-                <select id="gender"  {...register('Gender'
-                )}
-                >
-                  <option value="">--Select Gender--</option>
-                  <option value="Male">Male</option>
+                  >
+                    <option value="">--Select Gender--</option>
+                    <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
-                </select>
+                  </select>
 
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>
-                <label>Height</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="number"
-                  name="Height"
-                  id="Height"
-                  placeholder="Enter your Height"
-                  {...register('Height')}
-                />
-
-              </td>
-            </tr>
+                </td>
+              </tr>
 
 
-            <tr>
-              <td>
-                <label>Weight</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="Weight"
-                  id="Weight"
-                  placeholder="Enter your Weight"
-                  {...register('Weight')}
-                />
+              <tr>
+                <td>
+                  <label>Height</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="number"
+                    name="Height"
+                    id="Height"
+                    placeholder="Enter your Height"
+                    {...register('Height')}
+                  />
 
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>
-                <label>Hobbies and Interests</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="HobbiesAndInterests"
-                  id="HobbiesAndInterests"
-                  placeholder="Enter your Hobbies and Interests"
-                  {...register('HobbiesAndInterests')}
-                />
-
-              </td>
-            </tr>
+                </td>
+              </tr>
 
 
-            <tr>
-              <td>
-                <label>Marital-Status</label>
-              </td>
-              <td>:</td>
-              <td>
-                <select    {...register('MaritalStatus'
-                )}
-                >
-                  <option value="">--Select Marital-Status--</option>
-                  <option value="Single">Single</option>
-                  <option value="Married">Widowed</option>
-                  <option value="Divorced">Divorced</option>
-                </select>
+              <tr>
+                <td>
+                  <label>Weight</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="Weight"
+                    id="Weight"
+                    placeholder="Enter your Weight"
+                    {...register('Weight')}
+                  />
 
-              </td>
-            </tr>
+                </td>
+              </tr>
 
 
-            <tr>
-              <td>
-                <label>Mother-Tongue</label>
-              </td>
-              <td>:</td>
-              <td>
-                <select {...register('MotherTongue'
-                )}
-                >
-                  <option value="">--Select Mother-Tongue--</option>
-                  <option value="Hindi">Hindi</option>
-                  <option value="Malayalam">Malayalam</option>
-                  <option value="Tamil">Tamil</option>
-                  <option value="kannada">kannada</option>
-                </select>
+              <tr>
+                <td>
+                  <label>Hobbies and Interests</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="HobbiesAndInterests"
+                    id="HobbiesAndInterests"
+                    placeholder="Enter your Hobbies and Interests"
+                    {...register('HobbiesAndInterests')}
+                  />
 
-              </td>
-            </tr>
+                </td>
+              </tr>
 
 
-            <tr>
-              <td>
-                <label>Occupation</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="Occupation"
-                  id="Occupation"
-                  placeholder="Enter your Occupation"
-                  {...register('Occupation'
+              <tr>
+                <td>
+                  <label>Marital-Status</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select    {...register('MaritalStatus'
                   )}
-                />
+                  >
+                    <option value="">--Select Marital-Status--</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Widowed</option>
+                    <option value="Divorced">Divorced</option>
+                  </select>
 
-              </td>
-            </tr>
+                </td>
+              </tr>
 
 
-            <tr>
-              <td>
-                <label>Religion </label>
-              </td>
-              <td>:</td>
-              <td>
-                <select {...register('Religion'
-                )}
-                >
-                 <option value="">Select Religion</option>
-                 <option value="Christianity">Christianity</option>
+              <tr>
+                <td>
+                  <label>Mother-Tongue</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select {...register('MotherTongue'
+                  )}
+                  >
+                    <option value="">--Select Mother-Tongue--</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Malayalam">Malayalam</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="kannada">kannada</option>
+                  </select>
+
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  <label>Occupation</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="Occupation"
+                    id="Occupation"
+                    placeholder="Enter your Occupation"
+                    {...register('Occupation'
+                    )}
+                  />
+
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  <label>Religion </label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select {...register('Religion'
+                  )}
+                  >
+                    <option value="">Select Religion</option>
+                    <option value="Christianity">Christianity</option>
                     <option value="Islam">Islam</option>
                     <option value="Hinduism">Hinduism</option>
                     <option value="Buddhism">Buddhism</option>
                     <option value="Other">Other</option>
-                </select>
+                  </select>
 
-              </td>
-            </tr>
+                </td>
+              </tr>
 
 
-            <tr>
-              <td>
-                <label>State</label>
-              </td>
-              <td>:</td>
-              <td>
-                <select {...register('State'
-                )}
-                >
-                  <option value="">--Select State--</option>
-                  <option value="Andhra Pradesh">Andhra Pradesh</option>
-                  <option value="Arunachal Pradsh">Arunachal Pradsh</option>
-                  <option value="Goa">Goa</option>
-                  <option value="Gujarat">Gujarat</option>
-                  <option value="Kerala">Kerala</option>
-                  <option value="Karnataka">Karnataka</option>
-                  <option value="Tamil Nadu">Tamil Nadu</option>
-                  <option value="Telangana">Telangana</option>
-                  <option value="Jharkhand">Jharkhand</option>
-                </select>
-
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <label>Sub Caste</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="SubCaste"
-                  id="SubCaste"
-                  placeholder="Enter your Sub Caste"
-                  {...register('SubCaste'
+              <tr>
+                <td>
+                  <label>State</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select {...register('State'
                   )}
-                />
+                  >
+                    <option value="">--Select State--</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradsh">Arunachal Pradsh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                  </select>
 
-              </td>
-            </tr>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label>Sub Caste</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="SubCaste"
+                    id="SubCaste"
+                    placeholder="Enter your Sub Caste"
+                    {...register('SubCaste'
+                    )}
+                  />
+
+                </td>
+              </tr>
 
 
 
 
-            <tr>
-              <td>
-                <label>Preferred Partner Age Range</label>
-              </td>
-              <td>:</td>
-              <td>
-                <select {...register('PreferredPartnerAgeRange'
-                )}
-                >
-                  <option value="">--Select--</option>
-                  <option value="22-25">22-25</option>
-                  <option value="26-29">26-29</option>
-                  <option value="30-33">30-33</option>
-                  <option value="34-37">34-37</option>
-                  <option value="38-41">38-41</option>
-                  <option value="42-45">42-45</option>
-                  <option value="46-50">46-50</option>
-                </select>
-
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <label>Preffered Partner Caste</label>
-              </td>
-              <td>:</td>
-              <td>
-                <input type="text"
-                  name="PreferredPartnerCaste"
-                  id="PreferredPartnerCaste"
-                  placeholder="Enter your Preferred Partner Caste"
-                  {...register('PreferredPartnerCaste'
+              <tr>
+                <td>
+                  <label>Preferred Partner Age Range</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select {...register('PreferredPartnerAgeRange'
                   )}
-                />
+                  >
+                    <option value="">--Select--</option>
+                    <option value="22-25">22-25</option>
+                    <option value="26-29">26-29</option>
+                    <option value="30-33">30-33</option>
+                    <option value="34-37">34-37</option>
+                    <option value="38-41">38-41</option>
+                    <option value="42-45">42-45</option>
+                    <option value="46-50">46-50</option>
+                  </select>
 
-              </td>
-            </tr>
+                </td>
+              </tr>
 
-            <tr>
-              <td>
-                <label>Preffered Partner Location</label>
-              </td>
-              <td>:</td>
-              <td>
-                <select {...register('PreferredPartnerLocation'
-                )}
-                >
-                  <option value="">Select Country</option>
+              <tr>
+                <td>
+                  <label>Preffered Partner Caste</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <input type="text"
+                    name="PreferredPartnerCaste"
+                    id="PreferredPartnerCaste"
+                    placeholder="Enter your Preferred Partner Caste"
+                    {...register('PreferredPartnerCaste'
+                    )}
+                  />
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label>Preffered Partner Location</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select {...register('PreferredPartnerLocation'
+                  )}
+                  >
+                    <option value="">Select Country</option>
                     <option value="USA">USA</option>
                     <option value="India">India</option>
                     <option value="UK">UK</option>
                     <option value="Canada">Canada</option>
                     <option value="Australia">Australia</option>
-                </select>
+                  </select>
 
-              </td>
-            </tr>
+                </td>
+              </tr>
 
 
 
-            <tr>
-              <td>
-                <label>Preffered Partner Religion</label>
-              </td>
-              <td>:</td>
-              <td>
-                <select {...register('PreferredPartnerReligion'
-                )}
-                >
-                  <option value="">--Select Religion--</option>
-                  <option value="Christianity">Christianity</option>
+              <tr>
+                <td>
+                  <label>Preffered Partner Religion</label>
+                </td>
+                <td>:</td>
+                <td>
+                  <select {...register('PreferredPartnerReligion'
+                  )}
+                  >
+                    <option value="">--Select Religion--</option>
+                    <option value="Christianity">Christianity</option>
                     <option value="Islam">Islam</option>
                     <option value="Hinduism">Hinduism</option>
                     <option value="Buddhism">Buddhism</option>
                     <option value="Other">Other</option>
-                </select>
+                  </select>
 
-              </td>
-            </tr>
-
-
-
-            <tr>
-              <td>
-                <label></label>
-              </td>
-              <td></td>
-              <td>
-                <input type="hidden" {...register('ProfilePictureUrl')} readOnly
-                  onChange={onFileChange}
-                />
-
-              </td>
-            </tr>
-
-          </table>
+                </td>
+              </tr>
 
 
 
-          <button className="button21" type="submit">Update</button>
-          <br /><br />
-          <button className="button21" type="button" onClick={() => handleReset()}>Reset</button>
+              <tr>
+                <td>
+                  <label></label>
+                </td>
+                <td></td>
+                <td>
+                  <input type="hidden" {...register('ProfilePictureUrl')} readOnly
+                    onChange={onFileChange}
+                  />
 
-        </form>
+                </td>
+              </tr>
 
+            </table>
+
+
+
+            <button className="button21" type="submit">Update</button>
+            <br /><br />
+            <button className="button21" type="button" onClick={() => handleReset()}>Reset</button>
+
+          </form>
+
+        </div>
       </div>
-      </div>
-    
+
 
       <div className="parent-container712">
-  <div className="check20">
-    <h2>Check Out Our Recent Work On Instagram</h2>
-    </div>
-    <div className="insta-edit">
-      <a href="#" target="_self" rel="noopener noreferrer">
-        Follow Us On Instagram
-      </a>
-    </div>
-  <div className="container712">
-    <div className="row justify-content-center"> 
-      <div className="col-auto">
-        <div className="image16">
-          <figure>
-            <img srcSet={image16} alt="img-16" />
-          </figure>
+        <div className="check20">
+          <h2>Check Out Our Recent Work On Instagram</h2>
+        </div>
+        <div className="insta-edit">
+          <a href="https://www.instagram.com/nrimatch/" target="_self" rel="noopener noreferrer">
+            Follow Us On Instagram
+          </a>
+        </div>
+        <div className="container712">
+          <div className="row justify-content-center">
+            <div className="col-auto">
+              <div className="image16">
+                <figure>
+                  <img srcSet={image16} alt="img-16" />
+                </figure>
+              </div>
+            </div>
+            <div className="col-auto">
+              <div className="image17">
+                <figure>
+                  <img srcSet={image17} alt="img-17" />
+                </figure>
+              </div>
+            </div>
+            <div className="col-auto">
+              <div className="image18">
+                <figure>
+                  <img srcSet={image18} alt="img-18" />
+                </figure>
+              </div>
+            </div>
+            <div className="col-auto">
+              <div className="image19">
+                <figure>
+                  <img srcSet={image19} alt="img-19" />
+                </figure>
+              </div>
+            </div>
+            <div className="col-auto">
+              <div className="image20">
+                <figure>
+                  <img srcSet={image20} alt="img-20" />
+                </figure>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="col-auto">
-        <div className="image17">
-          <figure>
-            <img srcSet={image17} alt="img-17" />
-          </figure>
-        </div>
-      </div>
-      <div className="col-auto">
-        <div className="image18">
-          <figure>
-            <img srcSet={image18} alt="img-18" />
-          </figure>
-        </div>
-      </div>
-      <div className="col-auto">
-        <div className="image19">
-          <figure>
-            <img srcSet={image19} alt="img-19" />
-          </figure>
-        </div>
-      </div>
-      <div className="col-auto">
-        <div className="image20">
-          <figure>
-            <img srcSet={image20} alt="img-20" />
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
-    <div className="parent-container804">
-    <div className="container804 text-center">
-        <div className="find-edit mb-4"> 
+      <div className="parent-container804">
+        <div className="container804 text-center">
+          <div className="find-edit mb-4">
             <h2>Find Your Soulmate Today</h2>
+          </div>
+          <p className="info-edit">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
         </div>
-        <p className="info-edit">Join The IndianWedding today and begin your search for a compatible life partner in the Indian community.</p>
-    </div>
-    </div>
+      </div>
 
 
-    <div class="parent-container520">
-    <div class="contact-container520">
-        <div class="contact-item520">
+      <div class="parent-container520">
+        <div class="contact-container520">
+          <div class="contact-item520">
             <h2>Phone</h2>
-            <p>202-555-0188</p>
-        </div>
-        <div class="contact-item520">
+            <p>+447737024736</p>
+          </div>
+          <div class="contact-item520">
             <h2>Follow Us</h2>
             <div class="social-icons520">
-                <ul>
-                    <li><a href="" target="blank"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="" target="blank"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
-                </ul>
+              <ul>
+                <li><a href="https://www.facebook.com/profile.php?id=61570002380672" target="blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/nrimatch/" ><i class="fab fa-instagram"></i></a></li>
+                <li><a href=""><i class="fab fa-youtube" target="blank"></i></a></li>
+              </ul>
             </div>
-        </div>
-        <div class="contact-item520">
+          </div>
+          <div class="contact-item520">
             <h2>Email</h2>
-            <p>contact@example.com</p>
+            <p>paulfortuneltd@gmail.com</p>
+          </div>
         </div>
-    </div>
-    </div>
-    
-    
-    
-        
-<div class="parent-container554">
+      </div>
 
-    <nav class="container554">
 
-            <ul id="info-edit">
-                <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
-                <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
-                <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
-                <li><a href="#"onClick={() => navigateTo('/portfolio')}>Portfolio</a></li>
-                <li><a href="#" onClick={() => navigateTo('/testimonials')}>Testimonials</a></li>
-                <li><a href="#" onClick={() => navigateTo('/blog')}>Blog</a></li>
-                <li><a href="#" onClick={() => navigateTo('/contact')}>Contact</a></li>
-            </ul>
 
-    </nav>
 
-</div>			
-                      
-                                
+      <div class="parent-container554">
 
-<div class="parent-container564">
-	<div class="container564">
-        <p>Copyright © 2024 theindianwedding</p>
-    </div>			
-</div> 
+        <nav class="container554">
+
+          <ul id="info-edit">
+            <li><a href="#" onClick={() => navigateTo('/home')}>Home</a></li>
+            <li><a href="#" onClick={() => navigateTo('/about')}>About Us</a></li>
+            <li><a href="#" onClick={() => navigateTo('/services')}>Services</a></li>
+            <li><a href="#" onClick={() => navigateTo('/portfolio')}>Portfolio</a></li>
+            <li><a href="#" onClick={() => navigateTo('/testimonials')}>Testimonials</a></li>
+            <li><a href="#" onClick={() => navigateTo('/blog')}>Blog</a></li>
+            <li><a href="#" onClick={() => navigateTo('/contact')}>Contact</a></li>
+          </ul>
+
+        </nav>
+
+      </div>
+
+
+
+      <div class="parent-container564">
+        <div class="container564">
+          <p>Copyright © 2024 theindianwedding</p>
+        </div>
+      </div>
     </div>
 
 
